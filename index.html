@@ -1,0 +1,1599 @@
+<script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
+<style>
+
+
+    #theme-changer {
+               position: fixed;
+               top: 20px;
+               right: 20px;
+               z-index: 9999;
+             background: rgba(255,255,255,0.5);
+             backdrop-filter: blur(3px);
+             border: 2px solid #d1d1d1;
+             padding: 25px;
+             border-radius: 20px;
+             display: none;
+      }
+     
+     
+     
+     #theme-changer:hover {
+       color: rgba(255,255,255,0.75);
+       backdrop-filter: blur(6px);
+       border: 4px solid white;
+     }
+           .color-circle {
+               display: inline-block;
+               width: 30px;
+               height: 30px;
+               border-radius: 50%;
+               margin-right: 10px;
+               cursor: pointer;
+           }
+     
+     .color-circle:hover {
+       border: 2px solid white;
+       box-shadow: 0 0 20px white;
+     }
+           #custom-color {
+               display: none;
+           }
+
+           #color, #brunebot, #timetable {
+           cursor: pointer; 
+           }
+
+           #color:hover {
+           box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+           }
+
+
+           #timetable:hover {
+           box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+           }
+
+
+           #brunebot:hover {
+           box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+           }
+     .sidebar {
+         position: absolute;
+         width: 45px;
+       height: auto;
+       border-radius: 100px;
+       padding: 10px;
+       color: white;
+       background: #b91919;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       transition: all 0.3s ease;
+       transform: translate(53vw, 0px);
+       animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    margin-left: -30px;
+       transition: all 0.3s ease-in-out;
+     }
+ 
+ 
+     .sidebar img {
+         width: 25px;
+         margin-top: 12.5px;
+         margin-bottom: 12.5px;
+     }
+     .sidebar hr {
+        border: 1.5px solid#d61717;
+        width: 100%;
+     }
+     .incresize {
+       width: 100%;
+       height: 35%;
+       background: transparent;
+     }
+     
+     .website-layout-container {
+       position: absolute;
+       transform: translate(0%, -20%;)
+     }
+   .custom-shape-divider-bottom-1713904167 {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       width: 100%;
+       overflow: hidden;
+       line-height: 0;
+       transform: rotate(180deg);
+   }
+   
+   .custom-shape-divider-bottom-1713904167 svg {
+       position: relative;
+       display: block;
+       width: calc(130% + 1.3px);
+       height: 184px;
+       transform: rotateY(180deg);
+   }
+   
+   .custom-shape-divider-bottom-1713904167 .shape-fill {
+       fill: #781721;
+   }
+   
+   .open {
+       position: absolute;
+       transform: rotate(90deg);
+       transform: translate(49vw, 0px) rotate(90deg);
+       width: 25px;
+       height: 25px;
+       border-radius: 50%;
+       padding: 10px;
+       color: white;
+       background: #b91919;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       transition: all 0.3s ease;
+       z-index: 9;
+       animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+   }
+   
+     body {
+     display: flex;
+     width: 100vw;
+     height: 100vh;
+     overflow: hidden;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background: #DC143C;
+     color: white;
+     font-family: monospace;
+     font-weight: 700;
+   }
+   
+   .toggle {
+     width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     padding: 10px;
+     color: white;
+     background: #b91919;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+       margin-top: -20px;
+     transition: all 0.3s ease;
+     margin: 0 auto;
+   }
+   
+   .search-icons {
+       width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     padding: 10px;
+     color: white;
+     background: #b91919;
+     display: flex;
+     margin-top: 2.5px;
+     justify-content: center;
+     align-items: center;
+     transition: all 0.3s ease;
+     overflow: hidden;
+   }
+   
+   input:focus {
+     outline: none;
+   }
+   
+   #iframeContainer {
+     background: red;
+     display: none;
+     width: 80vw;
+     height: 90vh;
+     border-radius: 1rem;
+     border: 10px solid #d1d1d1;
+     position: absolute;
+     left: 10%;
+     top: 3.5%;
+     overflow: hidden;
+   }
+   
+   .invis {
+     margin-left: 17.5px;
+     background: transparent;
+     border: none;
+     color: white;
+     font-family: monospace;
+     font-size: 20px;
+     highlight: none;
+     width: 690px;
+     height: 50px;
+   }
+   
+   .invis::placeholder {
+     color: #8d6e6e;
+   }
+   .toggle:hover {
+     transform: scale(1.025);
+     margin-top: 7.5px;
+     border: 0.1px solid #d1d1d1;
+     margin-bottom: 35px;
+   }
+   
+   #Lol {
+     display: none;
+     color: white;
+     font-family: monospace;
+     border-radius: 2rem;
+     padding: 5px;
+     font-size: 5px;
+     background: #ba1919;
+     position: absolute;
+   }
+   
+   .toggle:hover + #Lol.show {
+     display: block;
+   }
+   
+   
+   #title {
+     margin-top: 300px;
+     margin-bottom: 50px;
+     text-align: center;
+     font-size: 3.5rem;
+     color: white;
+     font-family: monospace;
+     font-weight: 700;
+   }
+   
+   .search {
+     display: flex;
+     flex-direction: row;
+     font-size: 20px;
+     highlight: none;
+     color: white;
+     padding: 17.5px;
+     width: 700px;
+     border-radius: 12.5px;
+     border: 2px solid #d1d1d1;
+     background: linear-gradient(to right bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+     backdrop-filter: blur(6.5px);
+     transition: all 0.35s ease;
+   }
+   
+   .search:hover {
+     box-shadow: 0 0 69px white;
+     border: 3px solid white;
+     background: linear-gradient(to right bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+     backdrop-filter: blur(6px);
+     transform: scale(1.025);
+   }
+
+   .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #f1f1f1;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+.dropdown-content ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content ul li a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ccc;
+}
+
+.timetable-container {
+position: fixed;
+display: none;
+height: 500px;
+z-index: 6942069;
+  border-radius: 2rem;
+  border: 2px solid #d1d1d1;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.35));
+padding: 20px;
+  max-width: 696.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+    color: white;
+  font-family: monospace;
+}
+
+.timetable {
+    color: white;
+  font-family: monospace;
+  transition: all 0.9s;
+}
+
+.timetable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px white;
+}
+
+#table2 {
+  display: none;
+    color: #d1d1d1;
+  font-family: monospace;
+}
+
+#table1 {
+  display: block;
+}
+.horizontal-scroll-timetable {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 69px;
+}
+
+
+.timetable-container:hover {
+  transform: scale(1.0005);
+  box-shadow: 0 0 100px rgba(255,255,255,0.75);
+  border: 2px solid white;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
+  backdrop-filter: blur(10px);
+}
+
+  table {
+  width: 100%;
+  border-collapse: collapse;
+    color: white;
+  font-family: monospace;
+}
+th, td {
+  border: 5px solid white;
+  padding: 8px;
+  text-align: left;
+}
+
+ tr td:nth-child(even) {
+    background-color: #4eb0ca;
+   color: white;
+  font-family: monospace;
+  }
+
+  tr td:nth-child(odd) {
+    background-color: #57c4e1;
+   color: white;
+  font-family: monospace;
+  }
+
+  th {
+  background-color: #3e8ca1;
+  }
+
+
+
+
+
+
+
+
+
+.toggle-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  animation: pulse 1.5s ease alternate infinite; /* Animation */
+}
+
+.toggle-button:hover {
+  background-color: #ffffff; /* White */
+  color: #4CAF50; /* Dark Green */
+}
+
+.toggle-button:active {
+  animation: click-effect 0.01s ease forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes click-effect {
+  0% {
+    
+  }
+  100% {
+    background: green;
+    color: white;
+  }
+}
+
+   
+   h1:hover {
+     transform: scale(1.015);
+   }
+   
+   .search-icons:hover {
+     transform: scale(1.01);
+     border: 0.1px white solid; 
+   }
+   .ass {
+     width: 0px;
+     height: 0px;
+     border-radius: 25px;
+     filter: blur(12.5px);
+     background: white;
+     position: absolute;
+   }
+   .searchIcon {
+     animation: searchIcon 1s ease forwards;
+   }
+   
+   @keyframes searchIcon {
+     from {
+       width: 0px;
+       height: 0px;
+       opacity: 0;
+     }
+     
+     to {
+       width: 50px;
+       height: 50px;
+       opacity: 1;
+     }
+   }
+
+
+
+
+    .clockity {
+      position: absolute;
+      margin-bottom: 5px;
+      margin-left: 5px;
+      bottom: 0;
+      left: 0;
+      scale: 0.75;
+      z-index: 999999999999;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .clockity:hover {
+    box-shadow: 0 0 50px white;
+    scale: 1;
+    border: 2px solid white;
+    }
+
+    .clock {
+      width: 200px;
+      height: 200px;
+      border: 10px solid #b30000; /* Red border */
+      border-radius: 50%;
+      position: relative;
+      background-color: #4d0000; /* Darker red clock face */
+    }
+
+    .hour, .minute, .second {
+      background: #b30000; /* Red hands */
+      position: absolute;
+      transform-origin: center bottom;
+    }
+
+    .hour {
+      width: 6px;
+      height: 50px;
+      top: 50px;
+      left: 97px;
+    }
+
+    .minute {
+      width: 4px;
+      height: 70px;
+      top: 30px;
+      left: 98px;
+    }
+
+    .second {
+      width: 2px;
+      height: 80px;
+      top: 20px;
+      left: 99px;
+    }
+
+    .hour:hover, .second:hover, .minute:hover {
+    background: green;
+    } 
+
+    .number:hover {
+    color: green;
+    }
+
+    .number {
+      position: absolute;
+      font-size: 16px;
+      font-weight: bold;
+      transform-origin: center;
+      color: #b30000; /* Red numbers */
+    }
+
+   #pro-feature {
+   width: 100vw;
+   height: 100vh;
+   margin: 0;
+   padding: 0;
+   text-align: center;
+   justify-content:center;
+   align-items: center;
+   background: rgba(255,255,255,0.5);
+   backdrop-filter: blur(5px);
+   position: absolute;
+   z-index: 999;
+   display: none;
+   transition: all 0.3s ease;
+   }
+
+   #pro-feature:hover {
+   transform: scale(1.025);
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   .card {
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     width: 100px;
+     height: 100px;
+     background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+     backdrop-filter: blur(2px);
+     border-radius: 20%;
+     margin: 20px;
+     border: 2px solid #f5f5f5;
+     transition: ease-in-out 0.15s;
+     filter: blur(0.75px);
+     z-index: 9;
+     opacity: 0.75;
+   }
+   
+   h4 {
+     font-size: 8.5px;
+   }
+   
+   #smol {
+       margin-top: -10px;
+     font-size: 20px;
+     margin-bottom: -15px;
+   }
+
+   #smoler {
+     margin-top: -7.5px;
+     font-size: 20px;
+     margin-bottom: -15px;
+   }
+   
+   a{
+     text-decoration: none;
+     color: white;
+     font-family: monospace;
+   }
+   
+   .card img {
+     width: 75px;
+   }
+   
+   .card:hover {
+      transform: scale(1.05);
+       filter: blur(0px);
+     border: 2.5px solid white;
+     background: linear-gradient(to right bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+     box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+     opacity: 1;
+   }
+   
+   #gpt, #gc {
+     width: 50px;
+     margin-bottom: 10px;
+     margin-top: 15px;
+   }
+   
+   .bento {
+     display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(123px, 2fr));
+       width: 750px;
+     height: 150px;
+     margin: 0 auto;
+     z-index: -10;
+   }
+
+   #dcr {
+   width: 50%;
+   margin-bottom: 7.5px;
+   }
+   
+   .website-layout-container {
+     display: none;
+     margin: 0 auto;
+   }
+   
+   .toggle:hover + .website-layout-container,
+   .website-layout-container.show {
+     display: block;
+   }
+   
+   
+   section {
+   transform: translate(0%, -30%);
+   text-align: center;
+   position: relative;
+   }
+
+   #update {
+   position: absolute;
+   z-index: 9;
+   bottom: 0;
+   right: 0;
+   margin: 15px;
+   }
+
+   ery {
+   display: flex;
+   flex-direction: row;
+   gap: 5px;
+   position: absolute; 
+   z-index: 90;
+   top: 0;
+   left: 0;
+   margin: 10px;
+   }
+
+   .breh {
+   border: 0px solid transparent;
+   background: transparent;
+   transition: all 0.3s;
+   }
+
+
+.breh:hover {
+scale: 2;
+}
+   .timesoftables {
+   border: 0px solid transparent;
+   background: transparent;
+   }
+
+   .toggle-button, dropdown {
+  position: relative;
+  z-index: 9999999;
+  }
+
+
+
+.container {
+  position: fixed;
+  width: 620px;
+  margin: 0 auto;
+  height: 330px;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.75), rgba(255,255,255,0.25));
+  text-align: center;
+  border-radius: 2rem;
+  border: 1px solid white;
+  backdrop-filter: blur(2px);
+  z-index: 999999999999;
+  display: none;
+}
+
+.container:hover {
+  box-shadow: 0 0 25px rgba(255,255,255,0.75);
+  transform: scale(1.0005);
+  border: 2px solid white;
+  backdrop-filter: blur(5px);
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.5));
+}
+
+.shop-item {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 2rem;
+  width: 75%;
+      color: red;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out forwards;
+}
+
+.shop-item:hover {
+  background-color: white;
+  border: 2px solid white;
+  box-shadow: 0 0 15px white;
+  color: green;
+  transform: scale(1.025);
+}
+
+#brunglePoints, #boughtItems {
+color: green;
+}
+
+
+
+.news {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: monospace;
+  font-size: 2rem;
+  color: white;
+  background: linear-gradient(to bottom right, rgba(255, 255, 0, 0.75),rgba(255, 255, 0, 0.5));
+  box-shadow: 0 0 250px yellow;
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+   
+     </style>
+     <div class="news">
+  <h1> New FEATURE!?? </h1>
+  <p> Version 1.0.0 Full Release Updates:
+  </p>
+  <ul>
+    <li>Brungle Bot ( located in bottom right )</li>
+    <li>Clock</li>
+    <li>Brungle Shop</li>
+    <li>Timetable ( currently only 8.5A/B )</li>
+    <li>Brungle Points</li>
+  </ul>
+  <h3> Removing in 7.5 Seconds </h3>
+  <h4> Note, This will be VISIBLE till next UPDATE </h4>
+</div>
+<div class="clockity">
+  <div class="clock">
+    <div class="hour" id="hour"></div>
+    <div class="minute" id="minute"></div>
+    <div class="second" id="second"></div>
+     <div class="number" style="transform: translate(96px, 20px)">12</div>
+    <div class="number" style="transform: translate(176px, 100px)">3</div>
+    <div class="number" style="transform: translate(96px, 180px)">6</div>
+    <div class="number" style="transform: translate(16px, 100px)">9</div>
+    <div class="number" style="transform: translate(140px, 26px)">1</div>
+    <div class="number" style="transform: translate(164px, 52px)">2</div>
+    <div class="number" style="transform: translate(164px, 148px)">4</div>
+    <div class="number" style="transform: translate(140px, 174px)">5</div>
+    <div class="number" style="transform: translate(52px, 174px)">7</div>
+    <div class="number" style="transform: translate(26px, 148px)">8</div>
+    <div class="number" style="transform: translate(26px, 52px)">10</div>
+    <div class="number" style="transform: translate(52px, 26px)">11</div>
+  </div>
+  </div>
+
+
+<div class="container">
+  <h1>Brungle Shop</h1>
+  <h5> Reload to take effect </h5>
+  <p>Brungle Points: <span id="brunglePoints">1000</span></p>
+  <p>Bought Items: <span id="boughtItems">0</span></p>
+  <div id="shopItems">
+    <button class="shop-item" data-price="500" onclick="buyItem(500)">Shyun Pen - 500 Points</button>
+    <button class="shop-item" data-price="1000" onclick="buyItem(1500)">Candy - 1500 Points</button>
+    <button class="shop-item" data-price="2000" onclick="buyItem(2500)">100 Robux Giftcard - 2500 Points</button>
+  </div>
+</div>
+
+     <div id="pro-feature"><h1> Section has been removed. Will add subscribtion service here. </h1></div>
+     <a id="update" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fa-regular fa-copyright">Brungle Browser 2024</i></a>
+<ery>
+  <button class="breh" onclick="showShop()" style="color: white; scale: 1.5;">
+  <i class="fa-solid fa-cart-shopping"></i>
+  </button>
+  <h1>Brungle Points: </h1><h1 style="color: white" id="counter"> Loading... </h1>
+  </ery>
+       <html>
+         <section>
+         <h1 id="Lol"> Click! </h1>
+   <body>
+     <h1 id="title"> Brungle </h1>
+     <h4 style="margin-top: -50px"> Brune & Google </h4>
+   <land class="search">
+     <div class="search-icons">
+       <div class="ass"></div>
+       <i class="fa-solid fa-magnifying-glass"></i>
+       </div>
+     <input type="text" id="searchInput" placeholder="Search Brungle"class="invis"></input>
+     </land>
+   <div class="toggle">
+     <i class="fa-solid fa-circle-chevron-down"></i>
+   </div>
+   
+   <div class="website-layout-container">
+     <div class="bento">
+       
+       
+       <!-- bloxd -->
+       <a href="https://www.bloxd.io">
+   <div class="card">
+     <img id="dcr"src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Bloxd.io_Logo.jpeg/1200px-Bloxd.io_Logo.jpeg"></img>
+   <h1 id="smoler"> Bloxd.io </h1>
+   <h4> bloxd.io </h4>
+   </div>
+   </a>
+     
+     <!-- DISCORD -->
+       <a href="https://www.discord.com/app">
+   <div class="card">
+     <img id="dc"src="https://static.vecteezy.com/system/resources/previews/018/930/718/original/discord-logo-discord-icon-transparent-free-png.png"></img>
+   <h1 id="smol"> Discord </h1>
+   <h4> discord.com/app </h4>
+   </div>
+   </a>
+     
+     <!-- youtube -->
+         <a href="https://www.youtube.com/@brunegaming">
+   <div class="card">
+     <img src="https://www.freeiconspng.com/uploads/hd-youtube-logo-png-transparent-background-20.png"></img>
+   <h1 id="smol"> Youtube </h1>
+   <h4> youtube.com </h4>
+   </div>
+   </a>
+   
+   
+   <!-- chatgpt -->
+         <a href="https://www.chat.openai.com">
+   <div class="card">
+     <img id="gpt"src="https://freelogopng.com/images/all_img/1681039084chatgpt-icon.png"></img>
+   <h1 id="smol"> ChatGPT </h1>
+   <h4> chat.openai.com </h4>
+   </div>
+   </a>
+   
+   <!-- google classroom -->
+         <a href="https://classroom.google.com/u/7/">
+   <div class="card">
+     <img id="gc"src="https://logodownload.org/wp-content/uploads/2020/04/google-classroom-logo.png"></img>
+   <h1 id="smol"> Class </h1>
+   <h4> class.google.com </h4>
+   </div>
+   </a>
+     </div>
+   </div>
+   </section>
+   <footer class="incresize">
+   </footer>
+   
+   
+   <div id="iframeContainer"></div>
+   </body>
+   </html>
+   </head>
+
+   <body>
+        <div id="theme-changer">
+           <div class="color-circle" style="background-color: #E63946" onclick="changeColor('#E63946')"></div>
+           <div class="color-circle" style="background-color: #fc8c03" onclick="changeColor('#fc8c03')"></div>
+           <div class="color-circle" style="background-color: #036b52" onclick="changeColor('#036b52')"></div>
+           <div class="color-circle" style="background-color: #000042" onclick="changeColor('#000042')"></div>
+           <button onclick="showCustomColor()">+</button>
+           <input type="text" id="custom-color" placeholder="Enter hex code ( start with #)">
+           <button onclick="addCustomColor()">Add</button>
+           <button id="change-bg-btn">Change BG Image</button>
+           <br>
+           <hr>
+           <br>
+           <h1 style="font-size: 10px;"> Your Colors:</h1>
+           <br>
+       </div>
+         
+       <div class="sidebar">
+        <button class="breh" onclick="showThemeChanger()">
+         <i style="scale: 1.5"id="color"class="fa-solid fa-palette"></i>
+         </button>
+         <hr>
+         <button class="timesoftables" onclick="showTimetable()">
+         <img src="https://static.thenounproject.com/png/2080636-200.png" id="timetable"></img>
+         </button>
+         <hr>
+         <img src="https://static.vecteezy.com/system/resources/previews/021/608/795/non_2x/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector.jpg" id="brunebot"></img>
+       </div>
+       <div class="open" onclick="moveBoth()">
+          <i class="fa-solid fa-circle-chevron-down"></i>
+         </div>
+ 
+ 
+       <div class="custom-shape-divider-bottom-1713904167">
+       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+           <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+           <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+       </svg>
+   </div>
+   
+
+
+
+   <Div class="timetable-container" style="display: none;">
+  <button class="toggle-button"onclick="toggleTables()">Toggle Tables</button>
+  <div class="dropdown">
+  <button class="dropbtn">Select Class</button>
+
+  <div class="dropdown-content">
+    <ul>
+       <li><a href="#">8.1</a></li>
+      <li><a href="#">8.2</a></li>
+      <li><a href="#">8.3</a></li>
+      <li><a href="#">8.4</a></li>
+      <li><a href="#">8.5</a></li>
+      <li><a href="#">8.6</a></li>
+    </ul>
+  </div>
+</div>
+
+<h1> Class:  8.5  </h1>
+<br>
+  <div  id="table1">
+    <br>
+    <h1> Week 1 </h1>
+    <br>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>PRE</td>
+        <td>Dance</td>
+        <td>PSHE</td>
+        <td>English</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>History</td>
+        <td>Geography</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>Spanish</td>
+        <td>Spanish</td>
+        <td>History</td>
+        <td>Music</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Art</td>
+        <td>Biology</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Drama</td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>English</td>
+    </tr>
+  </table>
+  </div>
+    
+
+  <div  id="table2">
+        <br>
+
+    <h1 style="color: white"> Week 2 </h1>
+        <br>
+
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Geography</td>
+        <td>Drama</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>PRE</td>
+        <td>Physics</td>
+        <td>Biology</td>
+        <td>Music</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>DT / Food Tech</td>
+        <td>Food Tech / DT</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>Geography</td>
+        <td>History</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
+  </div>
+
+  
+  </div>
+
+
+  </div>
+   
+     
+   
+ 
+ 
+ 
+ <head>
+       <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+  // Call updateClock function initially
+  updateClock();
+
+  // Call updateClock function every second
+  setInterval(updateClock, 1000);
+});
+        window.onload = function() {
+      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      document.getElementById('counter').textContent = currentValue;
+
+
+
+
+    };
+      document.addEventListener("DOMContentLoaded", function() {
+    // Get the input element
+    window.onload = function() {
+      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      document.getElementById('counter').textContent = currentValue;
+    };
+    var searchInput = document.getElementById("searchInput");
+
+
+    // Listen for keyup event
+    searchInput.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            incrementCounter()
+            var query = searchInput.value;
+            var encodedQuery = encodeURIComponent(query);
+            var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
+            window.location.href = searchURL; // Redirect to Google search URL on the current tab
+            var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      // Increment the counter value by
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchIcons = document.querySelectorAll('.search-icons');
+    const assDiv = document.querySelector('.ass');
+
+    searchIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            assDiv.classList.add('searchIcon');
+            setTimeout(() => {
+                assDiv.classList.remove('searchIcon');
+
+                var query = document.getElementById('searchInput').value;
+
+                // Encode the query to use in the URL
+                var encodedQuery = encodeURIComponent(query);
+
+                // Create the Google search URL
+                var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
+
+                // Redirect to Google search URL on the current tab
+                window.location.href = searchURL;
+                var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      incrementCounter()
+            }, 1000);
+        });
+    });
+});
+
+ document.addEventListener("DOMContentLoaded", function() {
+     const toggle = document.querySelector('.toggle');
+     const layoutContainer = document.querySelector('.website-layout-container');
+ 
+     toggle.addEventListener('click', function() {
+         layoutContainer.classList.toggle('show');
+     });
+ });
+ 
+ function changeColor(color) {
+     document.body.style.backgroundColor = color;
+ }
+ 
+ function showCustomColor() {
+     var customColorInput = document.getElementById('custom-color');
+     customColorInput.style.display = 'inline-block';
+ }
+ 
+ function addCustomColor() {
+     var customColorInput = document.getElementById('custom-color');
+     var customColor = customColorInput.value;
+     if (/^#[0-9A-F]{6}$/i.test(customColor)) {
+         var colorCircle = document.createElement('div');
+         colorCircle.className = 'color-circle';
+         colorCircle.style.backgroundColor = customColor;
+         colorCircle.setAttribute('onclick', 'changeColor("' + customColor + '")');
+         var addButton = document.getElementById('add-button');
+         document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+         customColorInput.value = '';
+         customColorInput.style.display = 'none';
+     } else {
+         alert('Please enter a valid hex color code.');
+     }
+ }
+
+window.addEventListener('load', function() {
+    var countdown = 25.69420; // 7.5 seconds * 10 (convert to tenths of a second)
+    var countdownInterval = setInterval(function() {
+        countdown--;
+        var countdownSeconds = countdown / 10; // Convert back to seconds
+        var countdownDisplay = document.querySelector('.news h3');
+        if (countdownDisplay) {
+            countdownDisplay.textContent = "Removing in " + countdownSeconds.toFixed(1) + " Seconds";
+        }
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            var newsDiv = document.querySelector('.news');
+            if(newsDiv) {
+                newsDiv.style.display = 'none';
+            }
+        }
+    }, 100); // 0.1 second intervals
+});
+
+
+ let count = 2;
+
+ function moveBoth() {
+    const open = document.querySelector('.open');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (count % 2 === 0) {
+        open.style.transform = 'translate(40vw, 0px) rotate(270deg)';
+        sidebar.style.transform = 'translate(45vw, 0px)';
+      sidebar.style.height = "80%";
+      sidebar.style.width = "12.5%";
+        console.log('Sidebar opened by 146.90.75.207');
+    } else {
+    open.style.transform = 'translate(49vw, 0px) rotate(90deg)';
+        sidebar.style.transform = 'translate(53vw, 0px)';
+      sidebar.style.height = "auto";
+      sidebar.style.width = "auto";
+        console.log('Sidebar closed by 146.90.75.207');
+    }
+
+    count++;
+}
+
+let checker = 0;
+let lastIncrementTime = 0;
+
+function incrementCounter() {
+  const currentTime = Date.now();
+  if (currentTime - lastIncrementTime >= 2500 && checker % 2 === 0) {
+    // Get the current counter value from localStorage or initialize it to 0
+    let currentValue = parseInt(localStorage.getItem('counter')) || 0;
+    // Increment the counter value by 1
+    currentValue++;
+    // Update the counter value in localStorage
+    localStorage.setItem('counter', currentValue);
+    // Update the counter value on the page
+    document.getElementById('counter').textContent = currentValue;
+    // Update last increment time
+    lastIncrementTime = currentTime;
+  }
+  checker++;
+}
+
+
+
+    // Load the counter value from localStorage on page load
+    window.onload = function() {
+      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      document.getElementById('counter').textContent = currentValue;
+    };
+
+
+
+
+    function resetCounter() {
+    // Set the counter value to 0
+    var currentValue = 0;
+    // Update the counter value in localStorage
+    localStorage.setItem('counter', currentValue);
+    // Update the counter value on the page
+    document.getElementById('counter').textContent = currentValue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Get reference to the color element
+  var colorElement = document.getElementById("brunebot");
+  
+  // Get reference to the colornav element
+  var colorNavElement = document.getElementById("pro-feature");
+  
+  // Add click event listener to the color element
+  colorElement.addEventListener("click", function() {
+    // Check if colornav is currently hidden
+    if (colorNavElement.style.display === "none") {
+      // If hidden, show colornav by setting display to block
+      colorNavElement.style.display = "block";
+
+      // Wait for 3 seconds, then hide colornav again
+      wait(10000, () => {
+        colorNavElement.style.display = "none";
+      });
+    } else {
+      // If already shown, hide colornav by setting display to none
+      colorNavElement.style.display = "none";
+    }
+  });
+});
+
+// Simple wait function
+function wait(milliseconds, callback) {
+  setTimeout(callback, milliseconds);
+}
+
+
+function showThemeChanger() {
+    // Get reference to the theme changer element
+    var themeChanger = document.getElementById('theme-changer');
+
+    // Toggle the display property of the theme changer
+    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
+        themeChanger.style.display = "block";
+    } else {
+        themeChanger.style.display = "none";
+    }
+}
+
+const abras = document.querySelector('.timetable-container');
+abras.style.display = "none";
+
+function showTimetable() {
+    // Get reference to the theme changer element
+    var themeChanger = document.querySelector('.timetable-container');
+
+    // Toggle the display property of the theme changer
+    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
+        themeChanger.style.display = "block";
+    } else {
+        themeChanger.style.display = "none";
+    }
+}
+
+function showShop() {
+    // Get reference to the theme changer element
+    var themeChanger = document.querySelector('.container');
+
+    // Toggle the display property of the theme changer
+    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
+        themeChanger.style.display = "block";
+    } else {
+        themeChanger.style.display = "none";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Initialize variables
+let brunglePoints = parseInt(localStorage.getItem('counter')) || 1000; // Initialize with counter value or default value
+let boughtItems = 0;
+
+// Update display
+function updateDisplay() {
+  document.getElementById('brunglePoints').textContent = brunglePoints;
+  document.getElementById('boughtItems').textContent = boughtItems;
+}
+
+// Update local storage and display
+function updateLocalStorageAndDisplay() {
+  localStorage.setItem('counter', brunglePoints.toString());
+  updateDisplay();
+}
+
+// Update cloud variable representing points
+function updateCloudVariable(points) {
+  // Make an HTTP request to update the cloud variable
+  // Replace 'YOUR_UPDATE_ENDPOINT' with the actual endpoint URL
+  fetch('YOUR_UPDATE_ENDPOINT', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ points: points })
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to update cloud variable');
+    }
+    console.log('Cloud variable updated successfully');
+  })
+  .catch(error => {
+    console.error('Error updating cloud variable:', error);
+  });
+}
+
+// Buy item function
+function buyItem(price) {
+  let brunglePointsElement = document.getElementById('brunglePoints');
+  let boughtItemsElement = document.getElementById('boughtItems');
+  
+  if (brunglePoints >= price) {
+    brunglePoints -= price;
+    boughtItems++;
+    updateLocalStorageAndDisplay();
+    updateCloudVariable(brunglePoints); // Update cloud variable after purchase
+    alert('Item bought successfully!');
+  } else {
+    alert('Not enough Brungle Points!');
+  }
+}
+
+// Initial display update
+updateDisplay();
+
+
+
+
+
+
+
+
+
+
+function toggleTables() {
+      var table1 = document.getElementById('table1');
+      var table2 = document.getElementById('table2');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+
+
+
+
+
+    // admin tools
+
+    function infa() {
+  // Get the current counter value from localStorage or initialize it to 0
+  let currentValue = parseInt(localStorage.getItem('counter')) || 0;
+  
+  // Increase the counter value by 10000
+  currentValue += 10000;
+  
+  // Update the counter value in localStorage
+  localStorage.setItem('counter', currentValue.toString());
+  
+  // Display the updated counter value
+  console.log('Counter increased by 10000. New value: ' + currentValue);
+}
+
+// Call the function to increase the counter value by 10000
+increaseCounterBy10000();
+
+
+
+function updateClock() {
+  console.log("Updating clock...");
+  
+  const now = new Date();
+  console.log("Current time:", now);
+
+  const hour = now.getHours();
+  const minute = now.getMinutes();
+  const second = now.getSeconds();
+  console.log("Hour:", hour, "Minute:", minute, "Second:", second);
+
+  const hourHand = document.getElementById('hour');
+  const minuteHand = document.getElementById('minute');
+  const secondHand = document.getElementById('second');
+
+  if (!hourHand || !minuteHand || !secondHand) {
+    console.error("Clock hands not found in the DOM");
+    return;
+  }
+
+  console.log("Clock hands found in the DOM");
+
+  // Calculate rotation angles for hour, minute, and second hands
+  const hourRotation = (hour % 12) * 30 + (minute / 60) * 30;
+  const minuteRotation = minute * 6 + (second / 60) * 6;
+  const secondRotation = second * 6;
+
+  console.log("Hour rotation:", hourRotation);
+  console.log("Minute rotation:", minuteRotation);
+  console.log("Second rotation:", secondRotation);
+
+  // Apply rotation transform to the clock hands
+  hourHand.style.transform = `rotate(${hourRotation}deg)`;
+  minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
+  secondHand.style.transform = `rotate(${secondRotation}deg)`;
+
+  console.log("Clock updated successfully");
+}
+
+
+
+</script>
+   </body>
+   </head></html>
