@@ -156,26 +156,16 @@ let lastIncrementTime = 0;
 
 // Initial display update
 updateDisplay();
+var closeButton = document.getElementById('closeMan');
 
-// Initial countdown setup
-window.addEventListener('load', function() {
-  let countdown = 7.5; // Countdown time in seconds
-  const countdownInterval = setInterval(function() {
-    countdown -= 0.1; // Decrease countdown by 0.1 seconds
-    const countdownDisplay = document.querySelector('.news h3');
-    if (countdownDisplay) {
-      countdownDisplay.textContent = "Removing in " + countdown.toFixed(1) + " Seconds";
-    }
-    if (countdown <= 0) {
-      clearInterval(countdownInterval);
-      const newsDiv = document.querySelector('.news');
-      if (newsDiv) {
-        newsDiv.style.display = 'none';
-      }
-    }
-  }, 100); // 100 milliseconds intervals
-});
+    // Add click event listener to the close button
+    closeButton.addEventListener('click', function() {
+        // Get the news element
+        var newsElement = document.querySelector('.news');
 
+        // Hide the news element
+        newsElement.style.display = 'none';
+    });
 // Show/hide functions
 const abras = document.querySelector('.timetable-container');
 abras.style.display = "none";
