@@ -159,13 +159,12 @@ updateDisplay();
 
 // Initial countdown setup
 window.addEventListener('load', function() {
-  let countdown = 25.69420; // 7.5 seconds * 10 (convert to tenths of a second)
+  let countdown = 7.5; // Countdown time in seconds
   const countdownInterval = setInterval(function() {
-    countdown--;
-    const countdownSeconds = countdown / 10; // Convert back to seconds
+    countdown -= 0.1; // Decrease countdown by 0.1 seconds
     const countdownDisplay = document.querySelector('.news h3');
     if (countdownDisplay) {
-      countdownDisplay.textContent = "Removing in " + countdownSeconds.toFixed(1) + " Seconds";
+      countdownDisplay.textContent = "Removing in " + countdown.toFixed(1) + " Seconds";
     }
     if (countdown <= 0) {
       clearInterval(countdownInterval);
@@ -174,7 +173,7 @@ window.addEventListener('load', function() {
         newsDiv.style.display = 'none';
       }
     }
-  }, 100); // 0.1 second intervals
+  }, 100); // 100 milliseconds intervals
 });
 
 // Show/hide functions
