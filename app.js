@@ -132,7 +132,7 @@ function toggleTables() {
 }
 
 // Function to increase the counter value by 10000
-function increaseCounterBy10000() {
+function iamgaybecozitypedthisin() {
   let currentValue = parseInt(localStorage.getItem('counter')) || 0;
   currentValue += 10000;
   localStorage.setItem('counter', currentValue.toString());
@@ -243,4 +243,45 @@ function toggleThemes() {
     theme.style.display = "block";
   }
 }
+let brunglePoints = parseInt(localStorage.getItem('counter')); // Initialize with counter value or default value
+let boughtItems = 0;
+
+// Update display
+function updateDisplay() {
+  document.getElementById('brunglePoints').textContent = brunglePoints;
+  document.getElementById('boughtItems').textContent = boughtItems;
+}
+
+// Buy item function
+function buyItem(price) {
+  let brunglePointsElement = document.getElementById('brunglePoints');
+  let boughtItemsElement = document.getElementById('boughtItems');
+  
+  if (brunglePoints >= price) {
+    brunglePoints -= price;
+    boughtItems++;
+    brunglePointsElement.textContent = brunglePoints;
+    boughtItemsElement.textContent = boughtItems;
+    // Update cloud variable here
+    updateCloudVariable(brunglePoints, boughtItems);
+    alert('Item bought successfully!');
+  } else {
+    alert('Not enough Brungle Points!');
+  }
+}
+
+// Simulate updating cloud variable
+function updateCloudVariable(points, items) {
+  // You can replace this with your actual cloud variable update logic
+  console.log(`Cloud variable updated: Brungle Points = ${points}, Bought Items = ${items}`);
+}
+
+// Initial display update
+updateDisplay();
+
+
+
+
+
+
 
