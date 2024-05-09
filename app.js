@@ -207,3 +207,9 @@ function showShop() {
     themeChanger.style.display = "none";
   }
 }
+
+function showThemes() {
+  const theme = document.querySelector('#theme-changer');
+
+  theme.style.display = "block";
+}
