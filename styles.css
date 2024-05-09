@@ -1,10 +1,9 @@
 
 
     #theme-changer {
-               position: fixed;
-               top: 20px;
-               right: 20px;
-               z-index: 9999;
+              position: absolute;
+        right: 20px;
+        top: 20px;
              background: rgba(255,255,255,0.5);
              backdrop-filter: blur(3px);
              border: 2px solid #d1d1d1;
