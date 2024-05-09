@@ -208,8 +208,7 @@ function showShop() {
   }
 }
 
-const theme = document.getElementbyId('#theme-changer');
-theme.style.display = "block";
+const theme = document.getElementById('theme-changer');
 
 function toggleThemes() {
   if (theme.style.display === "block") {
@@ -218,3 +217,4 @@ function toggleThemes() {
     theme.style.display = "block";
   }
 }
+
