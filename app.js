@@ -169,10 +169,9 @@ updateDisplay();
 window.onload = function() {
     setTimeout(function() {
         
-        var newsElements = document.getElementsByClassName('news');
-        for (var i = 0; i < newsElements.length; i++) {
-            newsElements[i].style.display = 'none';
-        }
+        const newsElements = document.querySelector('.news');
+        
+            newsElements.style.display = 'none';
     }, 1500); 
 };
 
