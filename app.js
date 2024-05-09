@@ -161,21 +161,35 @@ updateDisplay();
 
 
 
-function countdownAndRemove() {
+
+
+
+
+
+// Function to countdown and remove the news element
+  function countdownAndRemove() {
     var countdownElement = document.getElementById('countdown');
-    var countdownValue = parseInt(countdownElement.innerText);
+    var countdownValue = parseFloat(countdownElement.innerText);
+    var milliseconds = 0;
     
-    // Update the countdown value every second
+    // Update the countdown value every millisecond
     var countdownInterval = setInterval(function() {
-      countdownValue--;
-      countdownElement.innerText = countdownValue;
+      milliseconds--;
+      
+      if (milliseconds < 0) {
+        countdownValue--;
+        milliseconds = 999;
+      }
+      
+      // Update the display
+      countdownElement.innerText = countdownValue.toFixed(0) + "." + milliseconds.toFixed(0).padStart(3, '0');
       
       // If countdown reaches 0, hide the news element
-      if (countdownValue <= 0) {
+      if (countdownValue <= 0 && milliseconds <= 0) {
         clearInterval(countdownInterval);
         document.querySelector('.news').style.display = 'none';
       }
-    }, 1000);
+    }, 1);
   }
   
   // Call the countdownAndRemove function when the page loads
@@ -188,7 +202,10 @@ function countdownAndRemove() {
 
 
 
-// Show/hide functions
+
+
+
+
 const abras = document.querySelector('.timetable-container');
 abras.style.display = "none";
 
