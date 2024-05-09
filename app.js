@@ -1,3 +1,29 @@
+
+ function changeColor(color) {
+     document.body.style.backgroundColor = color;
+ }
+ 
+ function showCustomColor() {
+     var customColorInput = document.getElementById('custom-color');
+     customColorInput.style.display = 'inline-block';
+ }
+ 
+ function addCustomColor() {
+     var customColorInput = document.getElementById('custom-color');
+     var customColor = customColorInput.value;
+     if (/^#[0-9A-F]{6}$/i.test(customColor)) {
+         var colorCircle = document.createElement('div');
+         colorCircle.className = 'color-circle';
+         colorCircle.style.backgroundColor = customColor;
+         colorCircle.setAttribute('onclick', 'changeColor("' + customColor + '")');
+         var addButton = document.getElementById('add-button');
+         document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+         customColorInput.value = '';
+         customColorInput.style.display = 'none';
+     } else {
+         alert('Please enter a valid hex color code.');
+     }
+ }
 // Function to update the clock
 function updateClock() {
   const now = new Date();
