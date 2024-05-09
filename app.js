@@ -156,16 +156,38 @@ let lastIncrementTime = 0;
 
 // Initial display update
 updateDisplay();
-var closeButton = document.getElementById('closeMan');
 
-    // Add click event listener to the close button
-    closeButton.addEventListener('click', function() {
-        // Get the news element
-        var newsElement = document.querySelector('.news');
 
-        // Hide the news element
-        newsElement.style.display = 'none';
-    });
+
+
+
+function countdownAndRemove() {
+    var countdownElement = document.getElementById('countdown');
+    var countdownValue = parseInt(countdownElement.innerText);
+    
+    // Update the countdown value every second
+    var countdownInterval = setInterval(function() {
+      countdownValue--;
+      countdownElement.innerText = countdownValue;
+      
+      // If countdown reaches 0, hide the news element
+      if (countdownValue <= 0) {
+        clearInterval(countdownInterval);
+        document.querySelector('.news').style.display = 'none';
+      }
+    }, 1000);
+  }
+  
+  // Call the countdownAndRemove function when the page loads
+  window.onload = function() {
+    countdownAndRemove();
+  };
+
+
+
+
+
+
 // Show/hide functions
 const abras = document.querySelector('.timetable-container');
 abras.style.display = "none";
