@@ -208,7 +208,7 @@ function showShop() {
   }
 }
 
-const theme = document.querySelector('#theme-changer');
+const theme = document.getElementbyId('#theme-changer');
 theme.style.display = "block";
 
 function toggleThemes() {
