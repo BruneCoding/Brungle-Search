@@ -244,6 +244,14 @@ function toggleThemes() {
   }
 }
 
+
+
+
+
+
+let brunglePoints = 100; // Example initial points
+let boughtItems = 0; // Example initial bought items count
+
 // Buy item function
 function buyItem(price) {
   let brunglePointsElement = document.getElementById('brunglePoints');
@@ -269,16 +277,11 @@ function updateCloudVariable(points, items) {
 }
 
 // Initial display update
-updateDisplay();
+function updateDisplay() {
+  let brunglePointsElement = document.getElementById('brunglePoints');
+  let boughtItemsElement = document.getElementById('boughtItems');
+  brunglePointsElement.textContent = brunglePoints;
+  boughtItemsElement.textContent = boughtItems;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+updateDisplay(); // Call the initial display update function
