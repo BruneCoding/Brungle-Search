@@ -243,14 +243,6 @@ function toggleThemes() {
     theme.style.display = "block";
   }
 }
-let brunglePoints = parseInt(localStorage.getItem('counter')); // Initialize with counter value or default value
-let boughtItems = 0;
-
-// Update display
-function updateDisplay() {
-  document.getElementById('brunglePoints').textContent = brunglePoints;
-  document.getElementById('boughtItems').textContent = boughtItems;
-}
 
 // Buy item function
 function buyItem(price) {
@@ -278,6 +270,11 @@ function updateCloudVariable(points, items) {
 
 // Initial display update
 updateDisplay();
+
+
+
+
+
 
 
 
