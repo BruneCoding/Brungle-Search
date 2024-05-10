@@ -234,14 +234,16 @@ function showShop() {
   }
 }
 
-const theme = document.getElementById('theme-changer');
+
 
 function toggleThemes() {
-  if (theme.style.display === "block") {
-    theme.style.display = "none";
-  } else {
-    theme.style.display = "block";
-  }
+ const themeChanger = document.getElementById('theme-changer');
+   // Toggle the display property of the theme changer
+    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
+        themeChanger.style.display = "block";
+    } else {
+        themeChanger.style.display = "none";
+    }
 }
 
 
