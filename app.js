@@ -79,13 +79,31 @@ function wait(milliseconds, callback) {
 function incrementCounter() {
   const currentTime = Date.now();
   if (currentTime - lastIncrementTime >= 2500 && checker % 2 === 0) {
+    // Get the current counter value from localStorage or initialize it to 0
     let currentValue = parseInt(localStorage.getItem('counter')) || 0;
+    // Increment the counter value by 1
     currentValue++;
+    // Update the counter value in localStorage
     localStorage.setItem('counter', currentValue);
+    // Update the counter value on the page
     document.getElementById('counter').textContent = currentValue;
+    // Update last increment time
     lastIncrementTime = currentTime;
   }
   checker++;
+}
+
+
+
+    // Load the counter value from localStorage on page load
+    window.onload = function() {
+      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      document.getElementById('counter').textContent = currentValue;
+     document.getElementById('brunglePoints').textContent = currentValue;
+    };
+
+function wait(milliseconds, callback) {
+  setTimeout(callback, milliseconds);
 }
 
 // Function to reset the counter
@@ -262,8 +280,43 @@ function toggleThemes() {
 
 
 
-let brunglePoints = 100; // Example initial points
-let boughtItems = 0; // Example initial bought items count
+// Initialize variables
+let brunglePoints = parseInt(localStorage.getItem('counter')) || 1000; // Initialize with counter value or default value
+let boughtItems = 0;
+
+// Update display
+function updateDisplay() {
+  document.getElementById('brunglePoints').textContent = brunglePoints;
+  document.getElementById('boughtItems').textContent = boughtItems;
+}
+
+// Update local storage and display
+function updateLocalStorageAndDisplay() {
+  localStorage.setItem('counter', brunglePoints.toString());
+  updateDisplay();
+}
+
+// Update cloud variable representing points
+function updateCloudVariable(points) {
+  // Make an HTTP request to update the cloud variable
+  // Replace 'YOUR_UPDATE_ENDPOINT' with the actual endpoint URL
+  fetch('YOUR_UPDATE_ENDPOINT', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ points: points })
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to update cloud variable');
+    }
+    console.log('Cloud variable updated successfully');
+  })
+  .catch(error => {
+    console.error('Error updating cloud variable:', error);
+  });
+}
 
 // Buy item function
 function buyItem(price) {
@@ -273,28 +326,13 @@ function buyItem(price) {
   if (brunglePoints >= price) {
     brunglePoints -= price;
     boughtItems++;
-    brunglePointsElement.textContent = brunglePoints;
-    boughtItemsElement.textContent = boughtItems;
-    // Update cloud variable here
-    updateCloudVariable(brunglePoints, boughtItems);
+    updateLocalStorageAndDisplay();
+    updateCloudVariable(brunglePoints); // Update cloud variable after purchase
     alert('Item bought successfully!');
   } else {
     alert('Not enough Brungle Points!');
   }
 }
 
-// Simulate updating cloud variable
-function updateCloudVariable(points, items) {
-  // You can replace this with your actual cloud variable update logic
-  console.log(`Cloud variable updated: Brungle Points = ${points}, Bought Items = ${items}`);
-}
-
 // Initial display update
-function updateDisplay() {
-  let brunglePointsElement = document.getElementById('brunglePoints');
-  let boughtItemsElement = document.getElementById('boughtItems');
-  brunglePointsElement.textContent = brunglePoints;
-  boughtItemsElement.textContent = boughtItems;
-}
-
-updateDisplay(); // Call the initial display update function
+updateDisplay();
