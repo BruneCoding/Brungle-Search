@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = searchURL; // Redirect to Google search URL on the current tab
             var currentValue = parseInt(localStorage.getItem('counter')) || 0;
       // Increment the counter value by
-         } 1000);
+         };
         }
     });
 });
