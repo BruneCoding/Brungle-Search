@@ -1,315 +1,163 @@
-<!-- THIS IS BRUNGLE BROWSER, A RESKIN OF GOOGLE -->
-<link rel="stylesheet" type="text/css" href="styles.css">
-<script src="app.js"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div class="clockity">
+      <div class="clock">
+        <div class="hour" id="hour"></div>
+        <div class="minute" id="minute"></div>
+        <div class="second" id="second"></div>
+        <div class="number" style="transform: translate(96px, 20px)">12</div>
+        <div class="number" style="transform: translate(176px, 100px)">3</div>
+        <div class="number" style="transform: translate(96px, 180px)">6</div>
+        <div class="number" style="transform: translate(16px, 100px)">9</div>
+        <div class="number" style="transform: translate(140px, 26px)">1</div>
+        <div class="number" style="transform: translate(164px, 52px)">2</div>
+        <div class="number" style="transform: translate(164px, 148px)">4</div>
+        <div class="number" style="transform: translate(140px, 174px)">5</div>
+        <div class="number" style="transform: translate(52px, 174px)">7</div>
+        <div class="number" style="transform: translate(26px, 148px)">8</div>
+        <div class="number" style="transform: translate(26px, 52px)">10</div>
+        <div class="number" style="transform: translate(52px, 26px)">11</div>
+      </div>
+    </div>
 
-<div class="clockity">
-  <div class="clock">
-    <div class="hour" id="hour"></div>
-    <div class="minute" id="minute"></div>
-    <div class="second" id="second"></div>
-     <div class="number" style="transform: translate(96px, 20px)">12</div>
-    <div class="number" style="transform: translate(176px, 100px)">3</div>
-    <div class="number" style="transform: translate(96px, 180px)">6</div>
-    <div class="number" style="transform: translate(16px, 100px)">9</div>
-    <div class="number" style="transform: translate(140px, 26px)">1</div>
-    <div class="number" style="transform: translate(164px, 52px)">2</div>
-    <div class="number" style="transform: translate(164px, 148px)">4</div>
-    <div class="number" style="transform: translate(140px, 174px)">5</div>
-    <div class="number" style="transform: translate(52px, 174px)">7</div>
-    <div class="number" style="transform: translate(26px, 148px)">8</div>
-    <div class="number" style="transform: translate(26px, 52px)">10</div>
-    <div class="number" style="transform: translate(52px, 26px)">11</div>
-  </div>
-  </div>
+    <div class="container">
+      <h1>Brungle Shop</h1>
+      <h5>Reload to take effect</h5>
+      <p>Brungle Points: <span id="brunglePoints">Loading ...</span></p>
+      <p>Bought Items: <span id="boughtItems">Loading ...</span></p>
+      <div id="shopItems">
+        <button class="shop-item" data-price="500" onclick="buyItem(500)">Shyun Pen - 500 Points</button>
+        <button class="shop-item" data-price="1000" onclick="buyItem(1500)">Candy - 1500 Points</button>
+        <button class="shop-item" data-price="2000" onclick="buyItem(2500)">100 Robux Giftcard - 2500 Points</button>
+      </div>
+    </div>
 
+    <div id="pro-feature">
+      <h1>Section has been removed. Will add subscription service here.</h1>
+    </div>
+    <a id="update" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fa-regular fa-copyright">Brungle Browser 2024</i></a>
 
-<div class="container">
-  <h1>Brungle Shop</h1>
-  <h5> Reload to take effect </h5>
-  <p>Brungle Points: <span id="brunglePoints"> Loading ... </span></p>
-  <p>Bought Items: <span id="boughtItems"> Loading ... </span></p>
-  <div id="shopItems">
-    <button class="shop-item" data-price="500" onclick="buyItem(500)">Shyun Pen - 500 Points</button>
-    <button class="shop-item" data-price="1000" onclick="buyItem(1500)">Candy - 1500 Points</button>
-    <button class="shop-item" data-price="2000" onclick="buyItem(2500)">100 Robux Giftcard - 2500 Points</button>
-  </div>
-</div>
+    <div id="pointscontainer">
+      <br>
+      <button class="breh" onclick="showShop()" style="color: white; scale: 1.5;">
+        <img class="icons" src="shop.png"></img>
+      </button>
+      <h1>Brungle Points: </h1>
+      <h1 style="color: white" id="counter">Loading...</h1>
+    </div>
 
-     <div id="pro-feature"><h1> Section has been removed. Will add subscribtion service here. </h1></div>
-     <a id="update" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fa-regular fa-copyright">Brungle Browser 2024</i></a>
-<ery>
-  <button class="breh" onclick="showShop()" style="color: white; scale: 1.5;">
-  <img id="icons"src="https://github.com/BruneCoding/Brungle/raw/main/shop.png"></img>
-  </button>
-  <h1>Brungle Points: </h1><h1 style="color: white" id="counter"> Loading... </h1>
-  </ery>
-       <html>
-         <section>
-         <h1 id="Lol"> Click! </h1>
-   <body>
-     <h1 id="title"> Brungle </h1>
-     <h4 style="margin-top: -50px"> Brune & Google </h4>
-   <land class="search">
-     <div class="search-icons">
-       <div class="ass"></div>
-        <img  id="icons"src="https://github.com/BruneCoding/Brungle/raw/main/search.png"></img>
-       </div>
-     <input type="text" id="searchInput" placeholder="Search Brungle"class="invis"></input>
-     </land>
-   <div class="toggle">
-      <img  id="icons"src="https://github.com/BruneCoding/Brungle/raw/main/toggle.png"></img>
-   </div>
-   
-   <div class="website-layout-container">
-     <div class="bento">
-       
-       
-       <!-- bloxd -->
-       <a href="https://www.bloxd.io">
-   <div class="card">
-     <img id="dcr"src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Bloxd.io_Logo.jpeg/1200px-Bloxd.io_Logo.jpeg"></img>
-   <h1 id="smoler"> Bloxd.io </h1>
-   <h4> bloxd.io </h4>
-   </div>
-   </a>
-     
-     <!-- DISCORD -->
-       <a href="https://www.discord.com/app">
-   <div class="card">
-     <img id="dc"src="https://static.vecteezy.com/system/resources/previews/018/930/718/original/discord-logo-discord-icon-transparent-free-png.png"></img>
-   <h1 id="smol"> Discord </h1>
-   <h4> discord.com/app </h4>
-   </div>
-   </a>
-     
-     <!-- youtube -->
-         <a href="https://www.youtube.com/@brunegaming">
-   <div class="card">
-     <img src="https://www.freeiconspng.com/uploads/hd-youtube-logo-png-transparent-background-20.png"></img>
-   <h1 id="smol"> Youtube </h1>
-   <h4> youtube.com </h4>
-   </div>
-   </a>
-   
-   
-   <!-- chatgpt -->
-         <a href="https://www.chat.openai.com">
-   <div class="card">
-     <img id="gpt"src="https://freelogopng.com/images/all_img/1681039084chatgpt-icon.png"></img>
-   <h1 id="smol"> ChatGPT </h1>
-   <h4> chat.openai.com </h4>
-   </div>
-   </a>
-   
-   <!-- google classroom -->
-         <a href="https://classroom.google.com/u/7/">
-   <div class="card">
-     <img id="gc"src="https://logodownload.org/wp-content/uploads/2020/04/google-classroom-logo.png"></img>
-   <h1 id="smol"> Class </h1>
-   <h4> class.google.com </h4>
-   </div>
-   </a>
-     </div>
-   </div>
-   </section>
-   <footer class="incresize">
-   </footer>
-   
-   
-   <div id="iframeContainer"></div>
-   </body>
-   </html>
-   </head>
+    <section>
+      <h1 id="Lol">Click!</h1>
+      <div id="title">Brungle</div>
+      <h4 style="margin-top: -50px">Brune & Google</h4>
+      <div class="search">
+        <div class="search-icons">
+          <div class="ass"></div>
+          <img class="icons" src="search.png"></img>
+        </div>
+        <input type="text" id="searchInput" placeholder="Search Brungle" class="invis"></input>
+      </div>
+      <div class="toggle">
+        <img class="icons" src="toggle.png"></img>
+      </div>
 
-   <body>
-        <div id="theme-changer">
-           <div class="color-circle" style="background-color: #E63946" onclick="changeColor('#E63946')"></div>
-           <div class="color-circle" style="background-color: #fc8c03" onclick="changeColor('#fc8c03')"></div>
-           <div class="color-circle" style="background-color: #036b52" onclick="changeColor('#036b52')"></div>
-           <div class="color-circle" style="background-color: #000042" onclick="changeColor('#000042')"></div>
-           <button onclick="showCustomColor()">+</button>
-           <input type="text" id="custom-color" placeholder="Enter hex code ( start with #)">
-           <button onclick="addCustomColor()">Add</button>
-           <button id="change-bg-btn">Change BG Image</button>
-           <br>
-           <hr>
-           <br>
-           <h1 style="font-size: 10px;"> Your Colors:</h1>
-           <br>
-       </div>
-         
-       <div class="sidebar">
-        <button class="breh" onclick="toggleTheme()">
-         <img src="https://th.bing.com/th/id/OIP.HWAYvesDR7sq0J9UXsFBGgHaHa?rs=1&pid=ImgDetMain" id="icons"></img>
-         </button>
-         <hr>
-         <button class="timesoftables" onclick="showTimetable()">
-         <img src="https://static.thenounproject.com/png/2080636-200.png" id="timetable"></img>
-         </button>
-         <hr>
-         <img src="https://static.vecteezy.com/system/resources/previews/021/608/795/non_2x/chatgpt-logo-chat-gpt-icon-on-green-background-free-vector.jpg" id="brunebot"></img>
-       </div>
-       <div class="open" onclick="moveBoth()">
-         <img id="icons"src="https://github.com/BruneCoding/Brungle/raw/main/toggle.png"></img>
-         </div>
- 
- 
-       <div class="custom-shape-divider-bottom-1713904167">
-       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-           <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-           <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-       </svg>
-   </div>
-   
+      <div class="website-layout-container">
+        <div class="bento">
+          <!-- bloxd -->
+          <a href="https://www.bloxd.io">
+            <div class="card">
+              <img id="dcr" src="images/bloxd.jpeg"></img>
+              <h1 id="smoler">Bloxd.io</h1>
+              <h4>bloxd.io</h4>
+            </div>
+          </a>
 
+          <!-- discord -->
+          <a href="https://www.discord.com/app">
+            <div class="card">
+              <img id="dc" src="images/discord.webp"></img>
+              <h1 id="smol">Discord</h1>
+              <h4>discord.com/app</h4>
+            </div>
+          </a>
 
+          <!-- youtube -->
+          <a href="https://www.youtube.com/@brunegaming">
+            <div class="card">
+              <img src="images/youtube.png"></img>
+              <h1 id="smol">Youtube</h1>
+              <h4>youtube.com</h4>
+            </div>
+          </a>
 
-   <Div class="timetable-container" style="display: none;">
-  <button class="toggle-button"onclick="toggleTables()">Toggle Tables</button>
-  <div class="dropdown">
-  <button class="dropbtn">Select Class</button>
+          <!-- chatgpt -->
+          <a href="https://www.chat.openai.com">
+            <div class="card">
+              <img id="gpt" src="images/chatgpt.webp"></img>
+              <h1 id="smol">ChatGPT</h1>
+              <h4>chat.openai.com</h4>
+            </div>
+          </a>
 
-  <div class="dropdown-content">
-    <ul>
-       <li><a href="#">8.1</a></li>
-      <li><a href="#">8.2</a></li>
-      <li><a href="#">8.3</a></li>
-      <li><a href="#">8.4</a></li>
-      <li><a href="#">8.5</a></li>
-      <li><a href="#">8.6</a></li>
-    </ul>
-  </div>
-</div>
+          <!-- google classroom -->
+          <a href="https://classroom.google.com/u/7/"> <!--Why u7?-->
+            <div class="card">
+              <img id="gc" src="https://dev.wilburwilliams.uk/assets/newtab/gclass.png"></img>
+              <h1 id="smol">Class</h1>
+              <h4>classroom.google.com</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<h1> Class:  8.5  </h1>
-<br>
-  <div  id="table1">
-    <br>
-    <h1> Week 1 </h1>
-    <br>
-  <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>PRE</td>
-        <td>Dance</td>
-        <td>PSHE</td>
-        <td>English</td>
-        <td>PE</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Maths</td>
-        <td>Maths</td>
-        <td>History</td>
-        <td>Geography</td>
-        <td>Computer Science</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Dance</td>
-        <td>Spanish</td>
-        <td>Spanish</td>
-        <td>History</td>
-        <td>Music</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>English</td>
-        <td>Chemistry</td>
-        <td>Art</td>
-        <td>Biology</td>
-        <td>Physics</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Drama</td>
-        <td>German</td>
-        <td>Maths</td>
-        <td>Games</td>
-        <td>English</td>
-    </tr>
-  </table>
-  </div>
-    
+    <footer class="incresize"></footer>
 
-  <div  id="table2">
-        <br>
+    <div id="iframeContainer"></div> <!--What does this do?-->
 
-    <h1 style="color: white"> Week 2 </h1>
-        <br>
+    <div id="theme-changer">
+      <div class="color-circle" style="background-color: #E63946" onclick="changeColor('#E63946')"></div>
+      <div class="color-circle" style="background-color: #fc8c03" onclick="changeColor('#fc8c03')"></div>
+      <div class="color-circle" style="background-color: #036b52" onclick="changeColor('#036b52')"></div>
+      <div class="color-circle" style="background-color: #000042" onclick="changeColor('#000042')"></div>
+      <button onclick="showCustomColor()">+</button>
+      <input type="text" id="custom-color" placeholder="Enter hex code (start with #)">
+      <button onclick="addCustomColor()">Add</button>
+      <button id="change-bg-btn">Change BG Image</button>
+      <br>
+      <hr>
+      <br>
+      <h1 style="font-size: 10px;">Your Colors:</h1>
+      <br>
+    </div>
 
-      <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>English</td>
-        <td>Art</td>
-        <td>Maths</td>
-        <td>PE</td>
-        <td>English</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Spanish</td>
-        <td>English</td>
-        <td>Chemistry</td>
-        <td>Geography</td>
-        <td>Drama</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>PRE</td>
-        <td>Physics</td>
-        <td>Biology</td>
-        <td>Music</td>
-        <td>Computer Science</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>German</td>
-        <td>Maths</td>
-        <td>German</td>
-        <td>DT / Food Tech</td>
-        <td>Food Tech / DT</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Maths</td>
-        <td>Geography</td>
-        <td>History</td>
-        <td>Games</td>
-        <td>Maths</td>
-    </tr>
-  </table>
-  </div>
+    <div class="sidebar">
+      <button class="breh" onclick="toggleTheme()">
+        <img src="images/paint.jpeg" class="icons"></img>
+      </button>
+      <hr>
+      <button class="timesoftables" onclick="showTimetable()">
+        <img src="images/calendar.png" id="timetable"></img>
+      </button>
+      <hr>
+      <img src="images/chatgpt.webp" id="brunebot"></img>
+    </div>
+    <div class="open" onclick="moveBoth()">
+      <img class="icons" src="toggle.png"></img>
+    </div>
 
-  
-  </div>
-
-
-  </div>
-   
-     
-   
- 
- 
- 
- <head>
-   </body>
-   </head></html>
+    <div class="custom-shape-divider-bottom-1713904167">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+    </div>
+    <!--! DON'T PUT A HARDCODED TIMETABLE IN YOU'LL DOXX YOURSELF-->
+  </body>
+</html>
