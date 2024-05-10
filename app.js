@@ -149,21 +149,32 @@ document.addEventListener("DOMContentLoaded", function() {
   updateClock();
   setInterval(updateClock, 1000);
 
-  // Load counter value from localStorage
-  const currentValue = parseInt(localStorage.getItem('counter')) || 0;
-  document.getElementById('counter').textContent = currentValue;
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchIcons = document.querySelectorAll('.search-icons');
+    const assDiv = document.querySelector('.ass');
 
-  // Event listener for keyup on search input
-  const searchInput = document.getElementById("searchInput");
-  searchInput.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-      incrementCounter();
-      const query = searchInput.value;
-      const encodedQuery = encodeURIComponent(query);
-      const searchURL = "https://www.google.com/search?q=" + encodedQuery;
-      window.location.href = searchURL;
-    }
-  });
+    searchIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            assDiv.classList.add('searchIcon');
+            setTimeout(() => {
+                assDiv.classList.remove('searchIcon');
+
+                var query = document.getElementById('searchInput').value;
+
+                // Encode the query to use in the URL
+                var encodedQuery = encodeURIComponent(query);
+
+                // Create the Google search URL
+                var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
+
+                // Redirect to Google search URL on the current tab
+                window.location.href = searchURL;
+                var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      incrementCounter()
+            }, 1000);
+        });
+    });
+});
 
   // Event listener for toggle theme changer
   const toggle = document.querySelector('.toggle');
