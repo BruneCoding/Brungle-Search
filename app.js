@@ -190,32 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchIcons = document.querySelectorAll('.search-icons');
-    const assDiv = document.querySelector('.ass');
-
-    searchIcons.forEach(icon => {
-        icon.addEventListener('click', function() {
-            assDiv.classList.add('searchIcon');
-            setTimeout(() => {
-                assDiv.classList.remove('searchIcon');
-
-                var query = document.getElementById('searchInput').value;
-
-                // Encode the query to use in the URL
-                var encodedQuery = encodeURIComponent(query);
-
-                // Create the Google search URL
-                var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
-
-                // Redirect to Google search URL on the current tab
-                window.location.href = searchURL;
-                var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-      incrementCounter()
-            }, 1000);
-        });
-    });
-});
+  
 
   // Event listener for toggle theme changer
   const toggle = document.querySelector('.toggle');
@@ -244,14 +219,7 @@ updateDisplay();
 
 
 
-window.onload = function() {
-    setTimeout(function() {
-        
-        const newsElements = document.querySelector('.news');
-        
-            newsElements.style.display = 'none';
-    }, 1500); 
-};
+
 
 
 
