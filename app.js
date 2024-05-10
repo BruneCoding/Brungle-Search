@@ -166,6 +166,29 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initial clock update
   updateClock();
   setInterval(updateClock, 1000);
+}
+                          var searchInput = document.getElementById("searchInput");
+
+ searchInput.addEventListener("keyup", function(event) {
+   const searchIcons = document.querySelectorAll('.search-icons');
+    const assDiv = document.querySelector('.ass');
+
+  assDiv.classList.add('searchIcon');
+            setTimeout(() => {
+                assDiv.classList.remove('searchIcon');
+
+        if (event.keyCode === 13) {
+            incrementCounter()
+            var query = searchInput.value;
+            var encodedQuery = encodeURIComponent(query);
+            var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
+            window.location.href = searchURL; // Redirect to Google search URL on the current tab
+            var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      // Increment the counter value by
+         }, 1000);
+        }
+    });
+});
 
   document.addEventListener('DOMContentLoaded', function() {
     const searchIcons = document.querySelectorAll('.search-icons');
@@ -281,7 +304,7 @@ function toggleThemes() {
 
 
 // Initialize variables
-let brunglePoints = parseInt(localStorage.getItem('counter')) || 1000; // Initialize with counter value or default value
+let brunglePoints = parseInt(localStorage.getItem('counter')) || 'loading'; // Initialize with counter value or default value
 let boughtItems = 0;
 
 // Update display
