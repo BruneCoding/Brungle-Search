@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initial clock update
   updateClock();
   setInterval(updateClock, 1000);
-}
+
                           var searchInput = document.getElementById("searchInput");
 
  searchInput.addEventListener("keyup", function(event) {
