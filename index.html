@@ -46,14 +46,14 @@
       </div>
       <input type="text" id="searchInput" placeholder="Search Brungle"class="invis"></input>
     </land>
-    <div class="toggle">
+    <div id="showlinks" class="toggle" onmouseover="holdlinks()">
       <i class="fa-solid fa-circle-chevron-down"></i>
     </div>
 
-    <div class="website-layout-container">
+    <div id="links" class="website-layout-container" onmouseover="holdlinks()" onmouseleave="unholdlinks()">
       <div class="bento">
         <!-- bloxd -->
-        <a href="https://www.bloxd.io">
+        <a href="https://bloxd.io">
           <div class="card">
             <img id="dcr" src="images/bloxd.jpeg"></img>
             <h1 id="smoler">Bloxd.io</h1>
@@ -62,7 +62,7 @@
         </a>
 
         <!-- DISCORD -->
-        <a href="https://www.discord.com/app">
+        <a href="https://discord.com/app">
           <div class="card">
             <img id="dc" src="images/discord.webp"></img>
             <h1 id="smol">Discord</h1>
@@ -80,7 +80,7 @@
         </a>
 
         <!-- chatgpt -->
-        <a href="https://www.chat.openai.com">
+        <a href="https://chat.openai.com">
           <div class="card">
             <img id="gpt" src="images/chatgpt.webp"></img>
             <h1 id="smol">ChatGPT</h1>
@@ -92,8 +92,8 @@
         <a href="https://classroom.google.com/u/7/">
           <div class="card">
             <img id="gc" src="https://dev.wilburwilliams.uk/assets/newtab/gclass.png"></img>
-            <h1 id="smol">Class</h1>
-            <h4>class.google.com</h4>
+            <h1 id="smol">Classroom</h1>
+            <h4>classroom.google.com</h4>
           </div>
         </a>
       </div>

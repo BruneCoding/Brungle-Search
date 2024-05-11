@@ -1,3 +1,7 @@
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 window.onload = function() {
     var currentValue = parseInt(localStorage.getItem('counter')) || 0;
     document.getElementById('counter').textContent = currentValue;
@@ -168,6 +172,20 @@ function incrementCounter() {
   document.getElementById('counter').textContent = currentValue;
 }
 
+async function holdlinks() {
+  links = document.getElementById('links');
+  showlinks = document.getElementById('showlinks');
+  links.classList = "website-layout-container show";
+  showlinks.style = "transform: scale(1.025); margin-top: 7.5px; border: 0.1px solid #d1d1d1; margin-bottom: 35px;";
+  await sleep(1000);
+}
+
+function unholdlinks () {
+  links = document.getElementById('links');
+  showlinks = document.getElementById('showlinks');
+  links.classList = "website-layout-container";
+  showlinks.style = "";
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
