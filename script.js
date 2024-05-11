@@ -126,6 +126,8 @@ function moveBoth() {
   } else {
   open.style.transform = 'translate(49vw, 0px) rotate(90deg)';
       sidebar.style.transform = 'translate(53vw, 0px)';
+      var themeChanger = document.getElementById('theme-changer');
+      themeChanger.style.display = "none";
       console.log('Sidebar closed');
   }
 
@@ -295,12 +297,16 @@ localStorage.setItem('counter', currentValue.toString());
 console.log('Counter increased by 10000. New value: ' + currentValue);
 }
 
+function changeBGimage(url) {
+  document.body.style.backgroundImage = "url('" + url + "')";
+  document.body.style.backgroundSize = "100vw auto";
+}
+
 // Change background
 document.getElementById('change-bg-btn').addEventListener('click', function() {
   var imageUrl = prompt("Enter the URL of the image you want as background:");
   if (imageUrl) {
-    document.body.style.backgroundImage = "url('" + imageUrl + "')";
-    document.body.style.backgroundSize = "100vw auto";
+    changeBGimage(url);
   }
 });
 
