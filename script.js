@@ -1,14 +1,37 @@
+//Util functions
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+//I'd remove this and replace with sleep() but you can use this synchronously so learn how to async first
+function wait(milliseconds, callback) {
+  setTimeout(callback, milliseconds);
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+      }
+  }
+  return "";
+}
+
 window.onload = function() {
-    var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-    document.getElementById('counter').textContent = currentValue;
-  };
-    document.addEventListener("DOMContentLoaded", function() {
-  // Get the input element
-  window.onload = function() {
     var currentValue = parseInt(localStorage.getItem('counter')) || 0;
     document.getElementById('counter').textContent = currentValue;
   };
@@ -26,7 +49,6 @@ window.onload = function() {
           var currentValue = parseInt(localStorage.getItem('counter')) || 0;
     // Increment the counter value by
       }
-  });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -66,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function changeColor(color) {
+  setCookie('currentBG', color, 365);
   document.body.style.backgroundColor = color;
 }
 
@@ -187,35 +210,20 @@ function unholdlinks () {
   showlinks.style = "";
 }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-// Get reference to the color element
-var colorElement = document.getElementById("brunebot");
-
-// Get reference to the colornav element
-var colorNavElement = document.getElementById("pro-feature");
-
-// Add click event listener to the color element
-colorElement.addEventListener("click", function() {
+async function colourNav() {
+  // Get reference to the colornav element
+  var colorNavElement = document.getElementById("pro-feature");
   // Check if colornav is currently hidden
   if (colorNavElement.style.display === "none") {
     // If hidden, show colornav by setting display to block
     colorNavElement.style.display = "block";
-
-    // Wait for 3 seconds, then hide colornav again
-    wait(10000, () => {
-      colorNavElement.style.display = "none";
-    });
+    // Wait for 10 seconds, then hide colornav again
+    await sleep(10000);
+    colorNavElement.style.display = "none";
   } else {
     // If already shown, hide colornav by setting display to none
     colorNavElement.style.display = "none";
   }
-});
-});
-
-// Simple wait function
-function wait(milliseconds, callback) {
-setTimeout(callback, milliseconds);
 }
 
 
@@ -254,8 +262,8 @@ let boughtItems = 0;
 
 // Update display
 function updateDisplay() {
-document.getElementById('brunglePoints').textContent = brunglePoints;
-document.getElementById('boughtItems').textContent = boughtItems;
+  document.getElementById('brunglePoints').textContent = brunglePoints;
+  document.getElementById('boughtItems').textContent = boughtItems;
 }
 
 // Buy item function
@@ -316,6 +324,7 @@ console.log('Counter increased by 10000. New value: ' + currentValue);
 }
 
 function changeBGimage(url) {
+  setCookie('currentBG', url, 365);
   document.body.style.backgroundImage = "url('" + url + "')";
   document.body.style.backgroundSize = "100vw auto";
 }
@@ -328,3 +337,21 @@ document.getElementById('change-bg-btn').addEventListener('click', function() {
   }
 });
 
+
+document.addEventListener('DOMContentLoaded', function(){
+  //Check and apply bg colour/image
+  backgroundValue = getCookie('currentBG');
+  if (backgroundValue === null || backgroundValue === undefined || backgroundValue === "") {
+    setCookie('currentBG', '#036b52', 365);
+  } else if (backgroundValue.startsWith('http')) {
+    changeBGimage(backgroundValue);
+  } else if (backgroundValue.startsWith('#')) {
+    changeColor(backgroundValue)
+  } else {
+    console.error("invalid background: " + backgroundValue);
+  }
+
+  //Update counter
+  var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+  document.getElementById('counter').textContent = currentValue;
+});
