@@ -812,24 +812,6 @@ scale: 2;
 color: green;
 }
 
-       .clockity {
-      position: absolute;
-      margin-bottom: 25px;
-      margin-left: 25px;
-      bottom: 0;
-      left: 0;
-           z-index: 99;
-    }
-
-    .clock {
-      width: 200px;
-      height: 200px;
-      border: 10px solid #b30000; /* Red border */
-      border-radius: 50%;
-      position: relative;
-      background-color: #4d0000; /* Darker red clock face */
-    }
-
     .hour, .minute, .second {
       background: #b30000; /* Red hands */
       position: absolute;
@@ -865,25 +847,6 @@ color: green;
       color: #b30000; /* Red numbers */
     }
      </style>
-<div class="clockity">
-  <div class="clock">
-    <div class="hour" id="hour"></div>
-    <div class="minute" id="minute"></div>
-    <div class="second" id="second"></div>
-     <div class="number" style="transform: translate(96px, 20px)">12</div>
-    <div class="number" style="transform: translate(176px, 100px)">3</div>
-    <div class="number" style="transform: translate(96px, 180px)">6</div>
-    <div class="number" style="transform: translate(16px, 100px)">9</div>
-    <div class="number" style="transform: translate(140px, 26px)">1</div>
-    <div class="number" style="transform: translate(164px, 52px)">2</div>
-    <div class="number" style="transform: translate(164px, 148px)">4</div>
-    <div class="number" style="transform: translate(140px, 174px)">5</div>
-    <div class="number" style="transform: translate(52px, 174px)">7</div>
-    <div class="number" style="transform: translate(26px, 148px)">8</div>
-    <div class="number" style="transform: translate(26px, 52px)">10</div>
-    <div class="number" style="transform: translate(52px, 26px)">11</div>
-  </div>
-  </div>
 
 <div class="container">
   <h1>Brungle Shop</h1>
@@ -1340,51 +1303,6 @@ window.onload = function() {
     // Update the counter value on the page
     document.getElementById('counter').textContent = currentValue;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1893,36 +1811,6 @@ document.querySelector('.reset-button').onclick = function() {
     isSpinning = true;
   }, 2000);
 };
-
-      function updateClock() {
-    const now = new Date();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-    const second = now.getSeconds();
-
-    const hourHand = document.getElementById('hour');
-    const minuteHand = document.getElementById('minute');
-    const secondHand = document.getElementById('second');
-
-    const hourRotation = (hour % 12) * 30 + (minute / 60) * 30;
-    const minuteRotation = minute * 6 + (second / 60) * 6;
-    const secondRotation = second * 6;
-
-    hourHand.style.transform = `rotate(${hourRotation}deg)`;
-    minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
-    secondHand.style.transform = `rotate(${secondRotation}deg)`;
-
-    setTimeout(updateClock, 1000); // Call updateClock function again after 1 second
-}
-
-// Call updateClock function to start updating the clock
-updateClock();
-
-
-
-
-
-
 
    </script>
    <script>
