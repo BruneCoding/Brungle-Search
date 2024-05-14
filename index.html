@@ -7,6 +7,8 @@
                top: 20px;
                right: 50px;
                z-index: 9999;
+        height: 200px;
+        width: auto;
              background: rgba(255,255,255,0.5);
              backdrop-filter: blur(3px);
              border: 2px solid #d1d1d1;
@@ -29,6 +31,8 @@
                border-radius: 50%;
                margin-right: 10px;
                cursor: pointer;
+               overflow: hidden;
+               background-size: cover;
            }
      
      .color-circle:hover {
@@ -996,6 +1000,13 @@ color: green;
            <br>
            <hr>
            <br>
+           <h1 style="font-size: 10px;"> Themes: </h1>
+           <div class="color-circle" style="background-image: url('https://wallpapercave.com/wp/wp10532946.jpg')" onclick="themeSpace()"></div>
+           <br>
+           <hr>
+           <br>
+           <hr>
+           <br>
            <h1 style="font-size: 10px;"> Your Colors:</h1>
            <br>
        </div>
@@ -1933,6 +1944,13 @@ updateClock();
     document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
   }
 });
+
+       function themeSpace() {
+           
+    document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp10532946.jpg')";
+    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
+  }
+       
 
     </script>
     
