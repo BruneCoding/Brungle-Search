@@ -1,6 +1,4 @@
-alert('BRUNGLE POINTS WILL BE RESET BECAUSE OF EXPLOITATIONS. EVERYONE AFFECTED WITH OVER 500 POINTS WILL BE COMPENSATED 1 FREE SHYUN PEN! RESET WILL COMMENCE ON MONDAY 20TH MAY');
-const tabletime = document.querySelector('.timetable-container');
-tabletime.style.display = none;
+window.location.href = "https://testing-brungle-24.pages.dev/";
 
 
 //Util functions
