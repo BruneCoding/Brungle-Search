@@ -4,6 +4,15 @@
     --backgroundcolour: #000028;
 }
 
+.back-xd {
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+}
+
 * {
   margin: 0;
 }
