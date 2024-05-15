@@ -44,6 +44,10 @@ window.onload = function() {
       if (event.keyCode === 13) {
           incrementCounter()
           SummarizeAndSearch()
+         var query = searchInput.value;
+          var encodedQuery = encodeURIComponent(query);
+          var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
+          window.location.href = searchURL; // Redirect to Google search URL on the current tab
           var currentValue = parseInt(localStorage.getItem('counter')) || 0;
     
       }
@@ -163,15 +167,28 @@ function moveBoth() {
 
 
 function incrementCounter() {
-    // Get the current counter value from localStorage or initialize it to 0
+
     var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-    // Increment the counter value by 1
-    currentValue++;
-    // Update the counter value in localStorage
-    localStorage.setItem('counter', currentValue);
-    // Update the counter value on the page
-    document.getElementById('counter').textContent = currentValue;
-  }
+    
+
+    var lastExecutionTime = parseInt(localStorage.getItem('lastExecutionTime')) || 0;
+    
+
+    var currentTime = Date.now();
+
+    if (currentTime - lastExecutionTime >= 20000) {
+
+        currentValue++;
+
+        localStorage.setItem('counter', currentValue);
+
+        document.getElementById('counter').textContent = currentValue;
+    
+        localStorage.setItem('lastExecutionTime', currentTime);
+    }
+}
+
+
 
 
 
