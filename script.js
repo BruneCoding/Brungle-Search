@@ -263,7 +263,11 @@ function showThemeChanger() {
 
 function showTimetable() {
     const tabletime = document.querySelector('.timetable-container');
-  tabletime.style.display = "block";
+  if (tabletime.style.display === "none" || tabletime.style.display === "") {
+      tabletime.style.display = "block";
+  } else {
+      tabletime.style.display = "none";
+  }
 }
 
 function showShop() {
