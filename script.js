@@ -91,6 +91,7 @@ function openMaps() {
 
 
 const full = document.querySelector('.search-xd');
+const backgrounde = document.querySelector('.back-xd');
 document.getElementById("inputText").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         summarizeAndSearch();
@@ -100,6 +101,7 @@ document.getElementById("inputText").addEventListener("keypress", function(event
 
 function getSearchResults(query) {
   full.style.display = "block";
+  backgrounde.style.display = "block";
     var apiEndpoint = "https://www.googleapis.com/customsearch/v1";
     var cx = "564f027734c9441fe"; 
     var apiKey = "AIzaSyDIZJhGxmt_TZwEHATT25DmRk29VV_2xgU"; 
