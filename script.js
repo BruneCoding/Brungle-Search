@@ -7,6 +7,8 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+
+
 //I'd remove this and replace with sleep() but you can use this synchronously so learn how to async first
 function wait(milliseconds, callback) {
   setTimeout(callback, milliseconds);
@@ -260,7 +262,8 @@ function showThemeChanger() {
 
 
 function showTimetable() {
-    console.log("not implemented");
+    const tabletime = document.querySelector('.timetable-container');
+  tabletime.style.display = "block";
 }
 
 function showShop() {
