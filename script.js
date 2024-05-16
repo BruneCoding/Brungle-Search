@@ -1,5 +1,10 @@
-window.location.href = "https://testing-brungle-24.pages.dev/";
+const tabletime = document.querySelector('.timetable-container');
+tabletime.style.display = "none";
 
+async function redir(){
+  await sleep(1000);
+  window.location.href = "https://testing-brungle-24.pages.dev/";
+}
 
 //Util functions
 function sleep(ms) {
@@ -375,6 +380,7 @@ document.addEventListener('DOMContentLoaded', function(){
   } else {
     console.error("invalid background: " + backgroundValue);
   }
+redir();
 
   //Update counter
   var currentValue = parseInt(localStorage.getItem('counter')) || 0;
