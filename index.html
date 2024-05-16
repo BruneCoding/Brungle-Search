@@ -2603,15 +2603,14 @@ updateClock();
        let themeStarted = false; // Flag to track if themeRandom has been started
 
 function themeRandom() {
-    if (!themeStarted) { // Check if themeRandom has not been started yet
-        document.body.style.backgroundSize = "100vw auto";
-        document.body.style.backgroundImage = `url('${imageUrls[currentIndex]}')`;
-        currentIndex = (currentIndex + 1) % imageUrls.length;
-        setInterval(themeRandom, 5000);
-        themeStarted = true; // Set the flag to true indicating themeRandom has been started
-        
-    }
-}
+           document.body.style.backgroundSize = "100vw auto";
+
+          // Set background image
+            document.body.style.backgroundImage = `url('${imageUrls[currentIndex]}')`;
+
+            // Increment index for next image
+            currentIndex = (currentIndex + 1) % imageUrls.length;
+       }
 
      
      //toggles to next
