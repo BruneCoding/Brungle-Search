@@ -1,11 +1,502 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brungle</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
+<style>
+
+
+    #theme-changer {
+               position: fixed;
+               top: 20px;
+               right: 50px;
+               z-index: 9999;
+        height: 200px;
+        width: 500px;
+      display: flex;
+      flex-direction: row;
+             background: rgba(255,255,255,0.5);
+             backdrop-filter: blur(3px);
+             border: 2px solid #d1d1d1;
+             padding: 25px;
+             border-radius: 20px;
+             display: none;
+      }
+     
+     
+     
+     #theme-changer:hover {
+       color: rgba(255,255,255,0.75);
+       backdrop-filter: blur(6px);
+       border: 4px solid white;
+     }
+           .color-circle {
+               display: inline-block;
+               width: 30px;
+               height: 30px;
+               border-radius: 50%;
+               margin-right: 10px;
+               cursor: pointer;
+               overflow: hidden;
+               background-size: cover;
+           }
+     
+     .color-circle:hover {
+       border: 2px solid white;
+       box-shadow: 0 0 20px white;
+     }
+           #custom-color {
+               display: none;
+           }
+
+           #color, #brunebot, #timetable {
+           cursor: pointer; 
+           }
+
+           #color:hover {
+           box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+           }
+
+
+           #timetable:hover {
+           box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+           }
+
+
+           #brunebot:hover {
+           box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+           }
+     .sidebar {
+         position: absolute;
+         width: 45px;
+       height: 27.5%;
+      max-height: 35%;
+       border-radius: 100px;
+       padding: 10px;
+       color: white;
+       background: #b91919;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       transition: all 0.3s ease;
+       transform: translate(53vw, 0px);
+       animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    margin-left: -30px;
+     }
+  
+  
+ 
+ 
+     .sidebar img {
+         width: 25px;
+         margin-top: 12.5px;
+         margin-bottom: 12.5px;
+     }
+     .sidebar hr {
+        border: 1.5px solid#d61717;
+        width: 100%;
+     }
+
+     .sidebar i {
+      scale: 2;
+     }
+     .incresize {
+       width: 100%;
+       height: 35%;
+       background: transparent;
+     }
+     
+     .website-layout-container {
+       position: absolute;
+       transform: translate(0%, -20%;)
+     }
+   .custom-shape-divider-bottom-1713904167 {
+       position: absolute;
+       bottom: -45px;
+       left: 0;
+       width: 100%;
+       scale: 1;
+       opacity: 0.5;
+       overflow: hidden;
+       line-height: 0;
+       transform: rotate(180deg);
+   }
+  
+  // colors
+$space-blue: #000028;
+$star: rgba(255,255,255,0.7);
+
+body {  
+  font-family: -apple-system,system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0; 
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* change this to your background color choice */
+  }
+
+.container {
+  margin: 100px;
+}
+
+.illo {
+  cursor: move;
+}
+
+.text {
+  text-align: center;
+  color: #8E92A2;
+}
+
+button {
+  display: block;
+  margin: auto;
+  background: #444857;
+  color: white;
+  font-size: 14px;
+  font-family: inherit;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.25);
+}
+
+a {
+  color: #EA0;
+  font-weight: 700;
+}
+
+@keyframes twinkle{
+  to{
+  background-image:  
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, #fff 20%, transparent 30%),
+  radial-gradient(circle, $star 20%, transparent 30%), 
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, #fff 20%, transparent 30%),
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, #fff 20%, transparent 30%),
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, #fff 20%, transparent 30%),
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, #fff 20%, transparent 30%), 
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, #fff 20%, transparent 30%),
+  radial-gradient(circle, $star 20%, transparent 30%),
+  radial-gradient(circle, #fff 20%, transparent 30%),
+  radial-gradient(circle, #fff 20%, transparent 30%);  }
+}
+
+   
+   .custom-shape-divider-bottom-1713904167 svg {
+       position: relative;
+       display: block;
+       width: calc(130% + 1.3px);
+       height: 184px;
+       transform: rotateY(180deg);
+   }
+   
+   .custom-shape-divider-bottom-1713904167 .shape-fill {
+       fill: #781721;
+   }
+   
+   .open {
+       position: absolute;
+       transform: rotate(90deg);
+       transform: translate(49vw, 0px) rotate(90deg);
+       width: 25px;
+       height: 25px;
+       border-radius: 50%;
+       padding: 10px;
+       color: white;
+       background: #b91919;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       transition: all 0.3s ease;
+       z-index: 9;
+       animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+   }
+   
+     body {
+     display: flex;
+     width: 100vw;
+     height: 100vh;
+     overflow: hidden;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background: #036b52;
+     color: white;
+     font-family: monospace;
+     font-weight: 700;
+   }
+   
+   .toggle {
+     width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     padding: 10px;
+     color: white;
+     background: #b91919;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+       margin-top: -20px;
+     transition: all 0.3s ease;
+     margin: 0 auto;
+   }
+   
+   .search-icons {
+       width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     padding: 10px;
+     color: white;
+     background: #b91919;
+     display: flex;
+     margin-top: 2.5px;
+     justify-content: center;
+     align-items: center;
+     transition: all 0.3s ease;
+     overflow: hidden;
+   }
+   
+   input:focus {
+     outline: none;
+   }
+   
+   #iframeContainer {
+     background: red;
+     display: none;
+     width: 80vw;
+     height: 90vh;
+     border-radius: 1rem;
+     border: 10px solid #d1d1d1;
+     position: absolute;
+     left: 10%;
+     top: 3.5%;
+     overflow: hidden;
+   }
+   
+   .invis {
+     margin-left: 17.5px;
+     background: transparent;
+     border: none;
+     color: white;
+     font-family: monospace;
+     font-size: 20px;
+     highlight: none;
+     width: 690px;
+     height: 50px;
+   }
+   
+   .invis::placeholder {
+     color: #8d6e6e;
+   }
+   .toggle:hover {
+     transform: scale(1.025);
+     margin-top: 7.5px;
+     border: 0.1px solid #d1d1d1;
+     margin-bottom: 35px;
+   }
+   
+   #Lol {
+     display: none;
+     color: white;
+     font-family: monospace;
+     border-radius: 2rem;
+     padding: 5px;
+     font-size: 5px;
+     background: #ba1919;
+     position: absolute;
+   }
+   
+   .toggle:hover + #Lol.show {
+     display: block;
+   }
+   
+   
+   #title {
+     margin-top: 300px;
+     margin-bottom: 50px;
+     text-align: center;
+     font-size: 3.5rem;
+     color: white;
+     font-family: monospace;
+     font-weight: 700;
+   }
+   
+   .search {
+     display: flex;
+     flex-direction: row;
+     font-size: 20px;
+     highlight: none;
+     color: white;
+     padding: 17.5px;
+     width: 700px;
+     border-radius: 12.5px;
+     border: 2px solid #d1d1d1;
+     background: linear-gradient(to right bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+     backdrop-filter: blur(6.5px);
+     transition: all 0.35s ease;
+   }
+   
+   .search:hover {
+     box-shadow: 0 0 69px white;
+     border: 3px solid white;
+     background: linear-gradient(to right bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+     backdrop-filter: blur(6px);
+     transform: scale(1.025);
+   }
+
+  
+  
+  .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #f1f1f1;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+.dropdown-content ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content ul li a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ccc;
+}
+
+.timetable-container {
+  z-index: 9999999999999;
+  border-radius: 2rem;
+  border: 2px solid #d1d1d1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.35));
+padding: 20px;
+  min-width: 696.5px;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+    color: white;
+  font-family: monospace;
+  min-height: 500px;
+}
+
+.timetable {
+    color: white;
+  font-family: monospace;
+  transition: all 0.9s;
+}
+
+.timetable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px white;
+}
+
+#table2, #table2-6, #table2-1, #table2-2, #table2-3, #table2-4 {
+  display: none;
+    color: #d1d1d1;
+  font-family: monospace;
+}
+
+#table1, #table1-6, #table1-1, #table1-2, #table1-3, #table1-4 {
+  display: block;
+}
+.horizontal-scroll-timetable {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 69px;
+}
+
+
+.timetable-container:hover {
+  box-shadow: 0 0 100px rgba(255,255,255,0.75);
+  border: 2px solid white;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
+  backdrop-filter: blur(10px);
+}
+
+  table {
+  width: 100%;
+  border-collapse: collapse;
+    color: white;
+  font-family: monospace;
+}
+th, td {
+  border: 5px solid white;
+  padding: 8px;
+  text-align: left;
+}
+
+ tr td:nth-child(even) {
+    background-color: #4eb0ca;
+   color: white;
+  font-family: monospace;
+  }
+
+  tr td:nth-child(odd) {
+    background-color: #57c4e1;
+   color: white;
+  font-family: monospace;
+  }
+
+  th {
+  background-color: #3e8ca1;
+  }
 
 
 
@@ -17,28 +508,503 @@
 
 
 
+.toggle-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  animation: pulse 1.5s ease alternate infinite; /* Animation */
+}
 
-<Div class="timetable-container">
-  <button class="toggle-button"onclick="toggleTables()">Toggle Tables</button>
-  <BR>
-  <BR>
+.toggle-button:hover {
+  background-color: #ffffff; /* White */
+  color: #4CAF50; /* Dark Green */
+}
+
+.toggle-button:active {
+  animation: click-effect 0.01s ease forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes click-effect {
+  0% {
+    
+  }
+  100% {
+    background: green;
+    color: white;
+  }
+}
+  
+  .wand-extra {
+    display: flex;
+    flex-direction: row;
+  }
+
+   
+   h1:hover {
+     transform: scale(1.015);
+   }
+   
+   .search-icons:hover {
+     transform: scale(1.01);
+     border: 0.1px white solid; 
+   }
+   .ass {
+     width: 0px;
+     height: 0px;
+     border-radius: 25px;
+     filter: blur(12.5px);
+     background: white;
+     position: absolute;
+   }
+   .searchIcon {
+     animation: searchIcon 1s ease forwards;
+   }
+   
+   @keyframes searchIcon {
+     from {
+       width: 0px;
+       height: 0px;
+       opacity: 0;
+     }
+     
+     to {
+       width: 50px;
+       height: 50px;
+       opacity: 1;
+     }
+   }
+
+   #pro-feature {
+   width: 100vw;
+   height: 100vh;
+   margin: 0;
+   padding: 0;
+   text-align: center;
+   justify-content:center;
+   align-items: center;
+   background: rgba(255,255,255,0.5);
+   backdrop-filter: blur(5px);
+   position: absolute;
+   z-index: 999;
+   display: none;
+   transition: all 0.3s ease;
+   }
+
+   #pro-feature:hover {
+   transform: scale(1.025);
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   .card {
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     width: 100px;
+     height: 100px;
+     background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+     backdrop-filter: blur(2px);
+     border-radius: 20%;
+     margin: 20px;
+     border: 2px solid #f5f5f5;
+     transition: ease-in-out 0.15s;
+     filter: blur(0.75px);
+     z-index: 9;
+     opacity: 0.75;
+   }
+   
+   h4 {
+     font-size: 8.5px;
+   }
+   
+   #smol {
+       margin-top: -10px;
+     font-size: 20px;
+     margin-bottom: -15px;
+   }
+
+   #smoler {
+     margin-top: -7.5px;
+     font-size: 20px;
+     margin-bottom: -15px;
+   }
+   
+   a{
+     text-decoration: none;
+     color: white;
+     font-family: monospace;
+   }
+   
+   .card img {
+     width: 75px;
+   }
+   
+   .card:hover {
+      transform: scale(1.05);
+       filter: blur(0px);
+     border: 2.5px solid white;
+     background: linear-gradient(to right bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+     box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+     opacity: 1;
+   }
+   
+   #gpt, #gc {
+     width: 50px;
+     margin-bottom: 10px;
+     margin-top: 15px;
+   }
+   
+   .bento {
+     display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(123px, 2fr));
+       width: 750px;
+     height: 150px;
+     margin: 0 auto;
+     z-index: -10;
+   }
+
+   #dcr {
+   width: 50%;
+   margin-bottom: 7.5px;
+   }
+   
+   .website-layout-container {
+     display: none;
+     margin: 0 auto;
+   }
+   
+   .toggle:hover + .website-layout-container,
+   .website-layout-container.show {
+     display: block;
+   }
+   
+   
+   section {
+   transform: translate(0%, -30%);
+   text-align: center;
+   position: relative;
+   }
+  
+  .eight-one, .eight-two, .eight-three, .eight-four, .eight-five, .eight-six {
+    scale: 0.75;
+  }
+
+   #update {
+   position: absolute;
+   z-index: 9;
+   bottom: 0;
+   right: 0;
+   margin: 15px;
+   }
+
+   ery {
+   display: flex;
+   flex-direction: row;
+   gap: 5px;
+   position: absolute; 
+   z-index: 90;
+   top: 0;
+   left: 0;
+   margin: 10px;
+   }
+
+   .breh {
+   border: 0px solid transparent;
+   background: transparent;
+   transition: all 0.3s;
+   }
+
+
+   .timesoftables, .breh {
+   border: 0px solid transparent;
+   background: transparent;
+     width: 50px;
+     height: 50px;
+     margin-left: -5px;
+   }
+  
+
+   .toggle-button, dropdown {
+  position: relative;
+  z-index: 9999999;
+  }
+
+
+
+.container {
+  position: fixed;
+  width: 620px;
+  margin: 0 auto;
+  height: 320px;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.75), rgba(255,255,255,0.25));
+  text-align: center;
+  border-radius: 2rem;
+  border: 1px solid white;
+  backdrop-filter: blur(2px);
+  z-index: 999999999999;
+  display: none;
+}
+
+.container:hover {
+  box-shadow: 0 0 25px rgba(255,255,255,0.75);
+  transform: scale(1.0005);
+  border: 2px solid white;
+  backdrop-filter: blur(5px);
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.5));
+}
+
+.shop-item {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+    background: #012c22;
+  border-radius: 2rem;
+  width: 95%;
+      color: #b91919;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out forwards;
+}
+  
+  wand {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+
+.shop-item:hover {
+  background-color: rgba(255,255,255,0.75);
+  border: 2px solid white;
+  box-shadow: 0 0 15px white;
+  color: green;
+  transform: scale(1.025);
+}
+
+#brunglePoints, #boughtItems {
+color: #199b19;
+}
+
+       
+     </style>
+
+<div class="container">
+  <h1>Brungle Shop</h1>
+  <h5> Reload to take effect </h5>
+  <p>Brungle Points: <span id="brunglePoints">1000</span></p>
+  <p>Bought Items: <span id="boughtItems">0</span></p>
+  <div id="shopItems">
+    <button class="shop-item" data-price="500" onclick="buyItem(500)">Shyun Pen - 500 Points</button>
+    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">Food - 1000 Points</button>
+    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">100 Robux - 2000 Points</button>
+  </div>
+</div>
+
+     <div id="pro-feature"><h1> BruneBot is a PRO feature </h1></div>
+     <a id="update" href="https://brickwall-bank.w3spaces.com/">https://brungle.updates.trk</a>
+<ery>
+  <button class="breh" onclick="showShop()" style="color: white; scale: 1.5;">
+  <i class="fa-solid fa-cart-shopping"></i>
+  </button>
+  <h1>Brungle Points: </h1><h1 style="color: white" id="counter"> Loading... </h1>
+  </ery>
+       <html>
+         <section>
+         <h1 id="Lol"> Click! </h1>
+   <body>
+     <h1 id="title"> Brungle </h1>
+     <h4 style="margin-top: -50px"> Brune & Google </h4>
+   <land class="search">
+     <div class="search-icons">
+       <div class="ass"></div>
+       <i class="fa-solid fa-magnifying-glass"></i>
+       </div>
+     <input type="text" id="searchInput" placeholder="Search Brungle"class="invis"></input>
+     </land>
+   <div class="toggle">
+     <i class="fa-solid fa-circle-chevron-down"></i>
+   </div>
+   
+   <div class="website-layout-container">
+     <div class="bento">
+       
+       
+       <!-- bloxd -->
+       <a href="https://www.bloxd.io">
+   <div class="card">
+     <img id="dcr"src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Bloxd.io_Logo.jpeg/1200px-Bloxd.io_Logo.jpeg"></img>
+   <h1 id="smoler"> Bloxd.io </h1>
+   <h4> bloxd.io </h4>
+   </div>
+   </a>
+     
+     <!-- DISCORD -->
+       <a href="https://www.discord.com/app">
+   <div class="card">
+     <img id="dc"src="https://static.vecteezy.com/system/resources/previews/018/930/718/original/discord-logo-discord-icon-transparent-free-png.png"></img>
+   <h1 id="smol"> Discord </h1>
+   <h4> discord.com/app </h4>
+   </div>
+   </a>
+     
+     <!-- youtube -->
+         <a href="https://www.youtube.com/@brunegaming">
+   <div class="card">
+     <img src="https://www.freeiconspng.com/uploads/hd-youtube-logo-png-transparent-background-20.png"></img>
+   <h1 id="smol"> Youtube </h1>
+   <h4> youtube.com </h4>
+   </div>
+   </a>
+   
+   
+   <!-- chatgpt -->
+         <a href="https://www.chat.openai.com">
+   <div class="card">
+     <img id="gpt"src="https://freelogopng.com/images/all_img/1681039084chatgpt-icon.png"></img>
+   <h1 id="smol"> ChatGPT </h1>
+   <h4> chat.openai.com </h4>
+   </div>
+   </a>
+   
+   <!-- google classroom -->
+         <a href="https://classroom.google.com/u/7/">
+   <div class="card">
+     <img id="gc"src="https://logodownload.org/wp-content/uploads/2020/04/google-classroom-logo.png"></img>
+   <h1 id="smol"> Class </h1>
+   <h4> class.google.com </h4>
+   </div>
+   </a>
+     </div>
+   </div>
+   </section>
+   <footer class="incresize">
+   </footer>
+   
+   
+   <div id="iframeContainer"></div>
+   </body>
+   </html>
+   </head>
+
+   <body>
+       <div id="theme-changer">
+         <wand class="wand-extra">
+           <div class="color-circle" style="background-color: #E63946" onclick="changeColor('#E63946')"></div>
+           <div class="color-circle" style="background-color: #fc8c03" onclick="changeColor('#fc8c03')"></div>
+           <div class="color-circle" style="background-color: #036b52" onclick="changeColor('#036b52')"></div>
+           <div class="color-circle" style="background-color: #000042" onclick="changeColor('#000042')"></div>
+           <button onclick="showCustomColor()">+</button>
+           <input type="text" id="custom-color" placeholder="Enter hex code ( start with #)">
+           <button onclick="addCustomColor()">Add</button>
+           <button id="change-bg-btn">BG Img</button>
+         </wand>
+         
+           <br>
+           <hr>
+           <br>
+         <wand>
+           <h1 style="font-size: 10px;"> Themes: </h1>
+           <div class="color-circle" style="background-image: url('https://wallpapercave.com/wp/wp10532946.jpg')" onclick="themeSpace()"></div>
+             <div class="color-circle" style="background-image: url('https://www.chromethemer.com/blog/images/uhd-wallpaper-backgrounds-1.jpg')" onclick="themeFluid()"></div>
+             <div class="color-circle" style="background-image: url('https://t4.ftcdn.net/jpg/03/34/19/13/360_F_334191354_zW1Fj9HPbfJdBPEVe2d6mcuT1w2g8K5y.jpg')" onclick="themeDesert()"></div>
+             <div class="color-circle" style="background-image: url('https://miro.medium.com/v2/resize:fit:1400/1*yrppiCrEctYSXk2ZRiZ7VQ.gif')" onclick="themeGame()"></div>
+         </wand>
+           <br>
+           <hr>
+           <br>
+         <wand>
+           <h1 style="font-size: 10px;"> Your Colors:</h1>
+           </wand>
+           <br>
+       </div>
+         
+       <div class="sidebar">
+        <button class="breh" onclick="showThemeChanger()">
+         <i class="fa-solid fa-fill" id="color"></i>
+         </button>
+         <hr>
+         <button class="timesoftables" onclick="showTimetable()">
+         <i class="fa-solid fa-calendar" id="timetable"></i>
+         </button>
+         <hr>
+         <button class="timesoftables">
+         <i class="fa-regular fa-money-bill-1" id="brunebot"></i>
+         </button>
+       </div>
+
+       <div class="open" onclick="moveBoth()">
+          <i class="fa-solid fa-circle-chevron-down"></i>
+         </div>
+ 
+ 
+       <div class="custom-shape-divider-bottom-1713904167" style="Scale(0.5)">
+       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+           <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+           <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+       </svg>
+   </div>
+   
+
+
+
+<Div class="timetable-container" style="display: none;">
   <div class="dropdown">
   <button class="dropbtn">Select Class</button>
   <div class="dropdown-content">
     <ul>
-       <li><a href="#">8.1</a></li>
-      <li><a href="#">8.2</a></li>
-      <li><a href="#">8.3</a></li>
-      <li><a href="#">8.4</a></li>
-      <li><a href="#">8.5</a></li>
-      <li><a href="#">8.6</a></li>
+       <li><a onclick="eightOneChange()">8.1</a></li>
+      <li><a onclick="eightTwoChange()">8.2</a></li>
+      <li><a onclick="eightThreeChange()">8.3</a></li>
+      <li><a onclick="eightFourChange()">8.4</a></li>
+      <li><a onclick="eightFiveChange()">8.5</a></li>
+      <li><a onclick="eightSixChange()">8.6</a></li>
+      <li><a onclick="createTimetable()">Custom</a></li>
     </ul>
   </div>
 </div>
-  <h1 id="class-class"> 8.5 </h1>
-<section class="eight-five">
-  <div  id="table1">
+<section class="eight-five" style="display: none">
+  <button class="toggle-button"onclick="toggleEightFive()">Toggle Tables</button>
+  <br>
     <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.5 </h1> 
+  <div  id="table1">
     <h1> Week 1 </h1>
     <b>
   <table class="timetable">
@@ -149,163 +1115,1654 @@
   </table>
   </div>
   </section>
-
   
+  <section class="eight-six" style="display: none">
+    <button class="toggle-button"onclick="toggleEightSix()">Toggle Tables</button>
+    <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.6 
+  <div  id="table1-6">
+    <br>
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>Geography</td>
+        <td>German</td>
+        <td>PSHE</td>
+        <td>Geography</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Food Science</td>
+        <td>History</td>
+        <td>Music</td>
+        <td>English</td>
+        <td>Geography</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>History</td>
+        <td>Computer Science</td>
+        <td>Drama</td>
+        <td>PRE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Spanish</td>
+        <td>Chemistry</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>Dance</td>
+    </tr>
+  </table>
   </div>
+    
 
-
+  <div  id="table2-6">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>DT</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>Biology</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>Drama</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>German</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>English</td>
+        <td>History</td>
+        <td>PRE</td>
+        <td>Spanish</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>Biology</td>
+        <td>Maths</td>
+        <td>Art</td>
+        <td>English</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>Music</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
   </div>
-
-  
-<body>
-  
-  <h1 id="time"></h1>
-
-  <div class="container">
-    <h1>Brungle Shop</h1>
-    <h5>Reload to take effect</h5>
-    <p>Brungle Points: <span id="brunglePoints">1000</span></p>
-    <p>Bought Items: <span id="boughtItems">0</span></p>
-    <div id="shopItems">
-      <button class="shop-item" data-price="500" onclick="buyItem(5)">Shyun Pen - 500 Points</button>
-      <button class="shop-item" data-price="1000" onclick="buyItem(1000)">Food - 1000 Points</button>
-      <button class="shop-item" data-price="2000" onclick="buyItem(2000)">100 Robux - 2000 Points</button>
-    </div>
-  </div>
-
-  <div id="pro-feature">
-    <h1>BruneBot is a PRO feature</h1>
-  </div>
-  <a id="update" href="https://brickwall-bank.w3spaces.com/">https://brungle.updates.trk</a>
-
-  <ery>
-    <button class="breh" onclick="showShop()" style="color: white; scale: 1.5;">
-      <i class="fa-solid fa-cart-shopping"></i>
-    </button>
-    <h1>Brungle Points:</h1>
-    <h1 style="color: white" id="counter">Loading...</h1>
-  </ery>
-
-  <section>
-    <h1 id="Lol">Click!</h1>
-    <h1 id="title">Brungle</h1>
-    <h4 style="margin-top: -50px">Brune & Google</h4>
-    <land class="search">
-      <div class="search-icons">
-        <div class="ass"></div>
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </div>
-      <input type="text" id="searchInput" placeholder="Search Brungle"class="invis"></input>
-    </land>
-    <div id="showlinks" class="toggle" onmouseover="holdlinks()">
-      <i class="fa-solid fa-circle-chevron-down"></i>
-    </div>
-
-    <div id="links" class="website-layout-container" onmouseover="holdlinks()" onmouseleave="unholdlinks()">
-      <div class="bento">
-        <!-- bloxd -->
-        <a href="https://bloxd.io">
-          <div class="card">
-            <img id="dcr" src="images/bloxd.jpeg"></img>
-            <h1 id="smoler">Bloxd.io</h1>
-            <h4>bloxd.io</h4>
-          </div>
-        </a>
-
-        <!-- DISCORD -->
-        <a href="https://discord.com/app">
-          <div class="card">
-            <img id="dc" src="images/discord.webp"></img>
-            <h1 id="smol">Discord</h1>
-            <h4>discord.com/app</h4>
-          </div>
-        </a>
-
-        <!-- youtube -->
-        <a href="https://www.youtube.com/@brunegaming">
-          <div class="card">
-            <img src="images/youtube.png"></img>
-            <h1 id="smol">Youtube</h1>
-            <h4>youtube.com</h4>
-          </div>
-        </a>
-
-        <!-- chatgpt -->
-        <a href="https://chat.openai.com">
-          <div class="card">
-            <img id="gpt" src="images/chatgpt.webp"></img>
-            <h1 id="smol">ChatGPT</h1>
-            <h4>chat.openai.com</h4>
-          </div>
-        </a>
-
-        <!-- google classroom -->
-        <a href="https://classroom.google.com/u/7/">
-          <div class="card">
-            <img id="gc" src="https://dev.wilburwilliams.uk/assets/newtab/gclass.png"></img>
-            <h1 id="smol">Classroom</h1>
-            <h4>classroom.google.com</h4>
-          </div>
-        </a>
-      </div>
-    </div>
   </section>
-
-  <footer class="incresize">
-  </footer>
-
-  <div id="iframeContainer"></div>
-
-  <div id="theme-changer">
-    <div class="color-circle" style="background-color: #E63946" onclick="changeColor('#E63946')"></div>
-    <div class="color-circle" style="background-color: #fc8c03" onclick="changeColor('#fc8c03')"></div>
-    <div class="color-circle" style="background-color: #036b52" onclick="changeColor('#036b52')"></div>
-    <div class="color-circle" style="background-color: #000042" onclick="changeColor('#000042')"></div>
-    <button onclick="showCustomColor()">+</button>
-    <input type="text" id="custom-color" placeholder="Enter hex code ( start with #)">
-    <button onclick="addCustomColor()">Add</button>
-    <button id="change-bg-btn">Change BG Image</button>
+    <section class="eight-three" style="display: none">
+  <button class="toggle-button"onclick="toggleEightThree()">Toggle Tables</button>
+  <br>
     <br>
-    <hr>
-    <br>
-    <h1 style="font-size: 10px;"> Your Colors:</h1>
-    <br>
-    <hr>
-    <br>
-    <h1 style="font-size: 10px;"> Images:</h1>
-    <button onclick="changeBGimage('https://dev.wilburwilliams.uk/assets/background.png')">Space BG</button>
-    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.3 </h1> 
+  <div  id="table1-3">
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>PRE</td>
+        <td>Dance</td>
+        <td>PSHE</td>
+        <td>English</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>History</td>
+        <td>Geography</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>Spanish</td>
+        <td>Spanish</td>
+        <td>History</td>
+        <td>Music</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Art</td>
+        <td>Biology</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Drama</td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>English</td>
+    </tr>
+  </table>
   </div>
+    
 
-  <div class="sidebar">
-    <button class="breh" onclick="showThemeChanger()">
-      <i class="fa-solid fa-fill" id="color"></i>
-    </button>
-    <hr>
-    <button class="softables" onclick="showTimetable()">
-      <i class="fa-solid fa-calendar" id="timetable"></i>
-    </button>
-    <hr>
-    <i class="fa-regular fa-money-bill-1" id="brunebot" onclick="colourNav()"></i>
+  <div  id="table2-3">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Geography</td>
+        <td>Drama</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>PRE</td>
+        <td>Physics</td>
+        <td>Biology</td>
+        <td>Music</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>DT / Food Tech</td>
+        <td>Food Tech / DT</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>Geography</td>
+        <td>History</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
   </div>
-
-  <div class="open" onclick="moveBoth()">
-    <i class="fa-solid fa-circle-chevron-down"></i>
+  </section>
+  <section class="eight-four" style="display: none">
+    <button class="toggle-button"onclick="toggleEightFour()">Toggle Tables</button>
+    <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.4 
+  <div  id="table1-4">
+    <br>
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>Geography</td>
+        <td>German</td>
+        <td>PSHE</td>
+        <td>Geography</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Food Science</td>
+        <td>History</td>
+        <td>Music</td>
+        <td>English</td>
+        <td>Geography</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>History</td>
+        <td>Computer Science</td>
+        <td>Drama</td>
+        <td>PRE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Spanish</td>
+        <td>Chemistry</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>Dance</td>
+    </tr>
+  </table>
   </div>
+    
 
-  <div class="custom-shape-divider-bottom-1713904167">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-    </svg>
+  <div  id="table2-4">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>DT</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>Biology</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>Drama</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>German</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>English</td>
+        <td>History</td>
+        <td>PRE</td>
+        <td>Spanish</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>Biology</td>
+        <td>Maths</td>
+        <td>Art</td>
+        <td>English</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>Music</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
   </div>
+  </section>
+    <section class="eight-one" style="display: none">
+  <button class="toggle-button"onclick="toggleEightOne()">Toggle Tables</button>
+  <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.1 </h1> 
+  <div  id="table1-1">
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>PRE</td>
+        <td>Dance</td>
+        <td>PSHE</td>
+        <td>English</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>History</td>
+        <td>Geography</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>Spanish</td>
+        <td>Spanish</td>
+        <td>History</td>
+        <td>Music</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Art</td>
+        <td>Biology</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Drama</td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>English</td>
+    </tr>
+  </table>
+  </div>
+    
 
-  <!--DONT HARDCODE TIMETABLES, YOULL DOXX YOURSELF!-->
+  <div  id="table2-1">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Geography</td>
+        <td>Drama</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>PRE</td>
+        <td>Physics</td>
+        <td>Biology</td>
+        <td>Music</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>DT / Food Tech</td>
+        <td>Food Tech / DT</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>Geography</td>
+        <td>History</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
+  </div>
+  </section>
+  <section class="eight-two" style="display: none">
+    <button class="toggle-button"onclick="toggleEightTwo()">Toggle Tables</button>
+    <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.3 </h1> 
+    
+  <div  id="table1-6">
+    <br>
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>Geography</td>
+        <td>German</td>
+        <td>PSHE</td>
+        <td>Geography</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Food Science</td>
+        <td>History</td>
+        <td>Music</td>
+        <td>English</td>
+        <td>Geography</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>History</td>
+        <td>Computer Science</td>
+        <td>Drama</td>
+        <td>PRE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Spanish</td>
+        <td>Chemistry</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>Dance</td>
+    </tr>
+  </table>
+  </div>
+    
+
+  <div  id="table2-6">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>DT</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>Biology</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>Drama</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>German</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>English</td>
+        <td>History</td>
+        <td>PRE</td>
+        <td>Spanish</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>Biology</td>
+        <td>Maths</td>
+        <td>Art</td>
+        <td>English</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>Music</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
+  </div>
+    </section>
+  </div>
+    
+   
+     
+   
+ 
+ 
+ 
+ <head>
+       <script>
+        window.onload = function() {
+      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      document.getElementById('counter').textContent = currentValue;
+    };
+      document.addEventListener("DOMContentLoaded", function() {
+    // Get the input element
+    window.onload = function() {
+      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      document.getElementById('counter').textContent = currentValue;
+    };
+    var searchInput = document.getElementById("searchInput");
+
+
+    // Listen for keyup event
+    searchInput.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            incrementCounter()
+            var query = searchInput.value;
+            var encodedQuery = encodeURIComponent(query);
+            var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
+            window.location.href = searchURL; // Redirect to Google search URL on the current tab
+            var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      // Increment the counter value by
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchIcons = document.querySelectorAll('.search-icons');
+    const assDiv = document.querySelector('.ass');
+
+    searchIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            assDiv.classList.add('searchIcon');
+            setTimeout(() => {
+                assDiv.classList.remove('searchIcon');
+
+                var query = document.getElementById('searchInput').value;
+
+                // Encode the query to use in the URL
+                var encodedQuery = encodeURIComponent(query);
+
+                // Create the Google search URL
+                var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
+
+                // Redirect to Google search URL on the current tab
+                window.location.href = searchURL;
+                var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      incrementCounter()
+            }, 1000);
+        });
+    });
+});
+
+ document.addEventListener("DOMContentLoaded", function() {
+     const toggle = document.querySelector('.toggle');
+     const layoutContainer = document.querySelector('.website-layout-container');
+ 
+     toggle.addEventListener('click', function() {
+         layoutContainer.classList.toggle('show');
+     });
+ });
+ 
+function changeColor(color) {
+   setCookie('currentBG', color, 365); document.body.style.backgroundColor = color;
+    document.body.style.backgroundImage = "";
+}
+
+function showCustomColor() {
+    var customColorInput = document.getElementById('custom-color');
+    customColorInput.style.display = 'inline-block';
+}
+function loadColors() {
+    var transaction = db.transaction(['colors'], 'readonly');
+    var objectStore = transaction.objectStore('colors');
+    var request = objectStore.getAll();
+
+    request.onsuccess = function(event) {
+        var colors = event.target.result;
+        colors.forEach(function(colorObj) {
+            var colorCircle = document.createElement('div');
+            colorCircle.className = 'color-circle';
+            colorCircle.style.backgroundColor = colorObj.color;
+            colorCircle.addEventListener('click', function() {
+                changeColor(colorObj.color);
+            });
+            var addButton = document.getElementById('add-button');
+            document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+        });
+    };
+
+    request.onerror = function(event) {
+        console.error('Error loading colors from IndexedDB:', event.target.errorCode);
+    };
+}
+
+         
+function addCustomColor() {
+    var customColorInput = document.getElementById('custom-color');
+    var customColor = customColorInput.value;
+    if (/^#[0-9A-F]{6}$/i.test(customColor)) {
+        var colorCircle = document.createElement('div');
+        colorCircle.className = 'color-circle';
+        colorCircle.style.backgroundColor = customColor;
+        colorCircle.addEventListener('click', function() {
+            changeColor(customColor);
+        });
+        var addButton = document.getElementById('add-button');
+        document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+        customColorInput.value = '';
+        customColorInput.style.display = 'none';
+
+        // Save custom color to IndexedDB
+        var transaction = db.transaction(['colors'], 'readwrite');
+        var objectStore = transaction.objectStore('colors');
+        var request = objectStore.add({ color: customColor });
+
+        request.onsuccess = function(event) {
+            console.log('Color added to IndexedDB:', customColor);
+        };
+
+        request.onerror = function(event) {
+            console.error('Error adding color to IndexedDB:', event.target.errorCode);
+        };
+    } else {
+        alert('Please enter a valid hex color code.');
+    }
+}
+
+         let db;
+const request = indexedDB.open('ColorDB', 1);
+
+request.onupgradeneeded = function(event) {
+    db = event.target.result;
+    if (!db.objectStoreNames.contains('colors')) {
+        db.createObjectStore('colors', { keyPath: 'id', autoIncrement: true });
+    }
+};
+
+request.onsuccess = function(event) {
+    db = event.target.result;
+    loadColors();
+};
+
+request.onerror = function(event) {
+    console.error('IndexedDB error:', event.target.errorCode);
+};
+
+
+// Function to retrieve saved custom color on page load
+function retrieveCustomColor() {
+    var savedColor = localStorage.getItem('customColor');
+    if (savedColor) {
+        var colorCircle = document.createElement('div');
+        colorCircle.className = 'color-circle';
+        colorCircle.style.backgroundColor = savedColor;
+        colorCircle.addEventListener('click', function() {
+            changeColor(savedColor);
+        });
+        var addButton = document.getElementById('add-button');
+        document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+    }
+}
+
+// Call the function to retrieve custom color when the page loads
+window.onload = function() {
+    retrieveCustomColor();
+};
+
+
+window.onload = function() {
+  var storedColors = JSON.parse(localStorage.getItem('customColors'));
+  if (storedColors && storedColors.length > 0) {
+      storedColors.forEach(function(color) {
+          var colorCircle = document.createElement('div');
+          colorCircle.className = 'color-circle';
+          colorCircle.style.backgroundColor = color;
+          colorCircle.addEventListener('click', function() {
+              changeColor(color);
+          });
+          var addButton = document.getElementById('add-button');
+          document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+      });
+  }
+};
+
+
+
+
+
+ let count = 2;
+
+ function moveBoth() {
+    const open = document.querySelector('.open');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (count % 2 === 0) {
+        open.style.transform = 'translate(43vw, 0px) rotate(270deg)';
+        sidebar.style.transform = 'translate(48vw, 0px)';
+        console.log('Sidebar opened by 146.90.75.207');
+    } else {
+    open.style.transform = 'translate(49vw, 0px) rotate(90deg)';
+        sidebar.style.transform = 'translate(53vw, 0px)';
+        console.log('Sidebar closed by 146.90.75.207');
+    }
+
+    count++;
+}
+
+
+ 
+
+ var isFunctionAllowed = true;
+
+function incrementCounter() {
+    if (!isFunctionAllowed) return; // Check if function is allowed to run
+    isFunctionAllowed = false; // Set function to not allowed
+
+    var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+    // Increment the counter value by 1
+    currentValue++;
+    // Update the counter value in localStorage
+    localStorage.setItem('counter', currentValue);
+    // Update the counter value on the page
+    document.getElementById('counter').textContent = currentValue;
+
+    // Call setTimeout to schedule the next update after 20 seconds
+    setTimeout(function() {
+        isFunctionAllowed = true; // Set function to allowed after 20 seconds
+    }, 5000); // 20 seconds in milliseconds
+}
+
+
+
+
+    // Load the counter value from localStorage on page load
+    window.onload = function() {
+      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+      document.getElementById('counter').textContent = currentValue;
+    };
+
+
+
+
+    function resetCounter() {
+    // Set the counter value to 0
+    var currentValue = 0;
+    // Update the counter value in localStorage
+    localStorage.setItem('counter', currentValue);
+    // Update the counter value on the page
+    document.getElementById('counter').textContent = currentValue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Get reference to the color element
+  var colorElement = document.getElementById("brunebot");
   
-  <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-  <script src="script.js"></script>
-  <script src="https://kit.fontawesome.com/bb91950169.js" crossorigin="anonymous"></script>
-  <script src="https://dev.wilburwilliams.uk/js/clock.js"></script>
-</body>
-</html>
+  // Get reference to the colornav element
+  var colorNavElement = document.getElementById("pro-feature");
+  
+  // Add click event listener to the color element
+  colorElement.addEventListener("click", function() {
+    // Check if colornav is currently hidden
+    if (colorNavElement.style.display === "none") {
+      // If hidden, show colornav by setting display to block
+      colorNavElement.style.display = "block";
+
+      // Wait for 3 seconds, then hide colornav again
+      wait(10000, () => {
+        colorNavElement.style.display = "none";
+      });
+    } else {
+      // If already shown, hide colornav by setting display to none
+      colorNavElement.style.display = "none";
+    }
+  });
+});
+
+// Simple wait function
+function wait(milliseconds, callback) {
+  setTimeout(callback, milliseconds);
+}
+
+
+function showThemeChanger() {
+    // Get reference to the theme changer element
+    var themeChanger = document.getElementById('theme-changer');
+
+    // Toggle the display property of the theme changer
+    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
+        themeChanger.style.display = "block";
+    } else {
+        themeChanger.style.display = "none";
+    }
+}
+
+const abras = document.querySelector('.timetable-container');
+abras.style.display = "none";
+
+function showTimetable() {
+    // Get reference to the theme changer element
+    var themeChanger = document.querySelector('.timetable-container');
+
+    // Toggle the display property of the theme changer
+    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
+        themeChanger.style.display = "block";
+    } else {
+        themeChanger.style.display = "none";
+    }
+}
+
+function showShop() {
+    // Get reference to the theme changer element
+    var themeChanger = document.querySelector('.container');
+
+    // Toggle the display property of the theme changer
+    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
+        themeChanger.style.display = "block";
+    } else {
+        themeChanger.style.display = "none";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Initialize variables
+let brunglePoints = parseInt(localStorage.getItem('counter')); // Initialize with counter value or default value
+let boughtItems = 0;
+
+// Update display
+function updateDisplay() {
+  document.getElementById('brunglePoints').textContent = brunglePoints;
+  document.getElementById('boughtItems').textContent = boughtItems;
+}
+
+// Buy item function
+function buyItem(price) {
+  let brunglePointsElement = document.getElementById('brunglePoints');
+  let boughtItemsElement = document.getElementById('boughtItems');
+  
+  if (brunglePoints >= price) {
+    brunglePoints -= price;
+    boughtItems++;
+    brunglePointsElement.textContent = brunglePoints;
+    boughtItemsElement.textContent = boughtItems;
+    // Update cloud variable here
+    updateCloudVariable(brunglePoints, boughtItems);
+    alert('Item bought successfully!');
+  } else {
+    alert('Not enough Brungle Points!');
+  }
+}
+
+// Simulate updating cloud variable
+function updateCloudVariable(points, items) {
+  // You can replace this with your actual cloud variable update logic
+  console.log(`Cloud variable updated: Brungle Points = ${points}, Bought Items = ${items}`);
+}
+
+// Initial display update
+updateDisplay();
+
+
+
+
+
+
+
+
+function toggleTables() {
+      var table1 = document.getElementById('table1');
+      var table2 = document.getElementById('table2');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+
+
+
+
+
+    // admin tools
+
+    function infa() {
+  // Get the current counter value from localStorage or initialize it to 0
+  let currentValue = parseInt(localStorage.getItem('counter')) || 0;
+  
+  // Increase the counter value by 10000
+  currentValue += 10000;
+  
+  // Update the counter value in localStorage
+  localStorage.setItem('counter', currentValue.toString());
+  
+  // Display the updated counter value
+  console.log('Counter increased by 10000. New value: ' + currentValue);
+}
+
+// Call the function to increase the counter value by 10000
+increaseCounterBy10000();
+
+         
+         /*-- Made with Zdog --*/
+
+// setting up Zdog illustration element
+const illoElem = document.querySelector('.illo');
+const illoSize = 50;
+const minWindowSize = Math.min( window.innerWidth - 20, window.innerHeight - 60 );
+const zoom = Math.floor( (minWindowSize / illoSize) * 0.75 );
+illoElem.setAttribute( 'width', illoSize * zoom );
+illoElem.setAttribute( 'height', illoSize * zoom);
+
+// Zdog math variables
+const TAU = Zdog.TAU;
+
+// boolean flag for spin 
+let isSpinning = true;
+
+// illustration base
+const illo = new Zdog.Illustration({
+  element: illoElem,
+  zoom: zoom,
+  dragRotate: true,
+  onDragStart: function() {
+    isSpinning = false;
+  },
+  rotate: { y: TAU/4 }
+});
+
+// frontside earth
+const head = new Zdog.Hemisphere({
+  addTo: illo,
+  diameter: 40,
+  stroke: false,
+  color: '#1976B5',
+});
+
+// backside earth
+new Zdog.Hemisphere({
+  addTo: head,
+  diameter: 40,
+  stroke: false,
+  color: '#105AAA',
+  rotate: { x: TAU/2 }
+});
+
+// light green lands
+const land1 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -2, y: 0, z: 5 },
+  ],
+  translate: { x: 17, y: 5, z: 4 },
+  color: "#6FCC50",
+  closed: false,
+  fill: true,
+  stroke: 7,
+  addTo: head,
+});
+land1.copy({
+  scale: { x: -1 },
+  translate: { x: -17, y: 0, z: 4 },
+})
+
+const land2 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -10, y: 0, z: 4 },
+  ],
+  translate: { x: 13, y: -10, z: 10 },
+  color: "#6FCC50",
+  closed: false,
+  fill: true,
+  stroke: 7,
+  addTo: head,
+});
+
+new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: 5, y: 0, z: 4 },
+  ],
+  translate: { x: -13, y: -10, z: 10 },
+  color: "#6FCC50",
+  closed: false,
+  fill: true,
+  stroke: 7,
+  addTo: head,
+});
+
+const land3 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -2, y: 0, z: 3 },
+  ],
+  translate: { x: 13, y: 13, z: 7 },
+  color: "#6FCC50",
+  closed: false,
+  fill: true,
+  stroke: 4,
+  addTo: head,
+});
+land3.copy({
+  scale: { x: -1 },
+  translate: { x: -13, y: 13, z: 7 },
+})
+
+const land4 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -7, y: 0, z: 3 },
+  ],
+  translate: { x: 10, y: -3, z: 16 },
+  color: "#6FCC50",
+  closed: false,
+  fill: true,
+  stroke: 4,
+  addTo: head,
+});
+land4.copy({
+  scale: { x: -1 },
+  translate: { x: -10, y: 3, z: 16 },
+})
+
+// light clouds
+const cloud1 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -2, y: 0, z: 5 },
+  ],
+  translate: { x: 20, y: 7, z: 4 },
+  color: "#fff",
+  closed: false,
+  fill: true,
+  stroke: 5,
+  addTo: head,
+});
+
+new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: 3, y: 0, z: 1 },
+  ],
+  translate: { x: -5, y: 7, z: 20 },
+  color: "#fff",
+  closed: false,
+  fill: true,
+  stroke: 5,
+  addTo: head,
+});
+
+const cloud2 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -5, y: 0, z: 10 },
+  ],
+  translate: { x: 23, y: 2, z: 4 },
+  color: "#fff",
+  closed: false,
+  fill: true,
+  stroke: 4,
+  addTo: head,
+});
+cloud2.copy({
+  scale: { x: -1 },
+  translate: { x: -23, y: 2, z: 4 },
+})
+
+const cloud3 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -2, y: 0, z: 5 },
+  ],
+  translate: { x: 20, y: -2, z: 7 },
+  color: "#fff",
+  closed: false,
+  fill: true,
+  stroke: 2,
+  addTo: head,
+});
+cloud3.copy({
+  scale: { x: -1 },
+  translate: { x: -20, y: -2, z: 7 },
+})
+
+const cloud4 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -2, y: 0, z: 5 },
+  ],
+  translate: { x: 18, y: -10, z: 7 },
+  color: "#fff",
+  closed: false,
+  fill: true,
+  stroke: 3,
+  addTo: head,
+});
+cloud4.copy({
+  scale: { x: -1 },
+  translate: { x: -18, y: -10, z: 7 },
+})
+
+// dark clouds
+const cloud5 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: 0, y: 0, z: -3 },
+  ],
+  translate: { x: 20, y: -8, z: -3 },
+  color: "#A6B3DA",
+  closed: false,
+  fill: true,
+  stroke: 3,
+  addTo: head,
+});
+cloud5.copy({
+  scale: { x: -1 },
+  translate: { x: -20, y: -8, z: -3 },
+})
+
+const cloud6 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -4, y: 0, z: -7 },
+  ],
+  translate: { x: 20, y: 0, z: -8 },
+  color: "#A6B3DA",
+  closed: false,
+  fill: true,
+  stroke: 6,
+  addTo: head,
+});
+cloud6.copy({
+  scale: { x: -1 },
+  translate: { x: -20, y: 0, z: -8 },
+})
+
+const cloud7 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z:  0 },
+    { x: -3, y: 0, z: -3 },
+  ],
+  translate: { x: 15, y: 15, z: -8 },
+  color: "#A6B3DA",
+  closed: false,
+  fill: true,
+  stroke: 3,
+  addTo: head,
+});
+cloud7.copy({
+  scale: { x: -1 },
+  translate: { x: -15, y: 15, z: -8 },
+})
+
+new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z: 0 },
+    { x: -5, y:  0, z: 0 },
+  ],
+  translate: { x: -5, y: -4, z: -18 },
+  color: "#A6B3DA",
+  fill: true,
+  stroke: 8,
+  addTo: head,
+});
+
+// dark green lands
+const land5 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z: 0 },
+    { x: 2.5, y:  0, z: 2 },
+  ],
+  translate: { x: 7, y: 7, z: -16 },
+  color: "#489268",
+  fill: true,
+  stroke: 4,
+  addTo: head,
+});
+land5.copy({
+  scale: { x: -1 },
+  translate: { x: -7, y: 12, z: -16 },
+})
+
+const land6 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z: 0 },
+    { x: 10, y:  0, z: 9 },
+  ],
+  translate: { x: 5, y: -2, z: -17 },
+  color: "#489268",
+  fill: true,
+  stroke: 8,
+  addTo: head,
+});
+
+const land7 = new Zdog.Shape({
+  path: [
+    { x: 0, y:  0, z: 0 },
+    { x: 2.5, y:  0, z: 5 },
+  ],
+  translate: { x: 13, y: -10, z: -10 },
+  color: "#489268",
+  fill: true,
+  stroke: 4,
+  addTo: head,
+});
+land5.copy({
+  scale: { x: -1 },
+  translate: { x: -13, y: -10, z: -10 },
+  stroke: 5,
+})
+
+
+// spinning animation
+function animate() {
+  illo.rotate.y += isSpinning ? -0.01 : 0;
+  illo.updateRenderGraph();
+  requestAnimationFrame( animate );
+}
+
+animate();
+
+// reset animation
+document.querySelector('.reset-button').onclick = function() {
+  isSpinning = false;
+  illo.rotate.set({
+    y: TAU/4,
+  });
+  
+  setTimeout(() => { 
+    isSpinning = true;
+  }, 2000);
+};
+
+      function updateClock() {
+    const now = new Date();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const second = now.getSeconds();
+
+    const hourHand = document.getElementById('hour');
+    const minuteHand = document.getElementById('minute');
+    const secondHand = document.getElementById('second');
+
+    const hourRotation = (hour % 12) * 30 + (minute / 60) * 30;
+    const minuteRotation = minute * 6 + (second / 60) * 6;
+    const secondRotation = second * 6;
+
+    hourHand.style.transform = `rotate(${hourRotation}deg)`;
+    minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
+    secondHand.style.transform = `rotate(${secondRotation}deg)`;
+
+    setTimeout(updateClock, 1000); // Call updateClock function again after 1 second
+}
+
+// Call updateClock function to start updating the clock
+updateClock();
+
+
+
+
+
+
+
+   </script>
+   <script>
+   document.getElementById('change-bg-btn').addEventListener('click', function() {
+  var imageUrl = prompt("Enter the URL of the image you want as background:");
+  if (imageUrl) {
+    document.body.style.backgroundImage = "url('" + imageUrl + "')";
+    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
+  }
+});
+
+       function themeSpace() {
+           
+    document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp10532946.jpg')";
+    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
+  }
+
+       function themeFluid() {
+           document.body.style.backgroundImage = "url('https://www.chromethemer.com/blog/images/uhd-wallpaper-backgrounds-1.jpg')";
+           document.body.style.backgroundSize = "100vw auto";
+       }
+
+       function themeDesert() {
+           document.body.style.backgroundImage = "url('https://t4.ftcdn.net/jpg/03/34/19/13/360_F_334191354_zW1Fj9HPbfJdBPEVe2d6mcuT1w2g8K5y.jpg')";
+           document.body.style.backgroundSize = "100vw auto";
+       }
+
+       function themeGame() {
+           document.body.style.backgroundImage = "url('https://miro.medium.com/v2/resize:fit:1400/1*yrppiCrEctYSXk2ZRiZ7VQ.gif')";
+           document.body.style.backgroundSize = "100vw auto";
+       }
+     
+     //toggles to next
+function toggleEightOne() {
+      var table1 = document.getElementById('table1-1');
+      var table2 = document.getElementById('table2-1');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightTwo() {
+      var table1 = document.getElementById('table1-2');
+      var table2 = document.getElementById('table2-2');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightThree() {
+      var table1 = document.getElementById('table1-3');
+      var table2 = document.getElementById('table2-3');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightFour() {
+      var table1 = document.getElementById('table1-4');
+      var table2 = document.getElementById('table2-4');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightFive() {
+      var table1 = document.getElementById('table1');
+      var table2 = document.getElementById('table2');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightSix() {
+      var table1 = document.getElementById('table1-6');
+      var table2 = document.getElementById('table2-6');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+
+//Changing to different classes
+
+
+const eightOne = document.querySelector('.eight-one');
+const eightTwo = document.querySelector('.eight-two');
+const eightThree = document.querySelector('.eight-three');
+const eightFour = document.querySelector('.eight-four');
+const eightFive = document.querySelector('.eight-five');
+const eightSix = document.querySelector('.eight-six');
+     const customTable = document.querySelector('.eight-custom');
+
+function eightOneChange() {
+  eightOne.style.display = "block";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "none";
+  eightFour.style.display = "none";
+  eightFive.style.display = "none";
+  eightSix.style.display = "none";
+}
+
+function eightTwoChange() {
+  eightOne.style.display = "none";
+  eightTwo.style.display = "block";
+  eightThree.style.display = "none";
+  eightFour.style.display = "none";
+  eightFive.style.display = "none";
+  eightSix.style.display = "none";
+}
+
+function eightThreeChange() {
+  eightOne.style.display = "none";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "block";
+  eightFour.style.display = "none";
+  eightFive.style.display = "none";
+  eightSix.style.display = "none";
+}
+
+function eightFourChange() {
+  eightOne.style.display = "none";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "none";
+  eightFour.style.display = "block";
+  eightFive.style.display = "none";
+  eightSix.style.display = "none";
+}
+
+function eightFiveChange() {
+  eightOne.style.display = "none";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "none";
+  eightFour.style.display = "none";
+  eightFive.style.display = "block";
+  eightSix.style.display = "none";
+}
+
+function eightSixChange() {
+   eightOne.style.display = "none";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "none";
+  eightFour.style.display = "none";
+  eightFive.style.display = "none";
+  eightSix.style.display = "block";
+}
+
+function createTimetable() {
+  alert('Redirecting to a temporary website. This is because, to limit issues with code, disrupting other Brungle services, the dev team ( me ) have decided to move all "experimental", "beta" and "new" features to temporary sites until all bugs have been cleared. Appreciation to your understanding. Ok to proceed ... ');
+  window.location.href = "https://temporary-timetable-custom-brungle.pages.dev/";
+}
+     
+     function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//I'd remove this and replace with sleep() but you can use this synchronously so learn how to async first
+function wait(milliseconds, callback) {
+  setTimeout(callback, milliseconds);
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+      }
+  }
+  return "";
+}
+     
+     alert('UPDATE! COLORS NOW WILL SAVE... WORKING ON BG SAVE');
+       
+
+    </script>
+    
+   </body>
+   </head></html>
