@@ -1,8 +1,5 @@
-const tabletime = document.querySelector('.timetable-container');
-tabletime.style.display = "none";
-
 async function redir(){
-  await sleep(1000);
+  await sleep(100);
   window.location.href = "https://testing-brungle-24.pages.dev/";
 }
 
