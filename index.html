@@ -967,7 +967,7 @@ color: #199b19;
          </button>
          <hr>
          <button class="timesoftables">
-         <i class="fa-regular fa-money-bill-1" id="brunebot"></i>
+         <i class="fa-solid fa-book" id="brunebot"></i>
          </button>
        </div>
 
@@ -2014,28 +2014,13 @@ function incrementCounter() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Get reference to the color element
-  var colorElement = document.getElementById("brunebot");
-  
-  // Get reference to the colornav element
-  var colorNavElement = document.getElementById("pro-feature");
-  
-  // Add click event listener to the color element
-  colorElement.addEventListener("click", function() {
-    // Check if colornav is currently hidden
-    if (colorNavElement.style.display === "none") {
-      // If hidden, show colornav by setting display to block
-      colorNavElement.style.display = "block";
 
-      // Wait for 3 seconds, then hide colornav again
-      wait(10000, () => {
-        colorNavElement.style.display = "none";
+  var colorElement = document.getElementById("brunebot");
+
+  colorElement.addEventListener("click", function() {
+      alert('Redirecting to Brungle Info and Documentation!')
+    window.location.href = "https://documentation-brungle.pages.dev";
       });
-    } else {
-      // If already shown, hide colornav by setting display to none
-      colorNavElement.style.display = "none";
-    }
-  });
 });
 
 // Simple wait function
