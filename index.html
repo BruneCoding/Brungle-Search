@@ -865,14 +865,7 @@ color: #199b19;
      <div class="bento">
        
        
-       <!-- bloxd -->
-       <a href="https://www.bloxd.io">
-   <div class="card">
-     <img id="dcr"src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Bloxd.io_Logo.jpeg/1200px-Bloxd.io_Logo.jpeg"></img>
-   <h1 id="smoler"> Bloxd.io </h1>
-   <h4> bloxd.io </h4>
-   </div>
-   </a>
+       
      
      <!-- DISCORD -->
        <a href="https://www.discord.com/app">
@@ -908,6 +901,15 @@ color: #199b19;
      <img id="gc"src="https://logodownload.org/wp-content/uploads/2020/04/google-classroom-logo.png"></img>
    <h1 id="smol"> Class </h1>
    <h4> class.google.com </h4>
+   </div>
+   </a>
+
+         <!-- bloxd -->
+       <a id="customizeA"href="" onclick="customizeCards()">
+   <div class="card">
+     <img id="dcr"src="https://t4.ftcdn.net/jpg/01/26/10/59/360_F_126105961_6vHCTRX2cPOnQTBvx9OSAwRUapYTEmYA.jpg"></img>
+   <h1 id="smoler"> Custom </h1>
+   <h4> Your URL here </h4>
    </div>
    </a>
      </div>
@@ -2797,7 +2799,61 @@ function getCookie(cname) {
      
      alert('UPDATE! COLORS NOW WILL SAVE... WORKING ON BG SAVE');
        
+// Open (or create) the database
+        var request = indexedDB.open("CardDB", 1);
 
+        request.onupgradeneeded = function(event) {
+            var db = event.target.result;
+            var objectStore = db.createObjectStore("cards", { keyPath: "id" });
+        };
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            updateCard();
+        };
+
+        function saveCardData(imgUrl, name, url, href) {
+            var transaction = db.transaction(["cards"], "readwrite");
+            var objectStore = transaction.objectStore("cards");
+            var cardData = {
+                id: "card1",
+                imgUrl: imgUrl,
+                name: name,
+                url: url,
+                href: href
+            };
+            objectStore.put(cardData);
+        }
+
+        function updateCard() {
+            var transaction = db.transaction(["cards"]);
+            var objectStore = transaction.objectStore("cards");
+            var request = objectStore.get("card1");
+
+            request.onsuccess = function(event) {
+                if (request.result) {
+                    var data = request.result;
+                    document.getElementById('dcr').src = data.imgUrl;
+                    document.getElementById('smoler').innerHTML = data.name;
+                    document.getElementById('customUrl').innerHTML = data.url;
+                    document.getElementById('customizeA').href = data.href;
+                }
+            };
+        }
+
+        function customizeCards() {
+            var imgUrl = prompt("Enter the image address:");
+            var name = prompt("Enter the name:");
+            var url = prompt("Enter the URL:");
+            var href = prompt("Enter the href:");
+
+            if (imgUrl && name && url && href) {
+                saveCardData(imgUrl, name, url, href);
+                updateCard();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
     </script>
     
    </body>
