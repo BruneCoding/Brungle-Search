@@ -321,23 +321,23 @@
          
 
       .bento {
-           display: grid;
-             grid-template-columns: repeat(auto-fit, minmax(123px, 2fr));
-             width: 750px;
-           height: 150px;
-           margin: 0 auto;
-           z-index: -10;
-         }
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(123px, 2fr));
+        width: 750px;
+        height: 150px;
+        margin: 0 auto;
+        z-index: -10;
+      }
 
-         .website-layout-container {
-           display: none;
-           margin: 0 auto;
-         }
+      .website-layout-container {
+        display: none;
+        margin: 0 auto;
+      }
          
-         .toggle:hover + .website-layout-container,
-         .website-layout-container.show {
-           display: block;
-         } /*!FIXLATER*/
+      .toggle:hover + .website-layout-container,
+      .website-layout-container.show {
+        display: block;
+      } 
 
       .toggle:hover + #Lol.show {
         display: block;
@@ -558,6 +558,26 @@
         animation: click-effect 0.01s ease forwards;
       }
 
+      .toggle-button, dropdown {
+        position: relative;
+        z-index: 9999999;
+      }
+      
+      .toggle {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        padding: 10px;
+        color: white;
+        background: #b91919;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -20px;
+        transition: all 0.3s ease;
+        margin: 0 auto;
+      }
+
       /* Theme Changer */
       #theme-changer {
         position: fixed;
@@ -606,27 +626,25 @@
         cursor: pointer; 
       }
     
+      /* Other randos i couldnt figure out */
+      .incresize {
+        width: 100%;
+        height: 35%;
+        background: transparent;
+      }
            
-           .incresize {
-             width: 100%;
-             height: 35%;
-             background: transparent;
-           }
-           
-         .custom-shape-divider-bottom-1713904167 {
-             position: absolute;
-             bottom: -45px;
-             left: 0;
-             width: 100%;
-             scale: 1;
-             opacity: 0.5;
-             overflow: hidden;
-             line-height: 0;
-             transform: rotate(180deg);
-         }
+      .custom-shape-divider-bottom-1713904167 {
+        position: absolute;
+        bottom: -45px;
+        left: 0;
+        width: 100%;
+        scale: 1;
+        opacity: 0.5;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+      }
     
-      
-      
       .container {
         margin: 100px;
       }
@@ -642,198 +660,146 @@
     
       
          
-         .custom-shape-divider-bottom-1713904167 svg {
-             position: relative;
-             display: block;
-             width: calc(130% + 1.3px);
-             height: 184px;
-             transform: rotateY(180deg);
-         }
+      .custom-shape-divider-bottom-1713904167 svg {
+        position: relative;
+        display: block;
+        width: calc(130% + 1.3px);
+        height: 184px;
+        transform: rotateY(180deg);
+      }
          
-         .custom-shape-divider-bottom-1713904167 .shape-fill {
-             fill: #781721;
-         }
+      .custom-shape-divider-bottom-1713904167 .shape-fill {
+        fill: #781721;
+      }
+         
+      #title {
+        margin-top: 300px;
+        margin-bottom: 50px;
+        text-align: center;
+        font-size: 3.5rem;
+        color: white;
+        font-family: monospace;
+        font-weight: 700;
+      }
         
-         
+      .wand-extra {
+        display: flex;
+        flex-direction: row;
+      }
       
-         
-         
-         #title {
-           margin-top: 300px;
-           margin-bottom: 50px;
-           text-align: center;
-           font-size: 3.5rem;
-           color: white;
-           font-family: monospace;
-           font-weight: 700;
-         }
-         
+      #pro-feature {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        justify-content:center;
+        align-items: center;
+        background: rgba(255,255,255,0.5);
+        backdrop-filter: blur(5px);
+        position: absolute;
+        z-index: 999;
+        display: none;
+        transition: all 0.3s ease;
+      }
       
-  
-        
-        .wand-extra {
-          display: flex;
-          flex-direction: row;
-        }
+      #pro-feature:hover {
+        transform: scale(1.025);
+      }
+
+      .card {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+        backdrop-filter: blur(2px);
+        border-radius: 20%;
+        margin: 20px;
+        border: 2px solid #f5f5f5;
+        transition: ease-in-out 0.15s;
+        filter: blur(0.75px);
+        z-index: 9;
+        opacity: 0.75;
+      }
+            
+      #smol {
+        margin-top: -10px;
+        font-size: 20px;
+        margin-bottom: -15px;
+      }
       
-        
-        
-      
-         #pro-feature {
-         width: 100vw;
-         height: 100vh;
-         margin: 0;
-         padding: 0;
-         text-align: center;
-         justify-content:center;
-         align-items: center;
-         background: rgba(255,255,255,0.5);
-         backdrop-filter: blur(5px);
-         position: absolute;
-         z-index: 999;
-         display: none;
-         transition: all 0.3s ease;
-         }
-      
-         #pro-feature:hover {
-         transform: scale(1.025);
-         }
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         .card {
-           overflow: hidden;
-           display: flex;
-           flex-direction: column;
-           justify-content: center;
-           align-items: center;
-           text-align: center;
-           width: 100px;
-           height: 100px;
-           background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
-           backdrop-filter: blur(2px);
-           border-radius: 20%;
-           margin: 20px;
-           border: 2px solid #f5f5f5;
-           transition: ease-in-out 0.15s;
-           filter: blur(0.75px);
-           z-index: 9;
-           opacity: 0.75;
-         }
-         
-         
-         #smol {
-          margin-top: -10px;
-          font-size: 20px;
-          margin-bottom: -15px;
-         }
-      
-         #smoler {
-           margin-top: -7.5px;
-           font-size: 20px;
-           margin-bottom: -15px;
-         }
+      #smoler {
+        margin-top: -7.5px;
+        font-size: 20px;
+        margin-bottom: -15px;
+      }
 
          
-         .card img {
-           width: 75px;
-         }
+      .card img {
+        width: 75px;
+      }
          
-         .card:hover {
-            transform: scale(1.05);
-             filter: blur(0px);
-           border: 2.5px solid white;
-           background: linear-gradient(to right bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
-           box-shadow: 0 0 100px rgba(255, 255, 255, 1);
-           opacity: 1;
-         }
+      .card:hover {
+        transform: scale(1.05);
+        filter: blur(0px);
+        border: 2.5px solid white;
+        background: linear-gradient(to right bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+        box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+        opacity: 1;
+      }
          
-         #gpt, #gc {
-           width: 50px;
-           margin-bottom: 10px;
-           margin-top: 15px;
-         }
+      #gpt, #gc {
+        width: 50px;
+        margin-bottom: 10px;
+        margin-top: 15px;
+      }
          
-      
-         #dcr {
-         width: 50%;
-         margin-bottom: 7.5px;
-         }
+      #dcr {
+        width: 50%;
+        margin-bottom: 7.5px;
+      }
          
-         
-         
-         section {
-         transform: translate(0%, -30%);
-         text-align: center;
-         position: relative;
-         }
-        
-        .eight-one, .eight-two, .eight-three, .eight-four, .eight-five, .eight-six {
-          scale: 0.75;
-        }
-      
-         #update {
-         position: absolute;
-         z-index: 9;
-         bottom: 0;
-         right: 0;
-         margin: 15px;
-         }
-        
-      
-         .toggle-button, dropdown {
+      section {
+        transform: translate(0%, -30%);
+        text-align: center;
         position: relative;
-        z-index: 9999999;
-        }
-      
-        .toggle {
-           width: 25px;
-           height: 25px;
-           border-radius: 50%;
-           padding: 10px;
-           color: white;
-           background: #b91919;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-             margin-top: -20px;
-           transition: all 0.3s ease;
-           margin: 0 auto;
-         }
-         
+      }
         
-         
-         #iframeContainer {
-           background: red;
-           display: none;
-           width: 80vw;
-           height: 90vh;
-           border-radius: 1rem;
-           border: 10px solid #d1d1d1;
-           position: absolute;
-           left: 10%;
-           top: 3.5%;
-           overflow: hidden;
-         }
+      .eight-one, .eight-two, .eight-three, .eight-four, .eight-five, .eight-six {
+        scale: 0.75;
+      }
+      
+      #update {
+        position: absolute;
+        z-index: 9;
+        bottom: 0;
+        right: 0;
+        margin: 15px;
+      }
         
       
-    
+      /* Does this actually do anything? */
+      #iframeContainer {
+        background: red;
+        display: none;
+        width: 80vw;
+        height: 90vh;
+        border-radius: 1rem;
+        border: 10px solid #d1d1d1;
+        position: absolute;
+        left: 10%;
+        top: 3.5%;
+        overflow: hidden;
+      }
+
       
-             
-           </style>
+            
+      </style>
   </head>
   <body>
 
