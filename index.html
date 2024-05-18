@@ -1,3 +1,4 @@
+<html>
 <script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
 <style>
 .banner-popup {
@@ -855,7 +856,6 @@ wand {
   </button>
   <h1>Brungle Points: </h1><h1 style="color: white" id="counter"> Loading... </h1>
   </ery>
-       <html>
          <section>
          <h1 id="Lol"> Click! </h1>
    <body>
@@ -1717,86 +1717,73 @@ wand {
     </section>
   </div>
     
-   
-     
-   
- 
- 
- 
- <head>
-       <script>
-        window.onload = function() {
-      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-      document.getElementById('counter').textContent = currentValue;
-    };
-      document.addEventListener("DOMContentLoaded", function() {
-    // Get the input element
-    window.onload = function() {
-      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-      document.getElementById('counter').textContent = currentValue;
-    };
+
+<script>
+// Set the initial counter value from localStorage on window load
+window.onload = function() {
+    var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+    document.getElementById('counter').textContent = currentValue;
+};
+
+// Listen for DOMContentLoaded event
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the input element for search
     var searchInput = document.getElementById("searchInput");
 
-
-    // Listen for keyup event
+    // Listen for keyup event on search input
     searchInput.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
-            incrementCounter()
+            // Increment the counter value and redirect to Google search URL
+            incrementCounter();
             var query = searchInput.value;
             var encodedQuery = encodeURIComponent(query);
             var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
             window.location.href = searchURL; // Redirect to Google search URL on the current tab
-            var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-      // Increment the counter value by
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener to search icons
     const searchIcons = document.querySelectorAll('.search-icons');
     const assDiv = document.querySelector('.ass');
 
     searchIcons.forEach(icon => {
         icon.addEventListener('click', function() {
+            // Add animation class and redirect to Google search URL
             assDiv.classList.add('searchIcon');
             setTimeout(() => {
                 assDiv.classList.remove('searchIcon');
-
                 var query = document.getElementById('searchInput').value;
-
-                // Encode the query to use in the URL
                 var encodedQuery = encodeURIComponent(query);
-
-                // Create the Google search URL
                 var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
-
-                // Redirect to Google search URL on the current tab
                 window.location.href = searchURL;
-                var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-      incrementCounter()
+                incrementCounter();
             }, 1000);
         });
     });
+
+    // Toggle layout function
+    const toggle = document.querySelector('.toggle');
+    const layoutContainer = document.querySelector('.website-layout-container');
+
+    toggle.addEventListener('click', function() {
+        layoutContainer.classList.toggle('show');
+    });
 });
 
- document.addEventListener("DOMContentLoaded", function() {
-     const toggle = document.querySelector('.toggle');
-     const layoutContainer = document.querySelector('.website-layout-container');
- 
-     toggle.addEventListener('click', function() {
-         layoutContainer.classList.toggle('show');
-     });
- });
- 
+// Function to change background color
 function changeColor(color) {
-   setCookie('currentBG', color, 365); document.body.style.backgroundColor = color;
+    setCookie('currentBG', color, 365);
+    document.body.style.backgroundColor = color;
     document.body.style.backgroundImage = "";
 }
 
+// Function to show custom color input
 function showCustomColor() {
     var customColorInput = document.getElementById('custom-color');
     customColorInput.style.display = 'inline-block';
 }
+
+// Function to load saved colors
 function loadColors() {
     var transaction = db.transaction(['colors'], 'readonly');
     var objectStore = transaction.objectStore('colors');
@@ -1805,6 +1792,7 @@ function loadColors() {
     request.onsuccess = function(event) {
         var colors = event.target.result;
         colors.forEach(function(colorObj) {
+            // Create color circle and add event listener
             var colorCircle = document.createElement('div');
             colorCircle.className = 'color-circle';
             colorCircle.style.backgroundColor = colorObj.color;
@@ -1813,9 +1801,8 @@ function loadColors() {
             });
             var addButton = document.getElementById('add-button');
             document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
-          document.body.style.backgroundColor = colorObj.color;
-          console.log("Color Updated. ( Local Data )");
-          
+            document.body.style.backgroundColor = colorObj.color;
+            console.log("Color Updated. ( Local Data )");
         });
     };
 
@@ -1824,11 +1811,12 @@ function loadColors() {
     };
 }
 
-         
+// Function to add custom color
 function addCustomColor() {
     var customColorInput = document.getElementById('custom-color');
     var customColor = customColorInput.value;
     if (/^#[0-9A-F]{6}$/i.test(customColor)) {
+        // Create color circle, add to DOM, and save to IndexedDB
         var colorCircle = document.createElement('div');
         colorCircle.className = 'color-circle';
         colorCircle.style.backgroundColor = customColor;
@@ -1857,9 +1845,11 @@ function addCustomColor() {
     }
 }
 
-         let db;
+// IndexedDB setup
+let db;
 const request = indexedDB.open('ColorDB', 1);
 
+// Create object store if not exist
 request.onupgradeneeded = function(event) {
     db = event.target.result;
     if (!db.objectStoreNames.contains('colors')) {
@@ -1867,6 +1857,7 @@ request.onupgradeneeded = function(event) {
     }
 };
 
+// Load colors on successful opening of IndexedDB
 request.onsuccess = function(event) {
     db = event.target.result;
     loadColors();
@@ -1876,8 +1867,7 @@ request.onerror = function(event) {
     console.error('IndexedDB error:', event.target.errorCode);
 };
 
-
-// Function to retrieve saved custom color on page load
+// Retrieve saved custom color on page load
 function retrieveCustomColor() {
     var savedColor = localStorage.getItem('customColor');
     if (savedColor) {
@@ -1892,35 +1882,34 @@ function retrieveCustomColor() {
     }
 }
 
+//////////////////////////////////
+
 // Call the function to retrieve custom color when the page loads
 window.onload = function() {
     retrieveCustomColor();
 };
 
-
+// Load stored custom colors on page load
 window.onload = function() {
-  var storedColors = JSON.parse(localStorage.getItem('customColors'));
-  if (storedColors && storedColors.length > 0) {
-      storedColors.forEach(function(color) {
-          var colorCircle = document.createElement('div');
-          colorCircle.className = 'color-circle';
-          colorCircle.style.backgroundColor = color;
-          colorCircle.addEventListener('click', function() {
-              changeColor(color);
-          });
-          var addButton = document.getElementById('add-button');
-          document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
-      });
-  }
+    var storedColors = JSON.parse(localStorage.getItem('customColors'));
+    if (storedColors && storedColors.length > 0) {
+        storedColors.forEach(function(color) {
+            var colorCircle = document.createElement('div');
+            colorCircle.className = 'color-circle';
+            colorCircle.style.backgroundColor = color;
+            colorCircle.addEventListener('click', function() {
+                changeColor(color);
+            });
+            var addButton = document.getElementById('add-button');
+            document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+        });
+    }
 };
 
+// Move sidebar and icon
+let count = 2;
 
-
-
-
- let count = 2;
-
- function moveBoth() {
+function moveBoth() {
     const open = document.querySelector('.open');
     const sidebar = document.querySelector('.sidebar');
 
@@ -1929,7 +1918,7 @@ window.onload = function() {
         sidebar.style.transform = 'translate(48vw, 0px)';
         console.log('Sidebar opened by 146.90.75.207');
     } else {
-    open.style.transform = 'translate(49vw, 0px) rotate(90deg)';
+        open.style.transform = 'translate(49vw, 0px) rotate(90deg)';
         sidebar.style.transform = 'translate(53vw, 0px)';
         console.log('Sidebar closed by 146.90.75.207');
     }
@@ -1937,10 +1926,8 @@ window.onload = function() {
     count++;
 }
 
-
- 
-
- var isFunctionAllowed = true;
+// Function to increment counter with a delay
+var isFunctionAllowed = true;
 
 function incrementCounter() {
     if (!isFunctionAllowed) return; // Check if function is allowed to run
@@ -1960,19 +1947,14 @@ function incrementCounter() {
     }, 5000); // 20 seconds in milliseconds
 }
 
+// Load the counter value from localStorage on page load
+window.onload = function() {
+    var currentValue = parseInt(localStorage.getItem('counter')) || 0;
+    document.getElementById('counter').textContent = currentValue;
+};
 
-
-
-    // Load the counter value from localStorage on page load
-    window.onload = function() {
-      var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-      document.getElementById('counter').textContent = currentValue;
-    };
-
-
-
-
-    function resetCounter() {
+// Function to reset counter value
+function resetCounter() {
     // Set the counter value to 0
     var currentValue = 0;
     // Update the counter value in localStorage
@@ -1981,18 +1963,16 @@ function incrementCounter() {
     document.getElementById('counter').textContent = currentValue;
 }
 
-
-
-
+// Event listener for brunebot element
 document.addEventListener("DOMContentLoaded", function() {
+    var colorElement = document.getElementById("brunebot");
 
-  var colorElement = document.getElementById("brunebot");
-
-  colorElement.addEventListener("click", function() {
-      alert('Redirecting to Brungle Info and Documentation!')
-    window.location.href = "https://documentation-brungle.pages.dev";
-      });
+    colorElement.addEventListener("click", function() {
+        alert('Redirecting to Brungle Info and Documentation!');
+        window.location.href = "https://documentation-brungle.pages.dev";
+    });
 });
+
 
 // Simple wait function
 function wait(milliseconds, callback) {
@@ -2078,51 +2058,37 @@ function updateCloudVariable(points, items) {
 updateDisplay();
 
 
-
-
-
-
-
-
 function toggleTables() {
-      var table1 = document.getElementById('table1');
-      var table2 = document.getElementById('table2');
+    var table1 = document.getElementById('table1');
+    var table2 = document.getElementById('table2');
 
-      if (table1.style.display === 'block') {
+    if (table1.style.display === 'block') {
         table1.style.display = 'none';
         table2.style.display = 'block';
-      } else {
+    } else {
         table1.style.display = 'block';
         table2.style.display = 'none';
-      }
     }
-
-
-
-
-
-
-    // admin tools
-
-    function infa() {
-  // Get the current counter value from localStorage or initialize it to 0
-  let currentValue = parseInt(localStorage.getItem('counter')) || 0;
-  
-  // Increase the counter value by 10000
-  currentValue += 10000;
-  
-  // Update the counter value in localStorage
-  localStorage.setItem('counter', currentValue.toString());
-  
-  // Display the updated counter value
-  console.log('Counter increased by 10000. New value: ' + currentValue);
 }
 
-// Call the function to increase the counter value by 10000
-increaseCounterBy10000();
+// Admin tools
+
+function infa() {
+    // Get the current counter value from localStorage or initialize it to 0
+    let currentValue = parseInt(localStorage.getItem('counter')) || 0;
+
+    // Increase the counter value by 10000
+    currentValue += 10000;
+
+    // Update the counter value in localStorage
+    localStorage.setItem('counter', currentValue.toString());
+
+    // Display the updated counter value
+    console.log('Counter increased by 10000. New value: ' + currentValue);
+}
 
          
-         /*-- Made with Zdog --*/
+/*-- Made with Zdog --*/
 
 // setting up Zdog illustration element
 const illoElem = document.querySelector('.illo');
@@ -2454,7 +2420,8 @@ document.querySelector('.reset-button').onclick = function() {
   }, 2000);
 };
 
-      function updateClock() {
+//I've left this in here to not affect functionality but it doesn't do anything, please remove
+function updateClock() {
     const now = new Date();
     const hour = now.getHours();
     const minute = now.getMinutes();
@@ -2475,18 +2442,12 @@ document.querySelector('.reset-button').onclick = function() {
     setTimeout(updateClock, 1000); // Call updateClock function again after 1 second
 }
 
-// Call updateClock function to start updating the clock
 updateClock();
 
+</script>
+<script>
 
-
-
-
-
-
-   </script>
-   <script>
- // Add an event listener to the button with id 'change-bg-btn' for changing background image
+// Add an event listener to the button with id 'change-bg-btn' for changing background image
 document.getElementById('change-bg-btn').addEventListener('click', function() {
     // Prompt the user to enter the URL of the image they want as the background
     var imageUrl = prompt("Enter the URL of the image you want as background:");
@@ -2747,15 +2708,11 @@ const paragraph = document.querySelector("#bannerP");
 banner.style.display = "block";
 
 // Function to run when the window loads
-window.onload = function() {
-    // Get elements by their IDs
-    const banner = document.getElementById('banner');
-    const header = document.getElementById('header');
-    const paragraph = document.getElementById('paragraph');
+window.onload = function() {2
 
     // Check if all elements are found
     if (banner && header && paragraph) {
-        // Update the header and paragraph text
+        /* Update the header and paragraph text (commented out so you can use again in future without affecting functionality)
         header.innerText = " ⚠️ Update 🚨 ";
         paragraph.innerText = "As of Thursday May 16th 2024, Brungle now has the ability to SAVE colors that you create. Moreover, it also applies the color every time you use Brungle. This will disappear in 10 Seconds.";
 
@@ -2763,8 +2720,12 @@ window.onload = function() {
         setTimeout(() => {
             banner.style.display = "none";
         }, 10000);
+        */
     } else {
         console.error("One or more elements not found.");
+        console.log(banner);
+        console.log(paragraph);
+        console.log(header);
     }
 };
 
@@ -2802,7 +2763,6 @@ document.getElementById('removeColorButton').addEventListener('click', function(
 });
 
 
-   </script>
-   </body>
-   </head>
-    </html>
+</script>
+</body>
+</html>
