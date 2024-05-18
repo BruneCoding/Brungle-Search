@@ -1984,50 +1984,6 @@ function incrementCounter() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
 
   var colorElement = document.getElementById("brunebot");
@@ -2082,27 +2038,6 @@ function showShop() {
         themeChanger.style.display = "none";
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Initialize variables
@@ -2551,66 +2486,72 @@ updateClock();
 
    </script>
    <script>
-   document.getElementById('change-bg-btn').addEventListener('click', function() {
-  var imageUrl = prompt("Enter the URL of the image you want as background:");
-  if (imageUrl) {
-    document.body.style.backgroundImage = "url('" + imageUrl + "')";
-    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
-  }
+ // Add an event listener to the button with id 'change-bg-btn' for changing background image
+document.getElementById('change-bg-btn').addEventListener('click', function() {
+    // Prompt the user to enter the URL of the image they want as the background
+    var imageUrl = prompt("Enter the URL of the image you want as background:");
+    if (imageUrl) {
+        // Set the background image to the entered URL and adjust the size
+        document.body.style.backgroundImage = "url('" + imageUrl + "')";
+        document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
+    }
 });
 
-       function themeSpace() {
-           
+// Function to set the background to a space-themed image
+function themeSpace() {
     document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp10532946.jpg')";
     document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
-  }
+}
 
-       function themeFluid() {
-           document.body.style.backgroundImage = "url('https://www.chromethemer.com/blog/images/uhd-wallpaper-backgrounds-1.jpg')";
-           document.body.style.backgroundSize = "100vw auto";
-       }
+// Function to set the background to a fluid-themed image
+function themeFluid() {
+    document.body.style.backgroundImage = "url('https://www.chromethemer.com/blog/images/uhd-wallpaper-backgrounds-1.jpg')";
+    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
+}
 
-       function themeDesert() {
-           document.body.style.backgroundImage = "url('https://t4.ftcdn.net/jpg/03/34/19/13/360_F_334191354_zW1Fj9HPbfJdBPEVe2d6mcuT1w2g8K5y.jpg')";
-           document.body.style.backgroundSize = "100vw auto";
-       }
+// Function to set the background to a desert-themed image
+function themeDesert() {
+    document.body.style.backgroundImage = "url('https://t4.ftcdn.net/jpg/03/34/19/13/360_F_334191354_zW1Fj9HPbfJdBPEVe2d6mcuT1w2g8K5y.jpg')";
+    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
+}
 
-       function themeGame() {
-           document.body.style.backgroundImage = "url('https://miro.medium.com/v2/resize:fit:1400/1*yrppiCrEctYSXk2ZRiZ7VQ.gif')";
-           document.body.style.backgroundSize = "100vw auto";
-       }
-     
-     // Array containing the URLs of the images
-        const imageUrls = [
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage1.gif",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage2.gif",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage3.webp",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage4.webp",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage5.webp",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage6.gif",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage7.gif",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage8.gif",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage9.gif",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage10.gif",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage11.jpg",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage12.gif",
-            "https://dev.wilburwilliams.uk/assets/brungle/bgimage13.jpg"
+// Function to set the background to a game-themed image
+function themeGame() {
+    document.body.style.backgroundImage = "url('https://miro.medium.com/v2/resize:fit:1400/1*yrppiCrEctYSXk2ZRiZ7VQ.gif')";
+    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
+}
+
+// Array containing the URLs of the images for random background
+const imageUrls = [
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage1.gif",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage2.gif",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage3.webp",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage4.webp",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage5.webp",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage6.gif",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage7.gif",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage8.gif",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage9.gif",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage10.gif",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage11.jpg",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage12.gif",
+    "https://dev.wilburwilliams.uk/assets/brungle/bgimage13.jpg"
 ];
 
-        let currentIndex = 0;
+let currentIndex = 0; // Initialize index for the image array
+let themeStarted = false; // Flag to track if themeRandom has been started
 
-
-       let themeStarted = false; // Flag to track if themeRandom has been started
-
+// Function to set the background to a random image from the array
 function themeRandom() {
-           document.body.style.backgroundSize = "100vw auto";
+    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
 
-          // Set background image
-            document.body.style.backgroundImage = `url('${imageUrls[currentIndex]}')`;
+    // Set background image to the current index from the array
+    document.body.style.backgroundImage = `url('${imageUrls[currentIndex]}')`;
 
-            // Increment index for next image
-            currentIndex = (currentIndex + 1) % imageUrls.length;
-       }
+    // Increment index for next image and wrap around using modulo
+    currentIndex = (currentIndex + 1) % imageUrls.length;
+}
+
 
      
      //toggles to next
@@ -2797,20 +2738,28 @@ function getCookie(cname) {
        
     </script>
     <script>
-      const banner = document.querySelector(".banner-popup");
-      const header = document.querySelector("#bannerH");
-      const paragraph = document.querySelector("#bannerP");
-      banner.style.display = "block";
-      
-     window.onload = function() {
+// Select elements for the banner popup, header, and paragraph
+const banner = document.querySelector(".banner-popup");
+const header = document.querySelector("#bannerH");
+const paragraph = document.querySelector("#bannerP");
+
+// Display the banner popup
+banner.style.display = "block";
+
+// Function to run when the window loads
+window.onload = function() {
+    // Get elements by their IDs
     const banner = document.getElementById('banner');
     const header = document.getElementById('header');
     const paragraph = document.getElementById('paragraph');
 
+    // Check if all elements are found
     if (banner && header && paragraph) {
+        // Update the header and paragraph text
         header.innerText = " ⚠️ Update 🚨 ";
         paragraph.innerText = "As of Thursday May 16th 2024, Brungle now has the ability to SAVE colors that you create. Moreover, it also applies the color every time you use Brungle. This will disappear in 10 Seconds.";
 
+        // Hide the banner after 10 seconds
         setTimeout(() => {
             banner.style.display = "none";
         }, 10000);
@@ -2818,33 +2767,40 @@ function getCookie(cname) {
         console.error("One or more elements not found.");
     }
 };
-      
-      document.getElementById('removeColorButton').addEventListener('click', function() {
+
+// Add an event listener to the button with id 'removeColorButton' to remove a color circle
+document.getElementById('removeColorButton').addEventListener('click', function() {
+    // Select all elements with the class 'color-circle'
     var colorCircles = document.querySelectorAll('.color-circle');
+    // Get the last color circle
     var lastColorCircle = colorCircles[colorCircles.length - 1];
+    // Get the background color of the last color circle
     var lastColor = lastColorCircle.style.backgroundColor;
-    
+
     // Find the index of the color circle to remove
     var index = Array.from(lastColorCircle.parentNode.children).indexOf(lastColorCircle);
-    
+
     // Remove the color circle element from the DOM
     lastColorCircle.parentNode.removeChild(lastColorCircle);
 
     // Remove the corresponding color from IndexedDB
     var transaction = db.transaction(['colors'], 'readwrite');
     var objectStore = transaction.objectStore('colors');
-    
+
     // Retrieve the color circle entry using its index and delete it
     var request = objectStore.delete(index);
 
+    // Log success message when the color is removed from IndexedDB
     request.onsuccess = function(event) {
         console.log('Most recent custom color removed from IndexedDB:', lastColor);
     };
 
+    // Log error message if there is an error removing the color from IndexedDB
     request.onerror = function(event) {
         console.error('Error removing color from IndexedDB:', event.target.errorCode);
     };
 });
+
 
    </script>
    </body>
