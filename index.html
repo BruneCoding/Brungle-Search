@@ -1,4 +1,5 @@
 <html>
+<head>
 <script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
 <style>
 .banner-popup {
@@ -825,11 +826,10 @@ wand {
 #brunglePoints, #boughtItems {
   color: #199b19;
 }
-
-
-       
-     </style>
-<a href="https://documentation-brune.pages.dev">
+</style>
+</head>
+<body>
+<a href="https://documentation-brungle.pages.dev">
 <div class="banner-popup">
   <h1 id="bannerH"> ⚠️ Update 🚨 </h1>
   <p id="bannerP"> As of Thursday May 16th 2024, Brungle now has the ability to SAVE colors that you create. Moreover, it also applies the color every time you use Brungle. However, I am having issues to save background Images so please keep in mind that they do not save. Working hard on it Right Now. Click to find out more information on the documentation </p>
@@ -858,7 +858,6 @@ wand {
   </ery>
          <section>
          <h1 id="Lol"> Click! </h1>
-   <body>
      <h1 id="title"> Brungle </h1>
      <h4 style="margin-top: -50px"> Brune & Google </h4>
    <land class="search">
@@ -931,11 +930,6 @@ wand {
    
    
    <div id="iframeContainer"></div>
-   </body>
-   </html>
-   </head>
-
-   <body>
        <div id="theme-changer">
          <wand class="wand-extra">
            <div class="color-circle" style="background-color: #E63946" onclick="changeColor('#E63946')"></div>
@@ -999,7 +993,7 @@ wand {
 
 
 
-<Div class="timetable-container" style="display: none;">
+<div class="timetable-container" style="display: none;">
   <div class="dropdown">
   <button class="dropbtn">Select Class</button>
   <div class="dropdown-content">
@@ -1720,7 +1714,7 @@ wand {
 
 <script>
 // Set the initial counter value from localStorage on window load
-window.onload = function() {
+function setBPcounter() {
     var currentValue = parseInt(localStorage.getItem('counter')) || 0;
     document.getElementById('counter').textContent = currentValue;
 };
@@ -1882,15 +1876,8 @@ function retrieveCustomColor() {
     }
 }
 
-//////////////////////////////////
-
-// Call the function to retrieve custom color when the page loads
-window.onload = function() {
-    retrieveCustomColor();
-};
-
 // Load stored custom colors on page load
-window.onload = function() {
+function loadStoredCustomColours() {
     var storedColors = JSON.parse(localStorage.getItem('customColors'));
     if (storedColors && storedColors.length > 0) {
         storedColors.forEach(function(color) {
@@ -1946,12 +1933,6 @@ function incrementCounter() {
         isFunctionAllowed = true; // Set function to allowed after 20 seconds
     }, 5000); // 20 seconds in milliseconds
 }
-
-// Load the counter value from localStorage on page load
-window.onload = function() {
-    var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-    document.getElementById('counter').textContent = currentValue;
-};
 
 // Function to reset counter value
 function resetCounter() {
@@ -2707,9 +2688,7 @@ const paragraph = document.querySelector("#bannerP");
 // Display the banner popup
 banner.style.display = "block";
 
-// Function to run when the window loads
-window.onload = function() {2
-
+function setUpdateBanner(){2
     // Check if all elements are found
     if (banner && header && paragraph) {
         /* Update the header and paragraph text (commented out so you can use again in future without affecting functionality)
@@ -2761,6 +2740,15 @@ document.getElementById('removeColorButton').addEventListener('click', function(
         console.error('Error removing color from IndexedDB:', event.target.errorCode);
     };
 });
+
+
+//Moved all onload() things to one function
+document.addEventListener('DOMContentLoaded', function(){
+  setBPcounter();
+  retrieveCustomColor();
+  loadStoredCustomColours();
+  setUpdateBanner();
+})
 
 
 </script>
