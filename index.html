@@ -831,7 +831,7 @@ wand {
 </head>
 <body>
 <a href="https://documentation-brungle.pages.dev">
-<div class="banner-popup">
+<div class="banner-popup" style="display: none">
   <h1 id="bannerH"> ⚠️ Update 🚨 </h1>
   <p id="bannerP"> Brungle Copyright: Brungle Browser [Brungle] © 2024 by Shyun Snigdhasiraz [Brune] is licensed under CC BY-NC-ND 4.0  </p>
 </div>
@@ -844,8 +844,8 @@ wand {
   <p>Bought Items: <span id="boughtItems">0</span></p>
   <div id="shopItems">
     <button class="shop-item" data-price="500" onclick="buyItem(500)">Shyun Pen - 500 Points</button>
-    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">Food - 1000 Points</button>
-    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">100 Robux - 2000 Points</button>
+    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">Food - 5000 Points</button>
+    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">100 Robux - 5000 Points</button>
   </div>
 </div>
 
@@ -2004,7 +2004,7 @@ function buyItem(price) {
   let boughtItemsElement = document.getElementById('boughtItems');
   
   if (brunglePoints >= price) {
-    brunglePoints -= price;
+    brunglePoints = brunglePoints - price;
     boughtItems++;
     brunglePointsElement.textContent = brunglePoints;
     boughtItemsElement.textContent = boughtItems;
