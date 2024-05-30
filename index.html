@@ -2747,9 +2747,14 @@ function classENGLISH() {
 function classMATHS() {
   window.location.href="https://classroom.google.com/u/9/c/NTI3MTM3Mjk3NzM1";
 }
+
+      let alertStopped = localStorage.getItem('alertStopped');
+
+        if (alertStopped !== 'true') {
 // releaed on update 2.0
 alert('BRUNGLE IS CURRENTLY INOPPERABLE WITHOUT CHOOSING A PLAN. Redirecting to landing-brungle.pages.dev to choose plan. OK to continue');
 window.location.href = "https://landing-brungle.pages.dev";
+        }
 
 </script>
 </body>
