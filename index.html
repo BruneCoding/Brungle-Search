@@ -2053,18 +2053,26 @@ function toggleTables() {
 // Admin tools
 
 function infa() {
-    // Get the current counter value from localStorage or initialize it to 0
-    let currentValue = parseInt(localStorage.getItem('counter')) || 0;
+  const realPass = "ThisIsNotAPasswordHahaLolHahaLolHahaThisIsNotAPasswordHahaLolHahaLolHahaThisIsNotAPasswordHahaLolHahaLolHahaThisIsNotAPasswordHahaLolHahaLolHaha";
+  let pass = "";
 
-    // Increase the counter value by 10000
-    currentValue += 10000;
+  while (pass !== realPass) {
+    pass = prompt("This is an Admin Tool. If you have found this, alert ssnigdhasiraz22@sirhenryfloyd.co.uk. If you're naughty and want free stuff, type the password:");
+  }
 
-    // Update the counter value in localStorage
-    localStorage.setItem('counter', currentValue.toString());
+  // Get the current counter value from localStorage or initialize it to 0
+  let currentValue = parseInt(localStorage.getItem('counter')) || 0;
 
-    // Display the updated counter value
-    console.log('Counter increased by 10000. New value: ' + currentValue);
+  // Increase the counter value by 10000
+  currentValue += 10000;
+
+  // Update the counter value in localStorage
+  localStorage.setItem('counter', currentValue.toString());
+
+  // Display the updated counter value
+  console.log('Counter increased by 10000. New value: ' + currentValue);
 }
+
 
          
 /*-- Made with Zdog --*/
