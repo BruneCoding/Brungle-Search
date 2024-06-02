@@ -14,7 +14,7 @@
   max-width: 35vw;
   max-height: 25vh;
   min-height: 15vh;
-  min-width: 30vw;
+  min-width: 30vw;av
   border-radius: 40px;
   font-family: monospace;
   color: #010101;
@@ -985,11 +985,11 @@ wand {
   <div class="dropdown-content">
     <ul>
        <li><a onclick="eightOneChange()">8.1 ( Unavailable! )</a></li>
-      <li><a onclick="eightTwoChange()">8.2</a></li>
-      <li><a onclick="eightThreeChange()">8.3</a></li>
+      <li><a onclick="eightTwoChange()">8.2 ( Unavailable! )</a></li>
+      <li><a onclick="eightThreeChange()">8.3 ( Unavailable! )</a></li>
       <li><a onclick="eightFourChange()">8.4 ( Unavailable! )</a></li>
-      <li><a onclick="eightFiveChange()">8.5</a></li>
-      <li><a onclick="eightSixChange()">8.6</a></li>
+      <li><a onclick="eightFiveChange()">8.5 ( Unavailable! )</a></li>
+      <li><a onclick="eightSixChange()">8.6 ( Unavailable! )</a></li>
       <li><a onclick="createTimetable()">Custom</a></li>
     </ul>
   </div>
@@ -1964,6 +1964,11 @@ const abras = document.querySelector('.timetable-container');
 abras.style.display = "none";
 
 function showTimetable() {
+
+  //version 2.0 alert system
+alert("ALL TIMETABLES ARE UNAVAILABLE CURRENTLY. PLEASE SEND YOUR TIMETABLE TO ssnigdhasiraz22@sirhenryfloyd.co.uk with your class and your name.")
+
+  
     // Get reference to the theme changer element
     var themeChanger = document.querySelector('.timetable-container');
 
