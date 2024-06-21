@@ -6,7 +6,99 @@
 <head>
 <script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://dev.wilburwilliams.uk"> <!--I noticed you deleted this last time. All this does is make background loading a little faster.-->
+  <div class="popupCont">
+<div class="popupALERT">
+  <button class="xmymommy" onclick="disappear()">X</button>
+  <h1> ATTENTION! </h1>
+  <h2> Version 1.0.0 Release News </h2>
+  <br>
+  <hr>
+  <br>
+  <p> Commencing the week of <b><u>1st July</u></b> This version of Brungle will be loosely supported. Hence, all saved data on Brungle [BETA!] will be deleted because of technical limitations. </p>
+  <br>
+  <p> Furthermore, after changing to the new version of Brungle, all users who would want to use Brungle's Reward system must have a Brungle Account, which is a upfront, payment per user per month of <b>£0.05</b>. However, since I feel this may be anooying to existing users, all users affected by this will receive a free Brungle Account. </p>
+  <br>
+  <p> To learn more about features of a Brungle Premium Account, please click <a href="https://landing-brungle.pages.dev"><b><u>HERE</u></b></a>
+    <br>
+  <p> Please email: <h3><b><u>ssnigdhasiraz22@sirhenryfloyd.co.uk</u></b></h3> to claim your free Brungle Account and its benefits. </p>
+  <br>
+  <h1><b> DEADLINE: 30TH JUNE </b></h1>
+  <h4> <a href="https://tos-brungle.pages.dev">Terms and Conditions</a> </h4>
+</div>
+</div>
+  <script>
+    function disappear() {
+  const urdad = document.querySelector('.popupCont');
+  urdad.style.display = "none";
+}
+  </script>
 <style>
+  .popupCont {
+  background: rgba(13,16,23,0.5);
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(90px);
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.popupALERT {
+  border-radius: 15px;
+  color: white;
+  padding: 50px;
+  display: flex;
+  text-align: center;
+  font-family: "Helvetica", cursive;
+  width: 69%;
+  background: #161b21;
+  display: flex;
+  flex-direction: column;
+  color: #ffffe7;
+  scale: 0.75;
+  position: relative;
+}
+
+.popupALERT a {
+  color: #ffffb2;
+  font-weight: 1000;
+  font-size: 25px;
+}
+
+.popupALERT h2 {
+  font-size: 0.9em;
+  margin-top: -20px;
+  color: #ffffe7;
+  opacity: 0.75;
+}
+
+.popupALERT hr {
+  background: white;
+  color: white;
+  width: 100%;
+}
+
+.xmymommy {
+  background: red;
+  border-radius: 10px;
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  margin: 0;
+  font-size: 50px;
+  font-weight: 1200;
+}
+
+.xmymommy:hover {
+  background: darkred;
+}
   #title span {
         background: -webkit-linear-gradient(left, lightblue, #a9b3e1, #6c7290);
         -webkit-background-clip: text;
