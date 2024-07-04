@@ -1,3079 +1,1050 @@
-<head>
-<title style="font-size: 30px;">👊Brungle</title>
-  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQ0lEQVQ4jcWT0UoCURSGv+8dlo3KOtSlWQaF8BReQ+AOwodDkK04gVWygkIp0GtRaJD0nxi/EBBsRgJQIDNMQdoQi1F4sLf/v9hiv6Z3fuM+/N+/5rnt/7szdyPpcBXsJYXZ/hDXgg46yF7sDl7AL/IRBLiFZynSCMABPZsA6k3YS7iF0BVYQ6HLEeDUOVgFU6UhnlIMItKNjC9wyJfFciqCWADfPsezLIiJ6lsgXE24iFJtgQ9i5t1FYF25nXERnqFI2gN8AKBe5wLMQyWBl+rkQmOAKkUwn6py5CnYvOMfAkeApR/ARyINg8u1H3Akx1F2+E6cbE8uJwNN/4nPgCz0LhEYUL5mIJ78a54cw5/4FCikMV7hEc10AAAAASUVORK5CYII=" type="image/png">
-</head>
+<!-- BRUNGLE REDESIGN IS OFFICIALLY BEING PULLED UP TO BRUNGLE.PAGES.DEV  From NOW ON, redesign-brungle.pages.dev is only a Investors Only and Testing Website. -->
+
 <html>
-<head>
 <script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://dev.wilburwilliams.uk"> <!--I noticed you deleted this last time. All this does is make background loading a little faster.-->
-  <div class="popupCont" style="display: block">
-<div class="popupALERT">
-  <button class="xmymommy" onclick="disappear()">X</button>
-  <h1> ATTENTION! </h1>
-  <h2> Upcoming Version 1.0.0 Release Notes & News </h2>
-  <br>
+<column>
+  <h1 id="title"> Brungle </h1>
+  <h3> Made with ❤️ by Shyun </h3>
+</column>
+<div class="searchBar">
+  <!-- search icon -->
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <!-- input -->
+  <input type="text" class="searchInput" placeholder="Search Brungle ... " autofocus></input>
+  <!--  file icon  -->
+  <i style="transform: rotate(-35deg)" class="fa-solid fa-paperclip"></i>
   <hr>
-  <br>
-  <p> Commencing the week of <b><u>1st July</u></b>, this version of Brungle will be loosely / not supported. Hence, all saved data on Brungle [BETA!] will not be able to be transferred due to technical limitations. </p>
-  <br>
-  <p> Furthermore, after changing to the new version of Brungle, all users who would want to use Brungle's Reward system must have a Brungle Account, which is a upfront payment per month of <b>£0.05 ( 5p )</b>. However, since I feel this may be annoying to existing users, all users affected by this will receive a free Brungle Account for <b>2 Months</b>. </p>
-  <br>
-  <p> To learn more about features of a Brungle Premium Account, please click <a href="https://landing-brungle.pages.dev"><b><u>HERE</u></b></a>
-    <br>
-  <p> Please email: <h3><b><u>ssnigdhasiraz22@sirhenryfloyd.co.uk</u></b></h3> to claim your free Brungle Account and its benefits. </p>
-  <br>
-  <h1><b> DEADLINE: 30TH JUNE </b></h1>
-  <h4> <a href="https://tos-brungle.pages.dev">Terms and Conditions</a> </h4>
+  <!-- ai icon -->
+  <svg id="fuck" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="35px" viewBox="0 0 24 24" width="35px">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#7f4cff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#4f84f2;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect fill="none" height="24" width="24" x="0" />
+    <g>
+      <path d="M19.46,8l0.79-1.75L22,5.46c0.39-0.18,0.39-0.73,0-0.91l-1.75-0.79L19.46,2c-0.18-0.39-0.73-0.39-0.91,0l-0.79,1.75 L16,4.54c-0.39,0.18-0.39,0.73,0,0.91l1.75,0.79L18.54,8C18.72,8.39,19.28,8.39,19.46,8z M11.5,9.5L9.91,6 C9.56,5.22,8.44,5.22,8.09,6L6.5,9.5L3,11.09c-0.78,0.36-0.78,1.47,0,1.82l3.5,1.59L8.09,18c0.36,0.78,1.47,0.78,1.82,0l1.59-3.5 l3.5-1.59c0.78-0.36,0.78-1.47,0-1.82L11.5,9.5z M18.54,16l-0.79,1.75L16,18.54c-0.39,0.18-0.39,0.73,0,0.91l1.75,0.79L18.54,22 c0.18,0.39,0.73,0.39,0.91,0l0.79-1.75L22,19.46c0.39-0.18,0.39-0.73,0-0.91l-1.75-0.79L19.46,16 C19.28,15.61,18.72,15.61,18.54,16z" style="fill:url(#grad1); font-weight: 1000; scale: 1.075" />
+    </g>
+  </svg>
 </div>
+
+<div class="topLevels">
+  <button class="circle" id="themeButton" onclick="showThemeChanger()">
+    <i style="scale: 1.35" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
+  </button>
+  <button class="circle" onclick="showTimetable()">
+    <i style="scale: 1.35" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
+  </button>
+  <button class="circle" id="moreButton" onclick="toggleMore()">
+    <i style="scale: 1.35" class="fa-solid fa-bars"></i>
+  </button>
 </div>
-  <script>
-    function disappear() {
-  const urdad = document.querySelector('.popupCont');
-  urdad.style.display = "none";
-}
-  </script>
+
+<div class="leftLevels">
+  <button class="circle">
+    <i style="scale: 1.35" class="fa-solid fa-trophy"></i>
+  </button>
+  <h1 id="points"> loading ... </h1>
+</div>
+
+<!-- brungle old features -->
+
+</html>
 <style>
-  .popupCont {
-  z-index: 99999999999999999999999999999999999999999999999;
-  background: rgba(13,16,23,0.5);
-  height: 100vh;
-  width: 100vw;
-  backdrop-filter: blur(90px);
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.popupALERT {
-  border-radius: 15px;
-  color: white;
-  padding: 50px;
-  display: flex;
-  text-align: center;
-  font-family: "Helvetica", cursive;
-  width: 69%;
-  background: #161b21;
-  display: flex;
-  flex-direction: column;
-  color: #ffffe7;
-  scale: 0.75;
-  position: relative;
-}
-
-.popupALERT a {
-  color: #ffffb2;
-  font-weight: 1000;
-  font-size: 25px;
-}
-
-.popupALERT h2 {
-  font-size: 0.9em;
-  margin-top: -20px;
-  color: #ffffe7;
-  opacity: 0.75;
-}
-
-.popupALERT hr {
-  background: white;
-  color: white;
-  width: 100%;
-}
-
-.xmymommy {
-  background: red;
-  border-radius: 10px;
-  height: 75px;
-  width: 75px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: white;
-  margin: 0;
-  font-size: 50px;
-  font-weight: 1200;
-}
-
-.xmymommy:hover {
-  background: darkred;
-}
-  #title span {
-        background: -webkit-linear-gradient(left, lightblue, #a9b3e1, #6c7290);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-.banner-popup {
-  position: absolute;
-  z-index: top;
-  left: 0;
-  bottom: 0;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  display: none;
-  max-width: 35vw;
-  max-height: 25vh;
-  min-height: 15vh;
-  min-width: 30vw;av
-  border-radius: 40px;
-  font-family: monospace;
-  color: #010101;
-  padding: 20px;
-  background: linear-gradient(to top right, rgba(255, 255, 0, 0.85), rgba(255, 255, 0, 0.3));
-  backdrop-filter: blur(20px);
-  border: 2px solid white;
-  transition: all 0.3s ease-in-out;
-}
-
-.banner-popup:hover {
-  transform: scale(1.005);
-  border: 5px solid white;
-  background: linear-gradient(to top right, rgba(255, 255, 0, 0.9), rgba(255, 255, 0, 0.76));
-}
-
-.banner-popup h1 {
-  font-size: 15px;
-  text-align: center;
-  font-weight: 925;
-  text-decoration: underline;
-}
-
-.banner-popup p {
-  font-size: 7.5px;
-  text-align: center;
-  font-weight: 800;
-  text-decoration: none;
-  color: #060606;
-}
-
-#theme-changer {
-  position: fixed;
-  top: 20px;
-  right: 50px;
-  z-index: 9999;
-  height: 200px;
-  width: 500px;
-  display: flex;
-  flex-direction: row;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(3px);
-  border: 2px solid #d1d1d1;
-  padding: 25px;
-  border-radius: 20px;
-  display: none;
-}
-
-#theme-changer:hover {
-  color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(6px);
-  border: 4px solid white;
-}
-
-.color-circle,
-.delete-circle {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-  cursor: pointer;
-  overflow: hidden;
-  background-size: cover;
-}
-
-.color-circle:hover,
-.delete-circle:hover {
-  border: 2px solid white;
-  box-shadow: 0 0 20px white;
-}
-
-#custom-color {
-  display: none;
-}
-
-#color,
-#brunebot,
-#timetable {
-  cursor: pointer;
-}
-
-#color:hover,
-#timetable:hover,
-#brunebot:hover {
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-}
-
-.sidebar {
-  position: absolute;
-  width: 45px;
-  height: 27.5%;
-  max-height: 35%;
-  border-radius: 100px;
-  padding: 10px;
-  color: white;
-  background: #b91919;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-  transform: translate(53vw, 0px);
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-  margin-left: -30px;
-}
-
-.sidebar img {
-  width: 25px;
-  margin-top: 12.5px;
-  margin-bottom: 12.5px;
-}
-
-.sidebar hr {
-  border: 1.5px solid #d61717;
-  width: 100%;
-}
-
-.sidebar i {
-  scale: 2;
-}
-
-.incresize {
-  width: 100%;
-  height: 35%;
-  background: transparent;
-}
-
-.website-layout-container {
-  position: absolute;
-  transform: translate(0%, -20%);
-}
-
-.custom-shape-divider-bottom-1713904167 {
-  position: absolute;
-  bottom: -45px;
-  left: 0;
-  width: 100%;
-  scale: 1;
-  opacity: 0.5;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-:root {
-  --space-blue: #000028;
-  --star: rgba(255, 255, 255, 0.7);
-}
-
-body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  margin: 100px;
-}
-
-.illo {
-  cursor: move;
-}
-
-.text {
-  text-align: center;
-  color: #8E92A2;
-}
-
-button {
-  display: block;
-  margin: auto;
-  background: #444857;
-  color: white;
-  font-size: 14px;
-  font-family: inherit;
-  border: none;
-  border-radius: 3px;
-  padding: 8px 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.25);
-}
-
-a {
-  color: #EA0;
-  font-weight: 700;
-}
-
-@keyframes twinkle {
-  to {
-    background-image:
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, #fff 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, #fff 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, #fff 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, #fff 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, #fff 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, #fff 20%, transparent 30%),
-      radial-gradient(circle, var(--star) 20%, transparent 30%),
-      radial-gradient(circle, #fff 20%, transparent 30%),
-      radial-gradient(circle, #fff 20%, transparent 30%);
-  }
-}
-
-.custom-shape-divider-bottom-1713904167 svg {
-  position: relative;
-  display: block;
-  width: calc(130% + 1.3px);
-  height: 184px;
-  transform: rotateY(180deg);
-}
-
-.custom-shape-divider-bottom-1713904167 .shape-fill {
-  fill: #781721;
-}
-
-.open {
-  position: absolute;
-  transform: rotate(90deg);
-  transform: translate(49vw, 0px) rotate(90deg);
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  padding: 10px;
-  color: white;
-  background: #b91919;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-  z-index: 9;
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-}
-
-body {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #036b52;
-  color: white;
-  font-family: monospace;
-  font-weight: 700;
-}
-
-.toggle {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  padding: 10px;
-  color: white;
-  background: #b91919;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -20px;
-  transition: all 0.3s ease;
-  margin: 0 auto;
-}
-
-.search-icons {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  padding: 10px;
-  color: white;
-  background: #b91919;
-  display: flex;
-  margin-top: 2.5px;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-input:focus {
-  outline: none;
-}
-
-#iframeContainer {
-  background: red;
-  display: none;
-  width: 80vw;
-  height: 90vh;
-  border-radius: 1rem;
-  border: 10px solid #d1d1d1;
-  position: absolute;
-  left: 10%;
-  top: 3.5%;
-  overflow: hidden;
-}
-
-.invis {
- 
-
- margin-left: 17.5px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-family: monospace;
-  font-size: 20px;
-  width: 690px;
-  height: 50px;
-}
-
-.invis::placeholder {
-  color: #8d6e6e;
-}
-
-.toggle:hover {
-  transform: scale(1.025);
-  margin-top: 7.5px;
-  border: 0.1px solid #d1d1d1;
-  margin-bottom: 35px;
-}
-   
-#Lol {
-  display: none;
-  color: white;
-  font-family: monospace;
-  border-radius: 2rem;
-  padding: 5px;
-  font-size: 5px;
-  background: #ba1919;
-  position: absolute;
-}
-
-.toggle:hover + #Lol.show {
-  display: block;
-}
-
-#title {
-  margin-top: 300px;
-  margin-bottom: 50px;
-  text-align: center;
-  font-size: 3.5rem;
-  color: white;
-  font-family: monospace;
-  font-weight: 700;
-}
-
-.search {
-  display: flex;
-  flex-direction: row;
-  font-size: 20px;
-  color: white;
-  padding: 17.5px;
-  width: 700px;
-  border-radius: 12.5px;
-  border: 2px solid #d1d1d1;
-  background: linear-gradient(to right bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
-  backdrop-filter: blur(6.5px);
-  transition: all 0.35s ease;
-}
-
-.search:hover {
-  box-shadow: 0 0 69px white;
-  border: 3px solid white;
-  background: linear-gradient(to right bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
-  backdrop-filter: blur(6px);
-  transform: scale(1.025);
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background-color: #f1f1f1;
-  color: black;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown-content ul li a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
-
-.dropdown-content ul li a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #ccc;
-}
-
-.timetable-container {
-  z-index: 9999999999999;
-  border-radius: 2rem;
-  border: 2px solid #d1d1d1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.35));
-  padding: 20px;
-  min-width: 696.5px;
-  max-width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  backdrop-filter: blur(5px);
-  overflow: hidden;
-  transition: all 0.1s ease-in-out;
-  color: white;
-  font-family: monospace;
-  min-height: 500px;
-}
-
-.timetable {
-  color: white;
-  font-family: monospace;
-  transition: all 0.9s;
-}
-
-.timetable:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 5px white;
-}
-
-#table2, #table2-6, #table2-1, #table2-2, #table2-3, #table2-4 {
-  display: none;
-  color: #d1d1d1;
-  font-family: monospace;
-}
-
-#table1, #table1-6, #table1-1, #table1-2, #table1-3, #table1-4 {
-  display: block;
-}
-
-.horizontal-scroll-timetable {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  gap: 69px;
-}
-
-.timetable-container:hover {
-  box-shadow: 0 0 100px rgba(255,255,255,0.75);
-  border: 2px solid white;
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
-  backdrop-filter: blur(10px);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  color: white;
-  font-family: monospace;
-}
-
-th, td {
-  border: 5px solid white;
-  padding: 8px;
-  text-align: left;
-}
-
-tr td:nth-child(even) {
-  background-color: #4eb0ca;
-  color: white;
-  font-family: monospace;
-}
-
-tr td:nth-child(odd) {
-  background-color: #57c4e1;
-  color: white;
-  font-family: monospace;
-}
-
-th {
-  background-color: #3e8ca1;
-}
-
-
-.toggle-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  animation: pulse 1.5s ease alternate infinite; /* Animation */
-}
-
-.toggle-button:hover {
-  background-color: #ffffff; /* White */
-  color: #4CAF50; /* Dark Green */
-}
-
-.toggle-button:active {
-  animation: click-effect 0.01s ease forwards;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes click-effect {
-  0% {
-    
-  }
-  100% {
-    background: green;
+  body {
+    background: #282a37;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
   }
-}
-  
-.wand-extra {
-  display: flex;
-  flex-direction: row;
-}
 
-h1:hover {
-  transform: scale(1.015);
-}
+  .searchBar {
+    margin-top: -175px;
+    width: 37.5%;
+    padding: 15px;
+    background: #3e404d;
+    height: 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease-in-out;
+    transition: border 0.025s ease-in-out !important;
+  }
 
-.search-icons:hover {
-  transform: scale(1.01);
-  border: 0.1px white solid;
-}
+  .searchBar:hover {
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+    background: #484a54;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
 
-.ass {
-  width: 0px;
-  height: 0px;
-  border-radius: 25px;
-  filter: blur(12.5px);
-  background: white;
-  position: absolute;
-}
+  .searchBar i {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 
-.searchIcon {
-  animation: searchIcon 1s ease forwards;
-}
+  .searchBar svg {
+    margin-left: 10px;
+    margin-right: 15px;
+  }
 
-@keyframes searchIcon {
-  from {
+  .searchInput {
+    color: white;
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 80%;
+  }
+
+  .searchInput:focus {
+    outline: none;
+    border: none;
+  }
+
+  .searchInput:focus~.searchBar {
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+    background: #484a54;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transform: scale(1.005);
+  }
+
+  .searchBar:focus-within {
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+    background: #484a54;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transform: scale(1.005);
+  }
+
+  .searchInput::placeholder {
+    color: #eaeaea;
+  }
+
+  .searchBar hr {
     width: 0px;
-    height: 0px;
-    opacity: 0;
+    height: 100%;
+    background: #8b8c94;
+    color: #8b8c94;
   }
-  to {
-    width: 50px;
-    height: 50px;
-    opacity: 1;
-  }
-}
 
-#pro-feature {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(5px);
-  position: absolute;
-  z-index: 999;
-  display: none;
-  transition: all 0.3s ease;
-}
-
-#pro-feature:hover {
-  transform: scale(1.025);
-}
-
-.card {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
-  backdrop-filter: blur(2px);
-  border-radius: 20%;
-  margin: 20px;
-  border: 2px solid #f5f5f5;
-  transition: ease-in-out 0.15s;
-  filter: blur(0.75px);
-  z-index: 9;
-  opacity: 0.75;
-}
-
-h4 {
-  font-size: 8.5px;
-}
-
-#smol {
-  margin-top: -10px;
-  font-size: 20px;
-  margin-bottom: -15px;
-}
-
-#smoler {
-  margin-top: -7.5px;
-  font-size: 20px;
-  margin-bottom: -15px;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  font-family: monospace;
-}
-
-.card img {
-  width: 75px;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  filter: blur(0px);
-  border: 2.5px solid white;
-  background: linear-gradient(to right bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
-  box-shadow: 0 0 100px rgba(255, 255, 255, 1);
-  opacity: 1;
-}
-
-#gpt, #gc {
-  width: 50px;
-  margin-bottom: 10px;
-  margin-top: 15px;
-}
-
-.bento {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(123px, 2fr));
-  width: 750px;
-  height: 150px;
-  margin: 0 auto;
-  z-index: -10;
-}
-
-#dcr {
-  width: 50%;
-  margin-bottom: 7.5px;
-}
-
-.website-layout-container {
-  display: none;
-  margin: 0 auto;
-}
-
-.toggle:hover + .website-layout-container,
-.website-layout-container.show {
-  display: block;
-}
-
-section {
-  transform: translate(0%, -30%);
-  text-align: center;
-  position: relative;
-}
-
-.eight-one, .eight-two, .eight-three, .eight-four, .eight-five, .eight-six {
-  scale: 0.75;
-}
-
-#update {
-  position: absolute;
-  z-index: 9;
-  bottom: 0;
-  right: 0;
-  margin: 15px;
-  text-decoration: underline;
-  font-size: 30px;
-  font-family: "Helvetica", cursive;
-  font-weight: 1200;
-  color: white;
-}
-
-ery {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  position: absolute;
-  z-index: 90;
-  top: 0;
-  left: 0;
-  margin: 10px;
-}
-
-.breh {
-  border: 0px solid transparent;
-  background: transparent;
-  transition: all 0.3s;
-}
-
-.timesoftables, .breh {
-  border: 0px solid transparent;
-  background: transparent;
-  width: 50px;
-  height: 50px;
-  margin-left: -5px;
-}
-
-.toggle-button, dropdown {
-  position: relative;
-  z-index: 9999999;
-}
-
-.container {
-  position: fixed;
-  width: 620px;
-  margin: 0 auto;
-  height: 320px;
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.75), rgba(255,255,255,0.25));
-  text-align: center;
-  border-radius: 2rem;
-  border: 1px solid white;
-  backdrop-filter: blur(2px);
-  z-index: 999999999999;
-  display: none;
-}
-
-.container:hover {
-  box-shadow: 0 0 25px rgba(255,255,255,0.75);
-  transform: scale(1.0005);
-  border: 2px solid white;
-  backdrop-filter: blur(5px);
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.5));
-}
-
-.shop-item {
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  background: #012c22;
-  border-radius: 2rem;
-  width: 95%;
-  color: #b91919;
-  font-family: monospace;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: all 0.3s ease-in-out forwards;
-}
-
-wand {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
-}
-
-.shop-item:hover {
-  background-color: rgba(255,255,255,0.75);
-  border: 2px solid white;
-  box-shadow: 0 0 15px white;
-  color: green;
-  transform: scale(1.025);
-}
-
-#brunglePoints, #boughtItems {
-  color: #199b19;
-}
-  #services {
+  column {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
     position: absolute;
-    font-size: 10px;
-    bottom: 0;
+    z-index: 1;
+    top: 0;
     left: 0;
-    z-index: 999999999999999999999999999999999999999999999999;
+    margin-top: 100px;
+    font-family: "Helvetica", cursive;
+  }
+
+  column h3 {
+    font-size: 12.5px;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  column h1 {
+    margin-top: 69px;
+    font-size: 55px;
+    margin-bottom: 0px;
+    text-align: center;
+    background: -webkit-linear-gradient(135deg, #3e8eff, #8e3eff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .topLevels {
+    position: absolute;
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    top: 0;
+    right: 0;
+    padding: 20px 15px;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .circle {
+    border-radius: 50%;
+    background: #3e404d;
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all 0.042.5s ease-in-out;
+  }
+
+  .leftLevels {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    padding: 20px 15px;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 10px;
+    gap: 10px;
+    font-family: "Helvetica", cursive;
+  }
+
+  .circle:hover {
+    background: #515157;
+    border: 2px dashed white;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    color: white;
   }
 </style>
-</head>
-<body>
-  <h1 id="services">Our Services: <a href="https://games-brungle.pages.dev"> Games </a>,<a href="https://maps-brungle.pages.dev"> Maps</a>,<a href="https://brungle.pages.dev"> Search </a>,<a href="https://coding-brungle.pages.dev"> BCoder </a></h1>
-<a href="https://documentation-brungle.pages.dev">
-<div class="banner-popup">
-  <a style="z-index: 99999999999999999999999999;"href="https://mail.google.com/mail/u/7/#inbox?compose=GTvVlcSMTFLLQbzqHlNklrggBCZxRfhwrTNKSpDmVpsTDhMnzxrPMQwxcMWVNlSpkcnKQBJSXxzsw"><h1 id="bannerH"> ⚠️ Introducing, Brungle Coding 🚨 </h1></a>
-  <p id="bannerP"> Visit on https://coding-brungle.pages.dev/ </p>
-</div>
-</a>
-
-<div class="container">
-  <h1>Brungle Shop</h1>
-  <h5> Reload to take effect </h5>
-  <p>Brungle Points: <span id="brunglePoints">1000</span></p>
-  <p>Bought Items: <span id="boughtItems">0</span></p>
-  <div id="shopItems">
-    <button class="shop-item" data-price="500" onclick="buyItem(500)">Shyun Pen - 500 Points</button>
-    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">Food - 1000 Points</button>
-    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">100 Robux - 2000 Points</button>
-  </div>
-</div>
-
-<div id="pro-feature"><h1> BruneBot is a PRO feature </h1></div>
-<a id="update" href="https://creativecommons.org/licenses/by-nc/4.0/">© 2024 Brungle LLC </a>
-<ery>
-  <button class="breh" onclick="showShop()" style="color: white; scale: 1.5;">
-  <i class="fa-solid fa-cart-shopping"></i>
-  </button>
-  <h1>Brungle Points: </h1><h1 style="color: white" id="counter"> Loading... </h1>
-</ery>
-<section>
-  <h1 id="Lol"> Click! </h1>
-  <h1 id="title"> Brungle <span>[BETA!]</span></h1>
-  <h4 style="margin-top: -5px"> Brune &amp; Google </h4>
-  <land class="search">
-    <div class="search-icons">
-      <div class="ass"></div>
-        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-    </div>
-    <input type="text" id="searchInput" placeholder="Search Brungle" class="invis" autofocus>
-  </land>
-  <div class="toggle">
-    <i class="fa-solid fa-circle-chevron-down" aria-hidden="true"></i>
-  </div>
-   
-  <div class="website-layout-container">
-    <div class="bento"> 
-     
-      <!-- custom ( inpoperatblee ekefiuhhef i ) -->
-      <a id="customizeA" onclick="customizeCards()">
-        <div class="card">
-          <img id="dcr" src="https://t4.ftcdn.net/jpg/01/26/10/59/360_F_126105961_6vHCTRX2cPOnQTBvx9OSAwRUapYTEmYA.jpg">
-          <h1 id="smoler"> Custom </h1>
-          <h4> Your URL here </h4>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-<footer class="incresize"></footer>
-<div id="iframeContainer"></div>
-<div id="theme-changer">
-  <wand class="wand-extra">
-    <div class="color-circle" style="background-color: #E63946" onclick="changeColor('#E63946')"></div>
-    <div class="color-circle" style="background-color: #fc8c03" onclick="changeColor('#fc8c03')"></div>
-    <div class="color-circle" style="background-color: #036b52" onclick="changeColor('#036b52')"></div>
-    <div class="color-circle" style="background-color: #000042" onclick="changeColor('#000042')"></div>
-    <button onclick="showCustomColor()">+</button>
-    <input type="text" id="custom-color" placeholder="Enter hex code ( start with #)">
-    <button onclick="addCustomColor()">Add</button>
-    <button id="change-bg-btn">BG Img</button>
-  </wand>
-  <br>
-  <hr>
-  <br>
-  <wand>
-    <h1 style="font-size: 10px;"> Themes: </h1>
-    <div class="color-circle" style="background-image: url('https://wallpapercave.com/wp/wp10532946.jpg')" onclick="themeSpace()"></div>
-    <div class="color-circle" style="background-image: url('https://www.chromethemer.com/blog/images/uhd-wallpaper-backgrounds-1.jpg')" onclick="themeFluid()"></div>
-    <div class="color-circle" style="background-image: url('https://t4.ftcdn.net/jpg/03/34/19/13/360_F_334191354_zW1Fj9HPbfJdBPEVe2d6mcuT1w2g8K5y.jpg')" onclick="themeDesert()"></div>
-    <div class="color-circle" style="background-image: url('https://miro.medium.com/v2/resize:fit:1400/1*yrppiCrEctYSXk2ZRiZ7VQ.gif')" onclick="themeGame()"></div>
-    <div class="color-circle" style="background-image: url('https://cd2.boardgamesmaker.com/AttachFiles/WebsiteImages/Product_Show/FI_8807.jpg')" onclick="themeRandom()"></div>
-  </wand>
-  <br>
-  <hr>
-  <br>
-  <wand>
-    <h1 style="font-size: 10px;"> Your Colors:</h1>
-  </wand>
-  <br>
-  <div class="delete-circle" id="removeColorButton" style="background-image: url('https://cdn-icons-png.flaticon.com/512/5258/5258411.png')"></div>
-</div>     
-
-<div class="sidebar">
-  <button class="breh" onclick="showThemeChanger()">
-    <i class="fa-solid fa-fill" id="color"></i>
-  </button>
-  <hr>
-  <button class="timesoftables" onclick="showTimetable()">
-    <i class="fa-solid fa-calendar" id="timetable"></i>
-  </button>
-  <hr>
-  <button class="timesoftables">
-    <i class="fa-solid fa-calculator" onclick="showCalculator()"></i>
-  </button>
-</div>
-<div class="open" onclick="moveBoth()">
-  <i class="fa-solid fa-circle-chevron-down"></i>
-</div>
-<div class="custom-shape-divider-bottom-1713904167">
-  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-   </svg>
-</div>
-
-<div class="timetable-container" style="display: none;">
-  <div class="dropdown">
-  <button class="dropbtn">Select Class</button>
-  <div class="dropdown-content">
-    <ul>
-       <li><a onclick="eightOneChange()">8.1 ( Unavailable! )</a></li>
-      <li><a onclick="eightTwoChange()">8.2 ( Available Partially! )</a></li>
-      <li><a onclick="eightThreeChange()">8.3</a></li>
-      <li><a onclick="eightFourChange()">8.4 ( Unavailable! )</a></li>
-      <li><a onclick="eightFiveChange()">8.5</a></li>
-      <li><a onclick="eightSixChange()">8.6 ( Unavailable! )</a></li>
-      <li><a onclick="createTimetable()">Custom</a></li>
-    </ul>
-  </div>
-</div>
-<section class="eight-five" style="display: none">
-  <button class="toggle-button"onclick="toggleEightFive()">Toggle Tables</button>
-  <br>
-    <br>
-  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.5 </h1> 
-  <div id="table1">
-    <h1> Week 1 </h1>
-    <b>
-  <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>Maths</td>
-        <td>English L13</td>
-        <td>PSHE</td>
-        <td>Maths</td>
-        <td>Music A14</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Spanish G13</td>
-        <td>Drama A1</td>
-        <td>Chemisty P13</td>
-        <td>History H14</td>
-        <td>Spanish G13</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Physics P11</td>
-        <td>Geography H14</td>
-        <td>English L13</td>
-        <td>German G14</td>
-        <td>Comp Sci L1</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>DT P2 / Food Sci P4</td>
-        <td>PRE G1</td>
-        <td>PE</td>
-        <td>History H14</td>
-        <td>Maths</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>English L13</td>
-        <td>Dance A6</td>
-        <td>Art P6</td>
-        <td>Games</td>
-        <td>German G14</td>
-    </tr>
-  </table>
-  </div>
-    
-
-  <div id="table2">
-    <br>
-    <h1 style="color: white"> Week 2 </h1>
-      <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>English L13</td>
-        <td>Maths</td>
-        <td>English L13</td>
-        <td>Biology C4💥</td>
-        <td>Food Sci P4 / DT P2</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Drama A1</td>
-        <td>Geography H14</td>
-        <td>Geography H14</td>
-        <td>Chemistry P13</td>
-        <td>German G14</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>PRE G12</td>
-        <td>Art P6</td>
-        <td>Maths</td>
-        <td>Maths</td>
-        <td>English L13</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>PE</td>
-        <td>Spanish G16</td>
-        <td>History H14</td>
-        <td>Dance A6</td>
-        <td>Biology C4💥</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Maths</td>
-        <td>Comp Sci L1</td>
-        <td>Physics P11</td>
-        <td>Games</td>
-        <td>Music A14</td>
-    </tr>
-  </table>
-  </div>
-  </section>
-  
-  <section class="eight-six" style="display: none">
-    <button class="toggle-button"onclick="toggleEightSix()">Toggle Tables</button>
-    <br>
-    <br>
-  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.6 
-  <div  id="table1-6">
-    <br>
-    <h1> Week 1 </h1>
-    <b>
-  <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>Geography</td>
-        <td>German</td>
-        <td>PSHE</td>
-        <td>Geography</td>
-        <td>PE</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Maths</td>
-        <td>Maths</td>
-        <td>English</td>
-        <td>Art</td>
-        <td>Physics</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Food Science</td>
-        <td>History</td>
-        <td>Music</td>
-        <td>English</td>
-        <td>Geography</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>History</td>
-        <td>Computer Science</td>
-        <td>Drama</td>
-        <td>PRE</td>
-        <td>English</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Spanish</td>
-        <td>Chemistry</td>
-        <td>Maths</td>
-        <td>Games</td>
-        <td>Dance</td>
-    </tr>
-  </table>
-  </div>
-    
-
-  <div  id="table2-6">
-    <br>
-    <h1 style="color: white"> Week 2 </h1>
-      <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>English</td>
-        <td>DT</td>
-        <td>Maths</td>
-        <td>PE</td>
-        <td>Biology</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Spanish</td>
-        <td>Drama</td>
-        <td>Physics</td>
-        <td>Chemistry</td>
-        <td>German</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Dance</td>
-        <td>English</td>
-        <td>History</td>
-        <td>PRE</td>
-        <td>Spanish</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>Biology</td>
-        <td>Maths</td>
-        <td>Art</td>
-        <td>English</td>
-        <td>Computer Science</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Maths</td>
-        <td>German</td>
-        <td>Music</td>
-        <td>Games</td>
-        <td>Maths</td>
-    </tr>
-  </table>
-  </div>
-  </section>
-    <section class="eight-three" style="display: none">
-  <button class="toggle-button"onclick="toggleEightThree()">Toggle Tables</button>
-  <br>
-    <br>
-  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.3 </h1> 
-  <div  id="table1-3">
-    <h1> Week 1 </h1>
-    <b>
-  <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>Maths</td>
-        <td>PE</td>
-        <td>PSHE</td>
-        <td>Music A15</td>
-        <td>Computer Science L1</td></td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>English L19</td>
-        <td>English L19</td>
-        <td>History H12</td>
-        <td>PRE H13</td>
-        <td>English L19</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Biology C4💥</td>
-        <td>Dance A6</td>
-        <td>Maths</td>
-        <td>French G17</td>
-        <td>Geography H11</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>Art P6</td>
-        <td>Spanish G13</td>
-        <td>Physics P11</td>
-        <td>Drama A1</td>
-        <td>Geography H11</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Spanish G13</td>
-        <td>Chemistry C12</td>
-        <td>Geography H11</td>'
-        <td>Games</td>
-        <td>Maths</td>
-    </tr>
-  </table>
-  </div>
-    
-
-  <div  id="table2-3">
-    <br>
-    <h1 style="color: white"> Week 2 </h1>
-      <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>Art P6</td>
-        <td>Chemistry C12</td>
-        <td>History H13</td>
-        <td>Maths</td>
-        <td>English L19</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Food Sci P4 / DT P3</td>
-        <td>Physics P11</td>
-        <td>French G16</td>
-        <td>History H16</td>
-        <td>Comp Sci L1</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Dance A6</td>
-        <td>English L19</td>
-        <td>Maths</td>
-        <td>French G17</td>
-        <td>Maths</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>Biology C4💥</td>
-        <td>Maths</td>
-        <td>English L19</td>
-        <td>Spanish G13</td>
-        <td>DT P3 / Food Sci P4</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Drama A1</td>
-        <td>PRE H13</td>
-        <td>PE</td>
-        <td>Games</td>
-        <td>Music A15</td>
-    </tr>
-  </table>
-  </div>
-  </section>
-  <section class="eight-four" style="display: none">
-    <button class="toggle-button"onclick="toggleEightFour()">Toggle Tables</button>
-    <br>
-    <br>
-  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.4 
-  <div  id="table1-4">
-    <br>
-    <h1> Week 1 </h1>
-    <b>
-  <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>Geography</td>
-        <td>German</td>
-        <td>PSHE</td>
-        <td>Geography</td>
-        <td>PE</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Maths</td>
-        <td>Maths</td>
-        <td>English</td>
-        <td>Art</td>
-        <td>Physics</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Food Science</td>
-        <td>History</td>
-        <td>Music</td>
-        <td>English</td>
-        <td>Geography</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>History</td>
-        <td>Computer Science</td>
-        <td>Drama</td>
-        <td>PRE</td>
-        <td>English</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Spanish</td>
-        <td>Chemistry</td>
-        <td>Maths</td>
-        <td>Games</td>
-        <td>Dance</td>
-    </tr>
-  </table>
-  </div>
-    
-
-  <div  id="table2-4">
-    <br>
-    <h1 style="color: white"> Week 2 </h1>
-      <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>English</td>
-        <td>DT</td>
-        <td>Maths</td>
-        <td>PE</td>
-        <td>Biology</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Spanish</td>
-        <td>Drama</td>
-        <td>Physics</td>
-        <td>Chemistry</td>
-        <td>German</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Dance</td>
-        <td>English</td>
-        <td>History</td>
-        <td>PRE</td>
-        <td>Spanish</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>Biology</td>
-        <td>Maths</td>
-        <td>Art</td>
-        <td>English</td>
-        <td>Computer Science</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Maths</td>
-        <td>German</td>
-        <td>Music</td>
-        <td>Games</td>
-        <td>Maths</td>
-    </tr>
-  </table>
-  </div>
-  </section>
-    <section class="eight-one" style="display: none">
-  <button class="toggle-button"onclick="toggleEightOne()">Toggle Tables</button>
-  <br>
-    <br>
-  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.1 </h1> 
-  <div  id="table1-1">
-    <h1> Week 1 </h1>
-    <b>
-  <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>PRE</td>
-        <td>Dance</td>
-        <td>PSHE</td>
-        <td>English</td>
-        <td>PE</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Maths</td>
-        <td>Maths</td>
-        <td>History</td>
-        <td>Geography</td>
-        <td>Computer Science</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Dance</td>
-        <td>Spanish</td>
-        <td>Spanish</td>
-        <td>History</td>
-        <td>Music</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>English</td>
-        <td>Chemistry</td>
-        <td>Art</td>
-        <td>Biology</td>
-        <td>Physics</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Drama</td>
-        <td>German</td>
-        <td>Maths</td>
-        <td>Games</td>
-        <td>English</td>
-    </tr>
-  </table>
-  </div>
-    
-
-  <div  id="table2-1">
-    <br>
-    <h1 style="color: white"> Week 2 </h1>
-      <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>English</td>
-        <td>Art</td>
-        <td>Maths</td>
-        <td>PE</td>
-        <td>English</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Spanish</td>
-        <td>English</td>
-        <td>Chemistry</td>
-        <td>Geography</td>
-        <td>Drama</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>PRE</td>
-        <td>Physics</td>
-        <td>Biology</td>
-        <td>Music</td>
-        <td>Computer Science</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>German</td>
-        <td>Maths</td>
-        <td>German</td>
-        <td>DT / Food Tech</td>
-        <td>Food Tech / DT</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Maths</td>
-        <td>Geography</td>
-        <td>History</td>
-        <td>Games</td>
-        <td>Maths</td>
-    </tr>
-  </table>
-  </div>
-  </section>
-  <section class="eight-two" style="display: none">
-    <button class="toggle-button"onclick="toggleEightTwo()">Toggle Tables</button>
-    <br>
-    <br>
-  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.2 </h1> 
-    
-  <div  id="table1-2">
-    <br>
-    <h1> Week 1 </h1>
-    <b>
-  <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>English</td>
-        <td>French</td>
-        <td>PSHE</td>
-        <td>English</td>
-        <td>Geography</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Maths</td>
-        <td>History</td>
-        <td>Maths</td>
-        <td>Music</td>
-        <td>English</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Maths</td>
-        <td>PE</td>
-        <td>Geography</td>
-        <td>German</td>
-        <td>Drama</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>PRE</td>
-        <td>Maths</td>
-        <td>Physics</td>
-        <td>Dance</td>
-        <td>DT</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>Drama</td>
-        <td>Chemistry</td>
-        <td>Biology</td>
-        <td>Games</td>
-        <td>Maths</td>
-    </tr>
-  </table>
-  </div>
-    
-
-  <div  id="table2-2">
-    <br>
-    <h1 style="color: white"> Week 2 </h1>
-      <table class="timetable">
-    <tr>
-      <th>Period</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-    </tr>
-      <tr>
-        <td><b>1</b></td>
-        <td>Food Science</td>
-        <td>Dance</td>
-        <td>English</td>
-        <td>French</td>
-        <td>Art</td>
-    </tr>
-    <tr>
-      <td> 2 </td>
-        <td>Computer Science</td>
-        <td>German</td>
-        <td>Art</td>
-        <td>Biology</td>
-        <td>English</td>
-    </tr>
-    <tr>
-      <td> 3 </td>
-        <td>Chemistry</td>
-        <td>History</td>
-        <td>PE</td>
-        <td>English</td>
-        <td>Geography</td>
-    </tr>
-    <tr>
-      <td> 4 </td>
-        <td>History</td>
-        <td>Maths</td>
-        <td>Physics</td>
-        <td>Maths</td>
-        <td>German</td>
-    </tr>
-    <tr>
-      <td> 5 </td>
-        <td>French</td>
-        <td>PRE</td>
-        <td>Computer Science</td>
-        <td>Games</td>
-        <td>Music</td>
-    </tr>
-  </table>
-  </div>
-    </section>
-  </div>
-    
-
 <script>
-// Set the initial counter value from localStorage on window load
-function setBPcounter() {
-    var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-    document.getElementById('counter').textContent = currentValue;
-};
+  window.addEventListener('load', function() {
+    document.querySelector('.searchInput').focus();
+  });
+  var queryURL = 'https://search.brave.com/search?q=';
+  var urdad = "";
+  document.querySelector('.searchInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      let query = event.target.value;
+      if (query) {
+        window.location.href = queryURL + encodeURIComponent(query) + urdad;
+      }
+    }
+  });
+  document.querySelector('#fuck').addEventListener('click', function() {
+    urdad = '&source=llmSuggest&summary=1';
+    console.log('clicked ai');
+    var lol = document.querySelector('#fuck');
+    lol.style.transition = "all 0.35s ease-in-out";
+    lol.style.marginTop = "-20px";
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    loadSites();
+  });
+  async function addSite() {
+    let siteName = prompt(
+      "What is the Name of your site? Please insert a name. For example, Twitter."
+    );
+    if (!siteName) return;
+    let siteURL = prompt("What is the URL / web address of your Website.");
+    if (!siteURL) return;
+    createSiteElement(siteName, siteURL);
+    saveSite(siteName, siteURL);
+  }
 
-// Listen for DOMContentLoaded event
-document.addEventListener("DOMContentLoaded", function() {
-    // Get the input element for search
-    var searchInput = document.getElementById("searchInput");
+  function createSiteElement(name, url) {
+    const template = document.querySelector("#siteTemplate");
+    const clone = document.importNode(template.content, true);
+    const siteAnchor = clone.querySelector(".siteName");
+    const siteH = clone.querySelector(".siteH");
+    const siteHT = clone.querySelector(".siteHT");
+    siteH.textContent = name;
+    siteHT.textContent = url;
+    siteAnchor.href = url;
+    document
+      .getElementById("sitesContainer")
+      .insertBefore(clone, document.querySelector(".sitesBottom"));
+  }
 
-    // Listen for keyup event on search input
-    searchInput.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            // Increment the counter value and redirect to Google search URL
-            incrementCounter();
-            var query = searchInput.value;
-            var encodedQuery = encodeURIComponent(query);
-            var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
-            window.location.href = searchURL; // Redirect to Google search URL on the current tab
-        }
-    });
-
-    // Add event listener to search icons
-    const searchIcons = document.querySelectorAll('.search-icons');
-    const assDiv = document.querySelector('.ass');
-
-    searchIcons.forEach(icon => {
-        icon.addEventListener('click', function() {
-            // Add animation class and redirect to Google search URL
-            assDiv.classList.add('searchIcon');
-            setTimeout(() => {
-                assDiv.classList.remove('searchIcon');
-                var query = document.getElementById('searchInput').value;
-                var encodedQuery = encodeURIComponent(query);
-                var searchURL = "https://www.google.com/search?q=" + encodedQuery; // Google search URL
-                window.location.href = searchURL;
-                incrementCounter();
-            }, 1000);
+  function saveSite(name, url) {
+    let request = indexedDB.open("sitesDB", 1);
+    request.onupgradeneeded = function(event) {
+      let db = event.target.result;
+      console.log("Upgrading database...");
+      if (!db.objectStoreNames.contains("sites")) {
+        let objectStore = db.createObjectStore("sites", {
+          keyPath: "id",
+          autoIncrement: true
         });
-    });
-
-    // Toggle layout function
-    const toggle = document.querySelector('.toggle');
-    const layoutContainer = document.querySelector('.website-layout-container');
-  layoutContainer.classList.toggle('show');
-
-    toggle.addEventListener('click', function() {
-        layoutContainer.classList.toggle('show');
-    });
-});
-
-// Function to change background color
-function changeColor(color) {
-    setCookie('currentBG', color, 365);
-    document.body.style.backgroundColor = color;
-    document.body.style.backgroundImage = "";
-}
-
-// Function to show custom color input
-function showCustomColor() {
-    var customColorInput = document.getElementById('custom-color');
-    customColorInput.style.display = 'inline-block';
-}
-
-// Function to load saved colors
-function loadColors() {
-    var transaction = db.transaction(['colors'], 'readonly');
-    var objectStore = transaction.objectStore('colors');
-    var request = objectStore.getAll();
-
+        objectStore.createIndex("name", "name", {
+          unique: false
+        });
+        objectStore.createIndex("url", "url", {
+          unique: false
+        });
+      }
+    };
     request.onsuccess = function(event) {
-        var colors = event.target.result;
-        colors.forEach(function(colorObj) {
-            // Create color circle and add event listener
-            var colorCircle = document.createElement('div');
-            colorCircle.className = 'color-circle';
-            colorCircle.style.backgroundColor = colorObj.color;
-            colorCircle.addEventListener('click', function() {
-                changeColor(colorObj.color);
-            });
-          changeColor(colorObj.color);
-            var addButton = document.getElementById('add-button');
-            document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
-            document.body.style.backgroundColor = colorObj.color;
-            console.log("Color Updated. ( Local Data )");
-        });
+      let db = event.target.result;
+      let transaction = db.transaction(["sites"], "readwrite");
+      let objectStore = transaction.objectStore("sites");
+      let site = {
+        name: name,
+        url: url
+      };
+      let addRequest = objectStore.add(site);
+      addRequest.onsuccess = function() {
+        console.log("Site added to the store:", site);
+      };
+      addRequest.onerror = function(event) {
+        console.log("Error adding site:", event.target.error);
+      };
     };
-
     request.onerror = function(event) {
-        console.error('Error loading colors from IndexedDB:', event.target.errorCode);
+      console.log("Error opening database:", event.target.errorCode);
     };
-}
+  }
 
-// Function to add custom color
-function addCustomColor() {
-    var customColorInput = document.getElementById('custom-color');
-    var customColor = customColorInput.value;
-    if (/^#[0-9A-F]{6}$/i.test(customColor)) {
-        // Create color circle, add to DOM, and save to IndexedDB
-        var colorCircle = document.createElement('div');
-        colorCircle.className = 'color-circle';
-        colorCircle.style.backgroundColor = customColor;
-        colorCircle.addEventListener('click', function() {
-            changeColor(customColor);
-        });
-        var addButton = document.getElementById('add-button');
-        document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
-        customColorInput.value = '';
-        customColorInput.style.display = 'none';
+  function loadSites() {
+    let request = indexedDB.open("sitesDB", 1);
+    request.onsuccess = function(event) {
+      let db = event.target.result;
+      let transaction = db.transaction(["sites"], "readonly");
+      let objectStore = transaction.objectStore("sites");
+      objectStore.openCursor().onsuccess = function(event) {
+        let cursor = event.target.result;
+        if (cursor) {
+          createSiteElement(cursor.value.name, cursor.value.url);
+          cursor.continue();
+        }
+      };
+    };
+    request.onerror = function(event) {
+      console.log("Error opening database:", event.target.errorCode);
+    };
+  }
+</script>
 
-        // Save custom color to IndexedDB
-        var transaction = db.transaction(['colors'], 'readwrite');
-        var objectStore = transaction.objectStore('colors');
-        var request = objectStore.add({ color: customColor });
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
+  <title>Brungle</title>
+  <style>
+    .siteName {
+      display: block;
+      margin: 10px 0;
+    }
 
-        request.onsuccess = function(event) {
-            console.log('Color added to IndexedDB:', customColor);
-        };
+    .sitesBottom {
+      margin: 20px 0;
+    }
+  </style>
+</head>
 
-        request.onerror = function(event) {
-            console.error('Error adding color to IndexedDB:', event.target.errorCode);
-        };
+<body>
+  <div class="sites" id="sitesContainer">
+    <template id="siteTemplate">
+      <a class="siteName" target="_blank">
+        <h1 class="siteH">Site</h1>
+        <h3 class="siteHT">Site.com</h3>
+      </a>
+    </template>
+    <button class="sitesBottom" onclick="addSite()">
+      <i class="fa-solid fa-plus fa-xl" style="scale: 1.3"></i>
+    </button>
+  </div>
+
+  <script>
+  </script>
+</body>
+
+</html>
+
+</html>
+<style>
+  .sites {
+    min-width: 750px;
+    max-width: 1000px;
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    min-height: 100px;
+    max-height: 250px;
+    height: auto;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    font-family: "Helvetica", cursive;
+    color: white;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: absolute;
+    z-index: 9;
+    scale: 0.85;
+    top: 337.5px;
+  }
+
+  .sitesBottom {
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    background: linear-gradient(to top right, #8646ff, #4c86f3);
+    border-radius: 10px;
+    color: white;
+    font-family: "Helvetica", cursive;
+    border: none;
+    outline: none;
+  }
+
+  .siteName {
+    position: relative;
+    padding: 5px;
+    background: linear-gradient(to top right, #8646ff, #4c86f3);
+    opacity: 0.85;
+    border-radius: 7.5px;
+    min-width: 150px;
+    text-decoration: none;
+    color: white;
+  }
+
+  .siteName h1 {
+    font-size: 35px;
+    margin-top: 5px;
+    margin-bottom: -12.5px;
+  }
+
+  .siteName h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+</style>
+<div class="customize">
+  <h1 id="bruh"> Brungle Customization Menu </h1>
+  <div class="content-customize">
+    <!--   Sections. Themes and Stuffs are Inactive Currently   -->
+    <div class="themes">
+      <h1> Themes </h1>
+      <div class="theme-circle"></div>
+      INACTIVE.
+    </div>
+    <div class="colors">
+      <h1> Colors </h1>
+      <div class="smolPopup" id="colours">
+        <h3 id="smolColors"> Loading ... </h3>
+      </div>
+      <button class="color-circle" style="background: #E63946" id="color-og"></button>
+      <button class="color-circle" style="background: #036B52" id="color-green"></button>
+      <button class="color-circle" style="background: #000042" id="color-navy"></button>
+      <button class="color-circle" style="background: #282a37" id="color-normal"></button>
+      <button class="color-circle" style="background: transparent; display: flex; justify-content: center;
+                                        align-items: center; color: white;" onclick="addNewColor()">+</button>
+    </div>
+    <div class="images">
+      <h1> BG Images </h1>
+      <div class="bg-circle" style="display: none"></div>
+      Currently No Default BG Images. Try Creating One...
+      <button class="color-circle" style="background: transparent; display: flex; justify-content: center;align-items: center; color: white;" onclick="addNewBG()">+</button>
+    </div>
+    <div class="stuffs">
+      <h1> Your Stuff: </h1>
+      <dang id="theme-dang">
+        <h2> Themes: </h2>
+        <div class="custom-theme"></div>
+        INACTIVE.
+      </dang>
+      <hr>
+      <dang id="color-dang">
+        <h2> Colors: </h2>
+      </dang>
+      <hr>
+      <dang id="image-dang">
+        <h2> Images: </h2>
+        <div class="custom-image"></div>
+        INACTIVE.
+      </dang>
+    </div>
+  </div>
+</div>
+
+<div class="moreMenu">
+  <div class="moreeenu">
+    <h1> Select A <b>SERVICE</b></h1>
+    <button class="box" style="background: #814cfe; border: 5px solid #814cfe;" onclick="showThemeChanger()">
+      <i style="scale: 1.35" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
+    </button>
+    <div class="box" style="background: #7444e4; border: 5px solid #7444e4;">
+      <i style="scale: 1.35" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
+    </div>
+    <button onclick="showCalculator()" class="box" style="background: #673ccb; border: 5px solid #673ccb;">
+      <i style="scale: 1.35" class="fa-solid fa-calculator" aria-hidden="true"></i>
+    </button>
+    <button class="box" style="background: #5a35b1; border: 5px solid #5a35b1;" onclick="gotoNotes()">
+      <i style="scale: 1.35" class="fa-solid fa-note-sticky"></i>
+    </button>
+    <button onclick="openBCHATS()"class="box" style="background: #40267f; border: 5px solid #40267f;">
+      <i style="scale: 1.35"  class="fa-solid fa-comment-dots"></i>
+    </button>
+    <button onclick="openBSCODE()"class="box" style="background: #473474; border: 5px solid #331e65;">
+     <i style="scale: 1.35"  class="fa-solid fa-code"></i>
+    </button>
+  </div>
+</div>
+<style>
+  button {
+    outline: none;
+    border: none;
+  }
+
+  .moreeenu {
+    background: rgba(70, 71, 78, 1);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    font-family: "Helvetica", cursive;
+    z-index: 99999999999;
+    scale: 0.75;
+    border-radius: 50px;
+  }
+
+  .moreMenu {
+    position: absolute;
+    display: none;
+    background: rgba(70, 71, 78, 0.15);
+    z-index: top;
+  }
+
+  .moreMenu b {
+    font-weight: 1000;
+  }
+
+  .moreMenu h1 {
+    position: absolute;
+    top: 150px;
+    z-index: 9;
+    font-size: 50px;
+    font-weight: 500;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  .box {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    width: 75px;
+    border-radius: 10px;
+    transition: all 0.35s ease-in-out;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    opacity: 0.75;
+  }
+
+  .box:hover {
+    width: 105px;
+    height: 105px;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+    opacity: 1;
+  }
+
+  #color-dang,
+  #image-dang,
+  #theme-dang {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  #color-dang h1,
+  #image-dang h1,
+  #theme-dang h1 {
+    position: absolute;
+  }
+
+  #bruh {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 950;
+    text-decoration: none;
+    transition: all 0.05s ease-in-out;
+  }
+
+  #bruh:hover {
+    font-size: 27.5px;
+    font-weight: 1000;
+    text-decoration: underline;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .customize {
+    position: absolute;
+    background: #3e404d;
+    width: 70%;
+    height: 80%;
+    z-index: 10;
+    top: 10vh;
+    left: 10vw;
+    padding: 15px;
+    border-radius: 25px;
+    display: flex;
+    color: white;
+    gap: 10px;
+    font-family: "Helvetica", cursive;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 999999999999999999999999;
+    display: none;
+  }
+
+  .closeIT {
+    height: 50px;
+    width: 50px;
+    background: red;
+    opacity: 0.86;
+    color: white;
+    font-weight: 1000;
+    border-radius: 15px;
+    z-index: 999999999;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .content-customize {
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .themes,
+  .images,
+  .colors,
+  .stuffs {
+    background: #3e8eff;
+    padding: 5px;
+    border-radius: 10px;
+    align-items: center;
+    width: calc(100% - 10px);
+    min-height: 20%;
+    height: auto;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    transition: all 0.075s ease-in-out;
+  }
+
+  .stuffs hr {
+    opacity: 0.35;
+    width: calc(100% + 7.5px);
+    margin-left: -5px;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+
+  .themes:hover,
+  .images:hover,
+  .colors:hover,
+  .stuffs:hover {
+    background: #7f37e5;
+    transform: scale(1.005) translateX(-0.35vw);
+    border: 2px dashed white;
+  }
+
+  .themes h1,
+  .images h1,
+  .colors h1,
+  .stuffs h1 {
+    font-size: 25px;
+    margin-left: 15px;
+  }
+
+  .stuffs h2 {
+    font-size: 15px;
+    margin-left: 15px;
+  }
+
+  .theme-circle,
+  .color-circle,
+  .bg-circle,
+  .custom-theme,
+  .custom-color,
+  .custom-image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: black;
+    margin: 5px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+
+  .theme-circle:hover,
+  .color-circle:hover,
+  .bg-circle:hover,
+  .custom-theme:hover,
+  .custom-color:hover,
+  .custom-image:hover {
+    border: 2px dashed white;
+  }
+
+  .smolPopup {
+    background: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 20px;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    display: block;
+    position: absolute;
+    z-index: 11;
+    border-radius: 5px;
+    right: 0;
+    top: 0;
+    margin-top: 35px;
+    margin-right: 50px;
+    display: none;
+  }
+</style>
+<script>
+  function showThemeChanger() {
+    var bruh = document.querySelector(".customize");
+    var theme = document.querySelector("#themeButton");
+    var hurb = document.querySelector(".moreMenu");
+    if (bruh.style.display === "block") {
+      bruh.style.display = "none";
+      theme.style.background = "#3e404d";
+      theme.style.border = "none";
     } else {
-        alert('Please enter a valid hex color code.');
+      bruh.style.display = "block";
+      theme.style.background = "#515157";
+      theme.style.border = "2px dashed white";
+      if (hurb.style.display === "block") {
+        toggleMore();
+      }
     }
-}
+  }
 
-// IndexedDB setup
-let db;
-const request = indexedDB.open('ColorDB', 1);
+  function toggleMore() {
+    var bruh = document.querySelector(".moreMenu");
+    var more = document.querySelector("#moreButton");
+    var hurb = document.querySelector(".customize");
+    if (bruh.style.display === "block") {
+      bruh.style.display = "none";
+      more.style.background = "#3e404d";
+      more.style.border = "none";
+    } else {
+      bruh.style.display = "block";
+      more.style.background = "#515157";
+      more.style.border = "2px dashed white";
+      if (hurb.style.display === "block") {
+        showThemeChanger();
+      }
+    }
+  }
 
-// Create object store if not exist
-request.onupgradeneeded = function(event) {
+  function closeIT() {
+    alert("broken lol");
+  }
+  let db;
+  const request = indexedDB.open("ColorDB", 1);
+  request.onupgradeneeded = function(event) {
     db = event.target.result;
-    if (!db.objectStoreNames.contains('colors')) {
-        db.createObjectStore('colors', { keyPath: 'id', autoIncrement: true });
-    }
-};
-
-// Load colors on successful opening of IndexedDB
-request.onsuccess = function(event) {
+    db.createObjectStore("colors", {
+      keyPath: "id",
+      autoIncrement: true
+    });
+  };
+  request.onsuccess = function(event) {
     db = event.target.result;
     loadColors();
-};
+  };
+  request.onerror = function(event) {
+    console.error("Database error: " + event.target.errorCode);
+  };
 
-request.onerror = function(event) {
-    console.error('IndexedDB error:', event.target.errorCode);
-};
-
-// Retrieve saved custom color on page load
-function retrieveCustomColor() {
-    var savedColor = localStorage.getItem('customColor');
-    if (savedColor) {
-        var colorCircle = document.createElement('div');
-        colorCircle.className = 'color-circle';
-        colorCircle.style.backgroundColor = savedColor;
-        colorCircle.addEventListener('click', function() {
-            changeColor(savedColor);
-        });
-        var addButton = document.getElementById('add-button');
-        document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+  function addNewColor() {
+    const color = prompt("Enter a color in hex (e.g., #ff0000):");
+    if (color) {
+      const transaction = db.transaction(["colors"], "readwrite");
+      const store = transaction.objectStore("colors");
+      store.add({
+        color: color
+      });
+      transaction.oncomplete = function() {
+        createColorDiv(color);
+      };
+      transaction.onerror = function(event) {
+        console.error("Transaction error: " + event.target.errorCode);
+      };
     }
-}
-
-// Load stored custom colors on page load
-function loadStoredCustomColours() {
-    var storedColors = JSON.parse(localStorage.getItem('customColors'));
-    if (storedColors && storedColors.length > 0) {
-        storedColors.forEach(function(color) {
-            var colorCircle = document.createElement('div');
-            colorCircle.className = 'color-circle';
-            colorCircle.style.backgroundColor = color;
-            colorCircle.addEventListener('click', function() {
-                changeColor(color);
-            });
-            var addButton = document.getElementById('add-button');
-            document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
-        });
-    }
-};
-
-// Move sidebar and icon
-let count = 2;
-
-function moveBoth() {
-    const open = document.querySelector('.open');
-    const sidebar = document.querySelector('.sidebar');
-
-    if (count % 2 === 0) {
-        open.style.transform = 'translate(43vw, 0px) rotate(270deg)';
-        sidebar.style.transform = 'translate(48vw, 0px)';
-        console.log('Sidebar opened by 146.90.75.207');
-    } else {
-        open.style.transform = 'translate(49vw, 0px) rotate(90deg)';
-        sidebar.style.transform = 'translate(53vw, 0px)';
-        console.log('Sidebar closed by 146.90.75.207');
-    }
-
-    count++;
-}
-
-// Function to increment counter with a delay
-var isFunctionAllowed = true;
-
-function incrementCounter() {
-    if (!isFunctionAllowed) return; // Check if function is allowed to run
-    isFunctionAllowed = false; // Set function to not allowed
-
-    var currentValue = parseInt(localStorage.getItem('counter')) || 0;
-    // Increment the counter value by 1
-    currentValue++;
-    // Update the counter value in localStorage
-    localStorage.setItem('counter', currentValue);
-    // Update the counter value on the page
-    document.getElementById('counter').textContent = currentValue;
-
-    // Call setTimeout to schedule the next update after 20 seconds
-    setTimeout(function() {
-        isFunctionAllowed = true; // Set function to allowed after 20 seconds
-    }, 5000); // 20 seconds in milliseconds
-}
-
-// Function to reset counter value
-function resetCounter() {
-    // Set the counter value to 0
-    var currentValue = 0;
-    // Update the counter value in localStorage
-    localStorage.setItem('counter', currentValue);
-    // Update the counter value on the page
-    document.getElementById('counter').textContent = currentValue;
-}
-
-// Event listener for brunebot element
-document.addEventListener("DOMContentLoaded", function() {
-    var colorElement = document.getElementById("brunebot");
-
-    colorElement.addEventListener("click", function() {
-        alert('Redirecting to Brungle Info and Documentation!');
-        window.location.href = "https://documentation-brungle.pages.dev";
-    });
-});
-
-
-// Simple wait function
-function wait(milliseconds, callback) {
-  setTimeout(callback, milliseconds);
-}
-
-
-function showThemeChanger() {
-    // Get reference to the theme changer element
-    var themeChanger = document.getElementById('theme-changer');
-
-    // Toggle the display property of the theme changer
-    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
-        themeChanger.style.display = "block";
-    } else {
-        themeChanger.style.display = "none";
-    }
-}
-
-const abras = document.querySelector('.timetable-container');
-abras.style.display = "none";
-
-function showTimetable() {
-
-  //version 2.0 alert system
-alert("MOST TIMETABLES ARE UNAVAILABLE CURRENTLY. PLEASE SEND YOUR TIMETABLE TO ssnigdhasiraz22@sirhenryfloyd.co.uk with your class and your name.")
-
-  
-    // Get reference to the theme changer element
-    var themeChanger = document.querySelector('.timetable-container');
-
-    // Toggle the display property of the theme changer
-    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
-        themeChanger.style.display = "block";
-    } else {
-        themeChanger.style.display = "none";
-    }
-}
-
-function showShop() {
-    // Get reference to the theme changer element
-    var themeChanger = document.querySelector('.container');
-
-    // Toggle the display property of the theme changer
-    if (themeChanger.style.display === "none" || themeChanger.style.display === "") {
-        themeChanger.style.display = "block";
-    } else {
-        themeChanger.style.display = "none";
-    }
-}
-
-
-// Initialize variables
-let brunglePoints = parseInt(localStorage.getItem('counter')); // Initialize with counter value or default value
-let boughtItems = 0;
-
-// Update display
-function updateDisplay() {
-  document.getElementById('brunglePoints').textContent = brunglePoints;
-  document.getElementById('boughtItems').textContent = boughtItems;
-}
-
-// Buy item function
-function buyItem(price) {
-  let brunglePointsElement = document.getElementById('brunglePoints');
-  let boughtItemsElement = document.getElementById('boughtItems');
-  
-  if (brunglePoints >= price) {
-    brunglePoints -= price;
-    boughtItems++;
-    brunglePointsElement.textContent = brunglePoints;
-    boughtItemsElement.textContent = boughtItems;
-    // Update cloud variable here
-    updateCloudVariable(brunglePoints, boughtItems);
-    alert('Item bought successfully!');
-  } else {
-    alert('Not enough Brungle Points!');
-  }
-}
-
-// Simulate updating cloud variable
-function updateCloudVariable(points, items) {
-  // You can replace this with your actual cloud variable update logic
-  console.log(`Cloud variable updated: Brungle Points = ${points}, Bought Items = ${items}`);
-}
-
-// Initial display update
-updateDisplay();
-
-
-function toggleTables() {
-    var table1 = document.getElementById('table1');
-    var table2 = document.getElementById('table2');
-
-    if (table1.style.display === 'block') {
-        table1.style.display = 'none';
-        table2.style.display = 'block';
-    } else {
-        table1.style.display = 'block';
-        table2.style.display = 'none';
-    }
-}
-
-// Admin tools
-
-function infa() {
-  const realPass = "ThisIsNotAPasswordHahaLolHahaLolHahaThisIsNotAPasswordHahaLolHahaLolHahaThisIsNotAPasswordHahaLolHahaLolHahaThisIsNotAPasswordHahaLolHahaLolHaha";
-  let pass = "";
-
-  while (pass !== realPass) {
-    pass = prompt("This is an Admin Tool. If you have found this, alert ssnigdhasiraz22@sirhenryfloyd.co.uk. If you're naughty and want free stuff, type the password:");
-    console.log("IP 219.254.103.251 ILLEGAL ACCESS ( not rlly )");
-    alert("Your IP is 219.254.103.251. Hacking all services... JK but thats ur ip 100%! 219.254.103.251 219.254.103.251");
   }
 
-  // Get the current counter value from localStorage or initialize it to 0
-  let currentValue = parseInt(localStorage.getItem('counter')) || 0;
-
-  // Increase the counter value by 10000
-  currentValue += 10000;
-
-  // Update the counter value in localStorage
-  localStorage.setItem('counter', currentValue.toString());
-
-  // Display the updated counter value
-  console.log('Counter increased by 10000. New value: ' + currentValue);
-}
-
-
-         
-/*-- Made with Zdog --*/
-
-// setting up Zdog illustration element
-const illoElem = document.querySelector('.illo');
-const illoSize = 50;
-const minWindowSize = Math.min( window.innerWidth - 20, window.innerHeight - 60 );
-const zoom = Math.floor( (minWindowSize / illoSize) * 0.75 );
-illoElem.setAttribute( 'width', illoSize * zoom );
-illoElem.setAttribute( 'height', illoSize * zoom);
-
-// Zdog math variables
-const TAU = Zdog.TAU;
-
-// boolean flag for spin 
-let isSpinning = true;
-
-// illustration base
-const illo = new Zdog.Illustration({
-  element: illoElem,
-  zoom: zoom,
-  dragRotate: true,
-  onDragStart: function() {
-    isSpinning = false;
-  },
-  rotate: { y: TAU/4 }
-});
-
-// frontside earth
-const head = new Zdog.Hemisphere({
-  addTo: illo,
-  diameter: 40,
-  stroke: false,
-  color: '#1976B5',
-});
-
-// backside earth
-new Zdog.Hemisphere({
-  addTo: head,
-  diameter: 40,
-  stroke: false,
-  color: '#105AAA',
-  rotate: { x: TAU/2 }
-});
-
-// light green lands
-const land1 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -2, y: 0, z: 5 },
-  ],
-  translate: { x: 17, y: 5, z: 4 },
-  color: "#6FCC50",
-  closed: false,
-  fill: true,
-  stroke: 7,
-  addTo: head,
-});
-land1.copy({
-  scale: { x: -1 },
-  translate: { x: -17, y: 0, z: 4 },
-})
-
-const land2 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -10, y: 0, z: 4 },
-  ],
-  translate: { x: 13, y: -10, z: 10 },
-  color: "#6FCC50",
-  closed: false,
-  fill: true,
-  stroke: 7,
-  addTo: head,
-});
-
-new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: 5, y: 0, z: 4 },
-  ],
-  translate: { x: -13, y: -10, z: 10 },
-  color: "#6FCC50",
-  closed: false,
-  fill: true,
-  stroke: 7,
-  addTo: head,
-});
-
-const land3 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -2, y: 0, z: 3 },
-  ],
-  translate: { x: 13, y: 13, z: 7 },
-  color: "#6FCC50",
-  closed: false,
-  fill: true,
-  stroke: 4,
-  addTo: head,
-});
-land3.copy({
-  scale: { x: -1 },
-  translate: { x: -13, y: 13, z: 7 },
-})
-
-const land4 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -7, y: 0, z: 3 },
-  ],
-  translate: { x: 10, y: -3, z: 16 },
-  color: "#6FCC50",
-  closed: false,
-  fill: true,
-  stroke: 4,
-  addTo: head,
-});
-land4.copy({
-  scale: { x: -1 },
-  translate: { x: -10, y: 3, z: 16 },
-})
-
-// light clouds
-const cloud1 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -2, y: 0, z: 5 },
-  ],
-  translate: { x: 20, y: 7, z: 4 },
-  color: "#fff",
-  closed: false,
-  fill: true,
-  stroke: 5,
-  addTo: head,
-});
-
-new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: 3, y: 0, z: 1 },
-  ],
-  translate: { x: -5, y: 7, z: 20 },
-  color: "#fff",
-  closed: false,
-  fill: true,
-  stroke: 5,
-  addTo: head,
-});
-
-const cloud2 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -5, y: 0, z: 10 },
-  ],
-  translate: { x: 23, y: 2, z: 4 },
-  color: "#fff",
-  closed: false,
-  fill: true,
-  stroke: 4,
-  addTo: head,
-});
-cloud2.copy({
-  scale: { x: -1 },
-  translate: { x: -23, y: 2, z: 4 },
-})
-
-const cloud3 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -2, y: 0, z: 5 },
-  ],
-  translate: { x: 20, y: -2, z: 7 },
-  color: "#fff",
-  closed: false,
-  fill: true,
-  stroke: 2,
-  addTo: head,
-});
-cloud3.copy({
-  scale: { x: -1 },
-  translate: { x: -20, y: -2, z: 7 },
-})
-
-const cloud4 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -2, y: 0, z: 5 },
-  ],
-  translate: { x: 18, y: -10, z: 7 },
-  color: "#fff",
-  closed: false,
-  fill: true,
-  stroke: 3,
-  addTo: head,
-});
-cloud4.copy({
-  scale: { x: -1 },
-  translate: { x: -18, y: -10, z: 7 },
-})
-
-// dark clouds
-const cloud5 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: 0, y: 0, z: -3 },
-  ],
-  translate: { x: 20, y: -8, z: -3 },
-  color: "#A6B3DA",
-  closed: false,
-  fill: true,
-  stroke: 3,
-  addTo: head,
-});
-cloud5.copy({
-  scale: { x: -1 },
-  translate: { x: -20, y: -8, z: -3 },
-})
-
-const cloud6 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -4, y: 0, z: -7 },
-  ],
-  translate: { x: 20, y: 0, z: -8 },
-  color: "#A6B3DA",
-  closed: false,
-  fill: true,
-  stroke: 6,
-  addTo: head,
-});
-cloud6.copy({
-  scale: { x: -1 },
-  translate: { x: -20, y: 0, z: -8 },
-})
-
-const cloud7 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z:  0 },
-    { x: -3, y: 0, z: -3 },
-  ],
-  translate: { x: 15, y: 15, z: -8 },
-  color: "#A6B3DA",
-  closed: false,
-  fill: true,
-  stroke: 3,
-  addTo: head,
-});
-cloud7.copy({
-  scale: { x: -1 },
-  translate: { x: -15, y: 15, z: -8 },
-})
-
-new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z: 0 },
-    { x: -5, y:  0, z: 0 },
-  ],
-  translate: { x: -5, y: -4, z: -18 },
-  color: "#A6B3DA",
-  fill: true,
-  stroke: 8,
-  addTo: head,
-});
-
-// dark green lands
-const land5 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z: 0 },
-    { x: 2.5, y:  0, z: 2 },
-  ],
-  translate: { x: 7, y: 7, z: -16 },
-  color: "#489268",
-  fill: true,
-  stroke: 4,
-  addTo: head,
-});
-land5.copy({
-  scale: { x: -1 },
-  translate: { x: -7, y: 12, z: -16 },
-})
-
-const land6 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z: 0 },
-    { x: 10, y:  0, z: 9 },
-  ],
-  translate: { x: 5, y: -2, z: -17 },
-  color: "#489268",
-  fill: true,
-  stroke: 8,
-  addTo: head,
-});
-
-const land7 = new Zdog.Shape({
-  path: [
-    { x: 0, y:  0, z: 0 },
-    { x: 2.5, y:  0, z: 5 },
-  ],
-  translate: { x: 13, y: -10, z: -10 },
-  color: "#489268",
-  fill: true,
-  stroke: 4,
-  addTo: head,
-});
-land5.copy({
-  scale: { x: -1 },
-  translate: { x: -13, y: -10, z: -10 },
-  stroke: 5,
-})
-
-
-// spinning animation
-function animate() {
-  illo.rotate.y += isSpinning ? -0.01 : 0;
-  illo.updateRenderGraph();
-  requestAnimationFrame( animate );
-}
-
-animate();
-
-// reset animation
-document.querySelector('.reset-button').onclick = function() {
-  isSpinning = false;
-  illo.rotate.set({
-    y: TAU/4,
-  });
-  
-  setTimeout(() => { 
-    isSpinning = true;
-  }, 2000);
-};
-
-//I've left this in here to not affect functionality but it doesn't do anything, please remove
-function updateClock() {
-    const now = new Date();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-    const second = now.getSeconds();
-
-    const hourHand = document.getElementById('hour');
-    const minuteHand = document.getElementById('minute');
-    const secondHand = document.getElementById('second');
-
-    const hourRotation = (hour % 12) * 30 + (minute / 60) * 30;
-    const minuteRotation = minute * 6 + (second / 60) * 6;
-    const secondRotation = second * 6;
-
-    hourHand.style.transform = `rotate(${hourRotation}deg)`;
-    minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
-    secondHand.style.transform = `rotate(${secondRotation}deg)`;
-
-    setTimeout(updateClock, 1000); // Call updateClock function again after 1 second
-}
-
-updateClock();
-
-</script>
-<script>
-
-// Add an event listener to the button with id 'change-bg-btn' for changing background image
-document.getElementById('change-bg-btn').addEventListener('click', function() {
-    // Prompt the user to enter the URL of the image they want as the background
-    var imageUrl = prompt("Enter the URL of the image you want as background:");
-    if (imageUrl) {
-        // Set the background image to the entered URL and adjust the size
-        document.body.style.backgroundImage = "url('" + imageUrl + "')";
-        document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
-    }
-});
-
-// Function to set the background to a space-themed image
-function themeSpace() {
-    document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp10532946.jpg')";
-    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
-}
-
-// Function to set the background to a fluid-themed image
-function themeFluid() {
-    document.body.style.backgroundImage = "url('https://www.chromethemer.com/blog/images/uhd-wallpaper-backgrounds-1.jpg')";
-    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
-}
-
-// Function to set the background to a desert-themed image
-function themeDesert() {
-    document.body.style.backgroundImage = "url('https://t4.ftcdn.net/jpg/03/34/19/13/360_F_334191354_zW1Fj9HPbfJdBPEVe2d6mcuT1w2g8K5y.jpg')";
-    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
-}
-
-// Function to set the background to a game-themed image
-function themeGame() {
-    document.body.style.backgroundImage = "url('https://miro.medium.com/v2/resize:fit:1400/1*yrppiCrEctYSXk2ZRiZ7VQ.gif')";
-    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
-}
-
-// Array containing the URLs of the images for random background
-const imageUrls = [
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage1.gif",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage2.gif",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage3.webp",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage4.webp",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage5.webp",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage6.gif",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage7.gif",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage8.gif",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage9.gif",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage10.gif",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage11.jpg",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage12.gif",
-    "https://dev.wilburwilliams.uk/assets/brungle/bgimage13.jpg"
-];
-
-let currentIndex = 0; // Initialize index for the image array
-let themeStarted = false; // Flag to track if themeRandom has been started
-
-// Function to set the background to a random image from the array
-function themeRandom() {
-    document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
-
-    // Set background image to the current index from the array
-    document.body.style.backgroundImage = `url('${imageUrls[currentIndex]}')`;
-
-    // Increment index for next image and wrap around using modulo
-    currentIndex = (currentIndex + 1) % imageUrls.length;
-}
-
-
-     
-     //toggles to next
-function toggleEightOne() {
-      var table1 = document.getElementById('table1-1');
-      var table2 = document.getElementById('table2-1');
-
-      if (table1.style.display === 'block') {
-        table1.style.display = 'none';
-        table2.style.display = 'block';
-      } else {
-        table1.style.display = 'block';
-        table2.style.display = 'none';
-      }
-    }
-
-function toggleEightTwo() {
-      var table1 = document.getElementById('table1-2');
-      var table2 = document.getElementById('table2-2');
-
-      if (table1.style.display === 'block') {
-        table1.style.display = 'none';
-        table2.style.display = 'block';
-      } else {
-        table1.style.display = 'block';
-        table2.style.display = 'none';
-      }
-    }
-
-function toggleEightThree() {
-      var table1 = document.getElementById('table1-3');
-      var table2 = document.getElementById('table2-3');
-
-      if (table1.style.display === 'block') {
-        table1.style.display = 'none';
-        table2.style.display = 'block';
-      } else {
-        table1.style.display = 'block';
-        table2.style.display = 'none';
-      }
-    }
-
-function toggleEightFour() {
-      var table1 = document.getElementById('table1-4');
-      var table2 = document.getElementById('table2-4');
-
-      if (table1.style.display === 'block') {
-        table1.style.display = 'none';
-        table2.style.display = 'block';
-      } else {
-        table1.style.display = 'block';
-        table2.style.display = 'none';
-      }
-    }
-
-function toggleEightFive() {
-      var table1 = document.getElementById('table1');
-      var table2 = document.getElementById('table2');
-
-      if (table1.style.display === 'block') {
-        table1.style.display = 'none';
-        table2.style.display = 'block';
-      } else {
-        table1.style.display = 'block';
-        table2.style.display = 'none';
-      }
-    }
-
-function toggleEightSix() {
-      var table1 = document.getElementById('table1-6');
-      var table2 = document.getElementById('table2-6');
-
-      if (table1.style.display === 'block') {
-        table1.style.display = 'none';
-        table2.style.display = 'block';
-      } else {
-        table1.style.display = 'block';
-        table2.style.display = 'none';
-      }
-    }
-
-
-//Changing to different classes
-
-
-const eightOne = document.querySelector('.eight-one');
-const eightTwo = document.querySelector('.eight-two');
-const eightThree = document.querySelector('.eight-three');
-const eightFour = document.querySelector('.eight-four');
-const eightFive = document.querySelector('.eight-five');
-const eightSix = document.querySelector('.eight-six');
-     const customTable = document.querySelector('.eight-custom');
-
-function eightOneChange() {
-  eightOne.style.display = "block";
-  eightTwo.style.display = "none";
-  eightThree.style.display = "none";
-  eightFour.style.display = "none";
-  eightFive.style.display = "none";
-  eightSix.style.display = "none";
-}
-
-function eightTwoChange() {
-  eightOne.style.display = "none";
-  eightTwo.style.display = "block";
-  eightThree.style.display = "none";
-  eightFour.style.display = "none";
-  eightFive.style.display = "none";
-  eightSix.style.display = "none";
-}
-
-function eightThreeChange() {
-  eightOne.style.display = "none";
-  eightTwo.style.display = "none";
-  eightThree.style.display = "block";
-  eightFour.style.display = "none";
-  eightFive.style.display = "none";
-  eightSix.style.display = "none";
-}
-
-function eightFourChange() {
-  eightOne.style.display = "none";
-  eightTwo.style.display = "none";
-  eightThree.style.display = "none";
-  eightFour.style.display = "block";
-  eightFive.style.display = "none";
-  eightSix.style.display = "none";
-}
-
-function eightFiveChange() {
-  eightOne.style.display = "none";
-  eightTwo.style.display = "none";
-  eightThree.style.display = "none";
-  eightFour.style.display = "none";
-  eightFive.style.display = "block";
-  eightSix.style.display = "none";
-}
-
-function eightSixChange() {
-   eightOne.style.display = "none";
-  eightTwo.style.display = "none";
-  eightThree.style.display = "none";
-  eightFour.style.display = "none";
-  eightFive.style.display = "none";
-  eightSix.style.display = "block";
-}
-
-function createTimetable() {
-  alert('Redirecting to a temporary website. This is because, to limit issues with code, disrupting other Brungle services, the dev team ( me ) have decided to move all "experimental", "beta" and "new" features to temporary sites until all bugs have been cleared. Appreciation to your understanding. Ok to proceed ... ');
-  window.location.href = "https://temporary-timetable-custom-brungle.pages.dev/";
-}
-     
-     function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-//I'd remove this and replace with sleep() but you can use this synchronously so learn how to async first
-function wait(milliseconds, callback) {
-  setTimeout(callback, milliseconds);
-}
-
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  var expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-      }
-  }
-  return "";
-}
-       
-    </script>
-    <script>
-// Select elements for the banner popup, header, and paragraph
-const banner = document.querySelector(".banner-popup");
-const header = document.querySelector("#bannerH");
-const paragraph = document.querySelector("#bannerP");
-
-// Display the banner popup
-banner.style.display = "block";
-
-function setUpdateBanner(){2
-    // Check if all elements are found
-    if (banner && header && paragraph) {
-        /* Update the header and paragraph text (commented out so you can use again in future without affecting functionality)
-        header.innerText = " ⚠️ Update 🚨 ";
-        paragraph.innerText = "As of Thursday May 16th 2024, Brungle now has the ability to SAVE colors that you create. Moreover, it also applies the color every time you use Brungle. This will disappear in 10 Seconds.";
-
-        // Hide the banner after 10 seconds
-        setTimeout(() => {
-            banner.style.display = "none";
-        }, 10000);
-        */
-    } else {
-        console.error("One or more elements not found.");
-        console.log(banner);
-        console.log(paragraph);
-        console.log(header);
-    }
-};
-
-// Add an event listener to the button with id 'removeColorButton' to remove a color circle
-document.getElementById('removeColorButton').addEventListener('click', function() {
-    // Select all elements with the class 'color-circle'
-    var colorCircles = document.querySelectorAll('.color-circle');
-    // Get the last color circle
-    var lastColorCircle = colorCircles[colorCircles.length - 1];
-    // Get the background color of the last color circle
-    var lastColor = lastColorCircle.style.backgroundColor;
-
-    // Find the index of the color circle to remove
-    var index = Array.from(lastColorCircle.parentNode.children).indexOf(lastColorCircle);
-
-    // Remove the color circle element from the DOM
-    lastColorCircle.parentNode.removeChild(lastColorCircle);
-
-    // Remove the corresponding color from IndexedDB
-    var transaction = db.transaction(['colors'], 'readwrite');
-    var objectStore = transaction.objectStore('colors');
-
-    // Retrieve the color circle entry using its index and delete it
-    var request = objectStore.delete(index);
-
-    // Log success message when the color is removed from IndexedDB
+  function loadColors() {
+    const transaction = db.transaction(["colors"], "readonly");
+    const store = transaction.objectStore("colors");
+    const request = store.getAll();
     request.onsuccess = function(event) {
-        console.log('Most recent custom color removed from IndexedDB:', lastColor);
+      const colors = event.target.result;
+      colors.forEach((colorObj) => createColorDiv(colorObj.color));
     };
-
-    // Log error message if there is an error removing the color from IndexedDB
     request.onerror = function(event) {
-        console.error('Error removing color from IndexedDB:', event.target.errorCode);
+      console.error("Transaction error: " + event.target.errorCode);
     };
-});
+  }
 
+  function createColorDiv(color) {
+    const div = document.createElement("div");
+    div.className = "color-circle";
+    div.style.backgroundColor = color;
+    div.onclick = function() {
+      document.body.style.backgroundColor = color;
+    };
+    document.getElementById("color-dang").appendChild(div);
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    // Open (or create) the database
+    let db;
+    const request = indexedDB.open("backgroundDB", 1);
+    request.onerror = function(event) {
+      console.log("Database error:", event.target.error);
+    };
+    request.onsuccess = function(event) {
+      db = event.target.result;
+      getBackgroundColor();
+    };
+    request.onupgradeneeded = function(event) {
+      db = event.target.result;
+      db.createObjectStore("settings", {
+        keyPath: "id"
+      });
+    };
 
-//Moved all onload() things to one function
-document.addEventListener('DOMContentLoaded', function(){
-  setBPcounter();
-  retrieveCustomColor();
-  loadStoredCustomColours();
-  setUpdateBanner();
-})
+    function saveBackgroundColor(color) {
+      const transaction = db.transaction(["settings"], "readwrite");
+      const store = transaction.objectStore("settings");
+      store.put({
+        id: "backgroundColor",
+        color: color
+      });
+    }
 
-function classPRE() {
-  window.location.href="https://classroom.google.com/u/9/c/NTI3MTM3Mjk3NzM1";
-}
+    function getBackgroundColor() {
+      const transaction = db.transaction(["settings"], "readonly");
+      const store = transaction.objectStore("settings");
+      const request = store.get("backgroundColor");
+      request.onsuccess = function(event) {
+        if (event.target.result) {
+          document.body.style.backgroundColor = event.target.result.color;
+        }
+      };
+      request.onerror = function(event) {
+        console.log("Error fetching background color:", event.target.error);
+      };
+    }
+    document.getElementById("color-navy").addEventListener("click", function() {
+      const navyColor = "#000042";
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundColor = navyColor;
+      saveBackgroundColor(navyColor);
+    });
+    document
+      .getElementById("color-normal")
+      .addEventListener("click", function() {
+        const normalColor = "#282a37";
+        document.body.style.backgroundImage = "";
+        document.body.style.backgroundColor = normalColor;
+        saveBackgroundColor(normalColor);
+      });
+    document.getElementById("color-green").addEventListener("click", function() {
+      const greenColor = "#036B52";
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundColor = greenColor;
+      saveBackgroundColor(greenColor);
+    });
+    document.getElementById("color-og").addEventListener("click", function() {
+      const ogColor = "#E63946";
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundColor = ogColor;
+      saveBackgroundColor(ogColor);
+    });
+    //smol popup thingy name
+    document
+      .getElementById("color-navy")
+      .addEventListener("mouseover", function() {
+        document.getElementById("smolColors").innerHTML = "Navy Oliver";
+        document.getElementById("smolPopup").style.display = "block";
+      });
+    document
+      .getElementById("color-normal")
+      .addEventListener("mouseover", function() {
+        document.getElementById("smolColors").innerHTML = "Dark";
+        document.getElementById("colours").style.display = "block";
+      });
+    document
+      .getElementById("color-green")
+      .addEventListener("mouseover", function() {
+        document.getElementById("smolColors").innerHTML = "Direct Green";
+        document.getElementById("colours").style.display = "block";
+      });
+    document
+      .getElementById("color-og")
+      .addEventListener("mouseover", function() {
+        document.getElementById("smolColors").innerHTML = "OG";
+        document.getElementById("smolPopup").style.display = "block";
+      });
+  });
+  // bruh
+  document.addEventListener("DOMContentLoaded", () => {
+    // Initialize IndexedDB
+    const request = indexedDB.open("bgImageDB", 1);
+    request.onupgradeneeded = (event) => {
+      const db = event.target.result;
+      db.createObjectStore("images", {
+        keyPath: "id"
+      });
+      db.createObjectStore("circles", {
+        keyPath: "id",
+        autoIncrement: true
+      });
+    };
+    request.onsuccess = (event) => {
+      const db = event.target.result;
+      loadSavedData(db);
+    };
+    request.onerror = (event) => {
+      console.error("Database error:", event.target.errorCode);
+    };
+  });
 
-function classENGLISH() {
-  window.location.href="https://classroom.google.com/u/9/c/NTI3MTM3Mjk3NzM1";
-}
-function classMATHS() {
-  window.location.href="https://classroom.google.com/u/9/c/NTI3MTM3Mjk3NzM1";
-}
+  function loadSavedData(db) {
+    // Load and set background image
+    const transaction = db.transaction(["images"], "readonly");
+    const store = transaction.objectStore("images");
+    const getRequest = store.get("bgImage");
+    getRequest.onsuccess = (event) => {
+      if (event.target.result) {
+        document.body.style.backgroundImage = `url(${event.target.result.url})`;
+      }
+    };
+    // Load and create saved circles
+    const circleTransaction = db.transaction(["circles"], "readonly");
+    const circleStore = circleTransaction.objectStore("circles");
+    circleStore.openCursor().onsuccess = (event) => {
+      const cursor = event.target.result;
+      if (cursor) {
+        addColorCircle(cursor.value.url, false);
+        cursor.continue();
+      }
+    };
+  }
 
-      //let alertStopped = localStorage.getItem('alertStopped');
+  function addNewBG() {
+    const imageUrl = prompt("Please enter the image URL:");
+    if (imageUrl) {
+      document.body.style.backgroundImage = `url(${imageUrl})`;
+      // Save the image URL to IndexedDB
+      const request = indexedDB.open("bgImageDB", 1);
+      request.onsuccess = (event) => {
+        const db = event.target.result;
+        const transaction = db.transaction(["images"], "readwrite");
+        const store = transaction.objectStore("images");
+        const bgImage = {
+          id: "bgImage",
+          url: imageUrl
+        };
+        store.put(bgImage);
+        transaction.oncomplete = () => {
+          console.log("Background image saved to IndexedDB.");
+          addColorCircle(imageUrl, true);
+        };
+        transaction.onerror = (event) => {
+          console.error("Transaction error:", event.target.errorCode);
+        };
+      };
+      request.onerror = (event) => {
+        console.error("Database error:", event.target.errorCode);
+      };
+    } else {
+      console.log("No image URL provided.");
+    }
+  }
 
-        //if (alertStopped !== 'true') {
-// releaed on update 2.0
-//alert('BRUNGLE IS CURRENTLY INOPPERABLE WITHOUT CHOOSING A PLAN. Redirecting to landing-brungle.pages.dev to choose plan. OK to continue');
-//window.location.href = "https://landing-brungle.pages.dev";
-       // }
+  function addColorCircle(imageUrl, saveToDB) {
+    const parentDiv = document.getElementById('image-dang');
+    const newDiv = document.createElement('div');
+    newDiv.className = 'color-circle';
+    newDiv.style.backgroundImage = `url(${imageUrl})`;
+    newDiv.addEventListener('click', () => {
+      document.body.style.backgroundImage = `url(${imageUrl})`;
+      saveBackgroundImage(imageUrl);
+    });
+    parentDiv.appendChild(newDiv);
+    if (saveToDB) {
+      // Save the circle's image URL to IndexedDB
+      const request = indexedDB.open("bgImageDB", 1);
+      request.onsuccess = (event) => {
+        const db = event.target.result;
+        const transaction = db.transaction(["circles"], "readwrite");
+        const store = transaction.objectStore("circles");
+        const circle = {
+          url: imageUrl
+        };
+        store.add(circle);
+        transaction.oncomplete = () => {
+          console.log("Circle image saved to IndexedDB.");
+        };
+        transaction.onerror = (event) => {
+          console.error("Transaction error:", event.target.errorCode);
+        };
+      };
+      request.onerror = (event) => {
+        console.error("Database error:", event.target.errorCode);
+      };
+    }
+  }
 
+  function saveBackgroundImage(imageUrl) {
+    const request = indexedDB.open("bgImageDB", 1);
+    request.onsuccess = (event) => {
+      const db = event.target.result;
+      const transaction = db.transaction(["images"], "readwrite");
+      const store = transaction.objectStore("images");
+      const bgImage = {
+        id: "bgImage",
+        url: imageUrl
+      };
+      store.put(bgImage);
+      transaction.oncomplete = () => {
+        console.log("Background image saved to IndexedDB.");
+      };
+      transaction.onerror = (event) => {
+        console.error("Transaction error:", event.target.errorCode);
+      };
+    };
+    request.onerror = (event) => {
+      console.error("Database error:", event.target.errorCode);
+    };
+  }
+
+  function gotoNotes() {
+    window.location.href = "https://notes-brungle.pages.dev/";
+  }
+
+  function openBCHATS() {
+    alert('NOt Opperational Currently. Try AGain Later');
+  }
+
+  function openBSCODE() {
+    alert('NOt Opperational Currently. Try AGain Later');
+  }
 </script>
-          <style>
-      .background-blur-bg {
-        width: 100vw;
-        height: 100vh;
-        left: 0;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        backdrop-filter: blur(20px);
-        background: rgba(255,255,255,0.25);
-        position: absolute;
-        z-index: 694209;
-      }
-      
-      .closeButtonxd {
-        width: 50px;
-        height: 50px;
-        border-radius: 1em;
-        border: 2px solid white;
-        background: #d74315;
-        position: absolute;
-        z-index: 69421;
-        left: 20px;
-        bottom: 20px;
-        color: white;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s;
-      }
-      
-      .closeButtonxd:hover {
-        transform: scale(1.5);
-        border: 5px solid white;
-      }
-        .calculator {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            background-color: #004d40;
-          width: 300px;
-          position: absolute;
-          z-index: 6942099999;
-          top: 15%;
-          left: 5%;
-        }
-        .display {
-            width: 100%;
-            height: 60px;
-            margin-bottom: 20px;
-            text-align: right;
-            padding-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            font-size: 2em;
-            box-sizing: border-box;
-            background-color: #00332e; /* Even darker green */
-            color: white;
-          overflow: hidden;
-        }
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-        .button {
-            padding: 20px;
-            font-size: 1.2em;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            background-color: #008577; /* Teal */
-            color: white;
-        }
-        .button.operator {
-            background-color: #00796b; /* Darker teal */
-        }
-        .button.equal {
-            background-color: #d84315; /* Orange */
-            color: white;
-        }
-        .button.clear {
-            background-color: #c62828; /* Red */
-            color: white;
-        }
-
-        /* Sparkle effect */
-        .sparkle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: radial-gradient(circle, white 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: sparkle 0.5s ease-out forwards;
-        }
-
-        @keyframes sparkle {
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(3);
-            }
-        }
-    </style>
-</head>
-<body>
-  <div class="background-blur-bg">
-  <button class="closeButtonxd" onclick="closeCalculator()">X</button>
-    <div class="calculator">
-        <div class="display" id="display">0</div>
-        <div class="buttons">
-            <div class="button clear" onclick="clearDisplay(event)">C</div>
-            <div class="button" onclick="appendToDisplay('7', event)">7</div>
-            <div class="button" onclick="appendToDisplay('8', event)">8</div>
-            <div class="button" onclick="appendToDisplay('9', event)">9</div>
-            <div class="button operator equal" onclick="appendToDisplay('/', event)">/</div>
-            <div class="button" onclick="appendToDisplay('4', event)">4</div>
-            <div class="button" onclick="appendToDisplay('5', event)">5</div>
-            <div class="button" onclick="appendToDisplay('6', event)">6</div>
-            <div class="button operator equal" onclick="appendToDisplay('*', event)">*</div>
-            <div class="button" onclick="appendToDisplay('1', event)">1</div>
-            <div class="button" onclick="appendToDisplay('2', event)">2</div>
-            <div class="button" onclick="appendToDisplay('3', event)">3</div>
-            <div class="button operator equal" onclick="appendToDisplay('-', event)">-</div>
-            <div class="button" onclick="appendToDisplay('0', event)">0</div>
-            <div class="button" onclick="appendToDisplay('.', event)">.</div>
-            <div class="button equal" onclick="calculateResult(event)">=</div>
-            <div class="button operator equal" onclick="appendToDisplay('+', event)">+</div>
-        </div>
-    </div>
-    </div>
-    <script>
-        const display = document.getElementById('display');
-
-        function clearDisplay(event) {
-            display.textContent = '0';
-            createSparkle(event);
-        }
-
-        function appendToDisplay(value, event) {
-            if (display.textContent === '0') {
-                display.textContent = value;
-            } else {
-                display.textContent += value;
-            }
-            createSparkle(event);
-        }
-
-        function calculateResult(event) {
-            try {
-                display.textContent = eval(display.textContent);
-            } catch {
-               display.textContent = 'Error! Why you type in calculator? Ur fatha comuing to whoops ur ass to venus.';
-display.style.fontSize = "17.5px";
-
-            
-            }
-            createSparkle(event);
-        }
-
-        function createSparkle(event) {
-            const sparkle = document.createElement('div');
-            sparkle.classList.add('sparkle');
-            document.body.appendChild(sparkle);
-            const rect = event.target.getBoundingClientRect();
-            sparkle.style.left = `${rect.left + rect.width / 2 - 5}px`;
-            sparkle.style.top = `${rect.top + rect.height / 2 - 5}px`;
-
-            sparkle.addEventListener('animationend', () => {
-                sparkle.remove();
-            });
-        }
-      var calculator = document.querySelector('.background-blur-bg');
-      calculator.style.display = "none";
-      function closeCalculator() {
-        
-        
-        calculator.style.display = "none";
-      }
-      
-      function showCalculator() {
-      calculator.style.display = "block";
-      }
-      
-      document.addEventListener('keypress', function(event) {
-  if (event.key === '0') {
-    appendToDisplay('0', event);
-  }
-  else if (event.key === '1' ||
-           event.key === '2' ||
-           event.key === '3' ||
-           event.key === '4' ||
-           event.key === '5' ||
-           event.key === '6' ||
-           event.key === '7' ||
-           event.key === '8' ||
-           event.key === '9') {
-    appendToDisplay(event.key, event);
-  }
-  else if (event.key === '*' ||
-           event.key === '/' ||
-           event.key === '+' ||
-           event.key === '-') {
-    appendToDisplay(event.key, event);
-  }
-        
-  else if (event.key === '=' || event.key === 'Enter') {
-    calculateResult(event)
-  }
-});
-    </script>
-</body>
-</html>
-
-</body>
-</html>
