@@ -465,23 +465,26 @@
 <div class="moreMenu">
   <div class="moreeenu">
     <h1> Select A <b>SERVICE</b></h1>
-    <button class="box" style="background: #814cfe; border: 5px solid #814cfe;" onclick="showThemeChanger()">
-      <i style="scale: 1.35" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
+    <button class="box" style="background: #00ffff; border: 5px solid #1ad4ff" onclick="showThemeChanger()">
+      <i style="scale: 1.45" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
     </button>
-    <button class="box" style="background: #7444e4; border: 5px solid #7444e4;"  onclick="showTimetable()">
-      <i style="scale: 1.35" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
+    <button class="box" style="background: #1ad4ff; border: 5px solid #339aff"  onclick="showTimetable()">
+      <i style="scale: 1.44" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
     </button>
-    <button onclick="showCalculator()" class="box" style="background: #673ccb; border: 5px solid #673ccb;">
-      <i style="scale: 1.35" class="fa-solid fa-calculator" aria-hidden="true"></i>
+    <button onclick="showSCHOOLS()" class="box" style="background: #339aff; border: 5px solid #4d5fff;">
+      <i style="scale: 1.43" class="fa-solid fa-calculator" aria-hidden="true"></i>
     </button>
-    <button class="box" style="background: #5a35b1; border: 5px solid #5a35b1;" onclick="gotoNotes()">
-      <i style="scale: 1.35" class="fa-solid fa-note-sticky"></i>
+    <button onclick="openMAPS()"class="box" style="background: #4d5fff; border: 5px solid #6635ff;">
+     <i style="scale: 1.42" class="fa-solid fa-school"></i>
     </button>
-    <button onclick="openBCHATS()"class="box" style="background: #40267f; border: 5px solid #40267f;">
-      <i style="scale: 1.35"  class="fa-solid fa-comment-dots"></i>
+    <button onclick="gotoNotes()" class="box" style="background: #6635ff; border: 5px solid #7f0aff;">
+      <i style="scale: 1.41" class="fa-solid fa-note-sticky"></i>
     </button>
-    <button onclick="openBSCODE()"class="box" style="background: #473474; border: 5px solid #331e65;">
-     <i style="scale: 1.35"  class="fa-solid fa-code"></i>
+    <button onclick="openBCHATS()"class="box" style="background: #7f0aff; border: 5px solid #704acb">
+      <i style="scale: 1.4"  class="fa-solid fa-comment-dots"></i>
+    </button>
+    <button onclick="openBSCODE()"class="box" style="background: #704acb; border: 5px solid #814cfe">
+     <i style="scale: 1.39"  class="fa-solid fa-code"></i>
     </button>
   </div>
 </div>
@@ -537,16 +540,17 @@
     justify-content: center;
     height: 75px;
     width: 75px;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: all 0.35s ease-in-out;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     opacity: 0.75;
+    scale: 1.25;
   }
 
   .box:hover {
     width: 105px;
     height: 105px;
-    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.05);
     opacity: 1;
   }
 
@@ -1041,11 +1045,11 @@
   }
 
   function openBCHATS() {
-    alert('NOt Opperational Currently. Try AGain Later');
+    alert('Currently Not Opperational Because of issues. Will come back soon!');
   }
 
   function openBSCODE() {
-    alert('NOt Opperational Currently. Try AGain Later');
+    window.location.href="https://coding-brungle.pages.dev";
   }
 
   function showTimetable() {
