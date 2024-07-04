@@ -420,8 +420,8 @@
     <!--   Sections. Themes and Stuffs are Inactive Currently   -->
     <div class="themes">
       <h1> Themes </h1>
-      <div class="theme-circle"></div>
-      INACTIVE.
+      <button class="theme-circle" onclick="ogBrungle()"></button>
+      PARTIALLY INACTIVE.
     </div>
     <div class="colors">
       <h1> Colors </h1>
@@ -468,9 +468,9 @@
     <button class="box" style="background: #814cfe; border: 5px solid #814cfe;" onclick="showThemeChanger()">
       <i style="scale: 1.35" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
     </button>
-    <div class="box" style="background: #7444e4; border: 5px solid #7444e4;">
+    <button class="box" style="background: #7444e4; border: 5px solid #7444e4;"  onclick="showTimetable()">
       <i style="scale: 1.35" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
-    </div>
+    </button>
     <button onclick="showCalculator()" class="box" style="background: #673ccb; border: 5px solid #673ccb;">
       <i style="scale: 1.35" class="fa-solid fa-calculator" aria-hidden="true"></i>
     </button>
@@ -1046,5 +1046,16 @@
 
   function openBSCODE() {
     alert('NOt Opperational Currently. Try AGain Later');
+  }
+
+  function showTimetable() {
+    window.location.href="https://timetable-brungle.pages.dev";
+  }
+
+
+  // theme functions
+  function ogBrungle() {
+    alert('For a few days, This theme will redirect you to the old Brungle Website. Sorry for the inconvienence.');
+    window.location.href="https://og-brungle.pages.dev";
   }
 </script>
