@@ -1,1079 +1,189 @@
-<!-- BRUNGLE REDESIGN IS OFFICIALLY BEING PULLED UP TO BRUNGLE.PAGES.DEV  From NOW ON, redesign-brungle.pages.dev is only a Investors Only and Testing Website. -->
-
-<html>
-<script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
-<column>
-  <h1 id="title"> Brungle </h1>
-  <h3> Made with ❤️ by Shyun </h3>
-  <div class="searchBar">
-  <!-- search icon -->
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <!-- input -->
-  <input type="text" class="searchInput" placeholder="Search Brungle ... " autofocus></input>
-  <!--  file icon  -->
-  <i style="transform: rotate(-35deg)" class="fa-solid fa-paperclip"></i>
-  <hr>
-  <!-- ai icon -->
-  <svg id="fuck" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="35px" viewBox="0 0 24 24" width="35px">
-    <defs>
-      <linearGradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#7f4cff;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#4f84f2;stop-opacity:1" />
-      </linearGradient>
-    </defs>
-    <rect fill="none" height="24" width="24" x="0" />
-    <g>
-      <path d="M19.46,8l0.79-1.75L22,5.46c0.39-0.18,0.39-0.73,0-0.91l-1.75-0.79L19.46,2c-0.18-0.39-0.73-0.39-0.91,0l-0.79,1.75 L16,4.54c-0.39,0.18-0.39,0.73,0,0.91l1.75,0.79L18.54,8C18.72,8.39,19.28,8.39,19.46,8z M11.5,9.5L9.91,6 C9.56,5.22,8.44,5.22,8.09,6L6.5,9.5L3,11.09c-0.78,0.36-0.78,1.47,0,1.82l3.5,1.59L8.09,18c0.36,0.78,1.47,0.78,1.82,0l1.59-3.5 l3.5-1.59c0.78-0.36,0.78-1.47,0-1.82L11.5,9.5z M18.54,16l-0.79,1.75L16,18.54c-0.39,0.18-0.39,0.73,0,0.91l1.75,0.79L18.54,22 c0.18,0.39,0.73,0.39,0.91,0l0.79-1.75L22,19.46c0.39-0.18,0.39-0.73,0-0.91l-1.75-0.79L19.46,16 C19.28,15.61,18.72,15.61,18.54,16z" style="fill:url(#grad1); font-weight: 1000; scale: 1.075" />
-    </g>
-  </svg>
-</div>
-  <div class="sites" id="sitesContainer">
-    <template id="siteTemplate">
-      <a class="siteName" target="_blank">
-        <h1 class="siteH">Site</h1>
-        <h3 class="siteHT">Site.com</h3>
-      </a>
-    </template>
-    <button class="sitesBottom" onclick="addSite()">
-      <i class="fa-solid fa-plus fa-xl" style="scale: 1.3"></i>
-    </button>
-  </div>
-</column>
-
-
-<div class="topLevels">
-  <button class="circle" id="themeButton" onclick="showThemeChanger()">
-    <i style="scale: 1.35" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
-  </button>
-  <button class="circle" onclick="showTimetable()">
-    <i style="scale: 1.35" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
-  </button>
-  <button class="circle" id="moreButton" onclick="toggleMore()">
-    <i style="scale: 1.35" class="fa-solid fa-bars"></i>
-  </button>
-</div>
-
-<div class="leftLevels">
-  <button class="circle">
-    <i style="scale: 1.35" class="fa-solid fa-trophy"></i>
-  </button>
-  <h1 id="points"> loading ... </h1>
-</div>
-
-<!-- brungle old features -->
-
-</html>
-<style>
-  body {
-    background: #282a37;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-
-  .searchBar {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 37.5%;
-    padding: 15px;
-    background: #3e404d;
-    height: 35px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    transition: all 0.3s ease-in-out;
-    transition: border 0.025s ease-in-out !important;
-  }
-
-  .searchBar:hover {
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
-    background: #484a54;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-  }
-
-  .searchBar i {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  .searchBar svg {
-    margin-left: 10px;
-    margin-right: 15px;
-  }
-
-  .searchInput {
-    color: white;
-    background: transparent;
-    outline: none;
-    border: none;
-    width: 80%;
-  }
-
-  .searchInput:focus {
-    outline: none;
-    border: none;
-  }
-
-  .searchInput:focus~.searchBar {
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
-    background: #484a54;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    transform: scale(1.005);
-  }
-
-  .searchBar:focus-within {
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
-    background: #484a54;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    transform: scale(1.005);
-  }
-
-  .searchInput::placeholder {
-    color: #eaeaea;
-  }
-
-  .searchBar hr {
-    width: 0px;
-    height: 100%;
-    background: #8b8c94;
-    color: #8b8c94;
-  }
-
-  column {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    margin-top: 100px;
-    font-family: "Helvetica", cursive;
-  }
-
-  column h3 {
-    font-size: 12.5px;
-    margin-top: 5px;
-    text-align: center;
-  }
-
-  column h1 {
-    margin-top: 69px;
-    font-size: 55px;
-    margin-bottom: 0px;
-    text-align: center;
-    background: -webkit-linear-gradient(135deg, #3e8eff, #8e3eff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .topLevels {
-    position: absolute;
-    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-    top: 0;
-    right: 0;
-    padding: 20px 15px;
-    background: transparent;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .circle {
-    border-radius: 50%;
-    background: #3e404d;
-    height: 50px;
-    width: 50px;
-    margin-left: 5px;
-    margin-right: 5px;
-    transition: all 0.042.5s ease-in-out;
-  }
-
-  .leftLevels {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    padding: 20px 15px;
-    background: transparent;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 10px;
-    gap: 10px;
-    font-family: "Helvetica", cursive;
-  }
-
-  .circle:hover {
-    background: #515157;
-    border: 2px dashed white;
-  }
-
-  button {
-    outline: none;
-    border: none;
-    color: white;
-  }
-</style>
-<script>
-  window.addEventListener('load', function() {
-    document.querySelector('.searchInput').focus();
-  });
-  var queryURL = 'https://search.brave.com/search?q=';
-  var urdad = "";
-  document.querySelector('.searchInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-      let query = event.target.value;
-      if (query) {
-        window.location.href = queryURL + encodeURIComponent(query) + urdad;
-      }
-    }
-  });
-  document.querySelector('#fuck').addEventListener('click', function() {
-    urdad = '&source=llmSuggest&summary=1';
-    console.log('clicked ai');
-    var lol = document.querySelector('#fuck');
-    lol.style.transition = "all 0.35s ease-in-out";
-    lol.style.marginTop = "-20px";
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", (event) => {
-    loadSites();
-  });
-  async function addSite() {
-    let siteName = prompt(
-      "What is the Name of your site? Please insert a name. For example, Twitter."
-    );
-    if (!siteName) return;
-    let siteURL = prompt("What is the URL / web address of your Website.");
-    if (!siteURL) return;
-    createSiteElement(siteName, siteURL);
-    saveSite(siteName, siteURL);
-  }
-
-  function createSiteElement(name, url) {
-    const template = document.querySelector("#siteTemplate");
-    const clone = document.importNode(template.content, true);
-    const siteAnchor = clone.querySelector(".siteName");
-    const siteH = clone.querySelector(".siteH");
-    const siteHT = clone.querySelector(".siteHT");
-    siteH.textContent = name;
-    siteHT.textContent = url;
-    siteAnchor.href = url;
-    document
-      .getElementById("sitesContainer")
-      .insertBefore(clone, document.querySelector(".sitesBottom"));
-  }
-
-  function saveSite(name, url) {
-    let request = indexedDB.open("sitesDB", 1);
-    request.onupgradeneeded = function(event) {
-      let db = event.target.result;
-      console.log("Upgrading database...");
-      if (!db.objectStoreNames.contains("sites")) {
-        let objectStore = db.createObjectStore("sites", {
-          keyPath: "id",
-          autoIncrement: true
-        });
-        objectStore.createIndex("name", "name", {
-          unique: false
-        });
-        objectStore.createIndex("url", "url", {
-          unique: false
-        });
-      }
-    };
-    request.onsuccess = function(event) {
-      let db = event.target.result;
-      let transaction = db.transaction(["sites"], "readwrite");
-      let objectStore = transaction.objectStore("sites");
-      let site = {
-        name: name,
-        url: url
-      };
-      let addRequest = objectStore.add(site);
-      addRequest.onsuccess = function() {
-        console.log("Site added to the store:", site);
-      };
-      addRequest.onerror = function(event) {
-        console.log("Error adding site:", event.target.error);
-      };
-    };
-    request.onerror = function(event) {
-      console.log("Error opening database:", event.target.errorCode);
-    };
-  }
-
-  function loadSites() {
-    let request = indexedDB.open("sitesDB", 1);
-    request.onsuccess = function(event) {
-      let db = event.target.result;
-      let transaction = db.transaction(["sites"], "readonly");
-      let objectStore = transaction.objectStore("sites");
-      objectStore.openCursor().onsuccess = function(event) {
-        let cursor = event.target.result;
-        if (cursor) {
-          createSiteElement(cursor.value.name, cursor.value.url);
-          cursor.continue();
-        }
-      };
-    };
-    request.onerror = function(event) {
-      console.log("Error opening database:", event.target.errorCode);
-    };
-  }
-</script>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
-  <title>Brungle</title>
-  <style>
-    .siteName {
-      display: block;
-      margin: 10px 0;
-    }
-
-    .sitesBottom {
-      margin: 20px 0;
-    }
-  </style>
+<title>Brungle</title>
 </head>
 
 <body>
-  
-
-  <script>
-  </script>
+  <div class="container">
+    <form action="#">
+      <h1>Login</h1>
+      <div class="input-box">
+        <i class="fas fa-envelope icon"></i>
+        <input id="usernameInput" type="text" required />
+        <label>Username</label>
+      </div>
+      <div class="input-box">
+        <i class="fas fa-lock icon"></i>
+        <input id="passwordInput" type="password" required />
+        <label>Password</label>
+      </div>
+      <div class="row">
+        <a href="#" onclick="handleForgotPassword()">Forgot password?</a>
+      </div>
+      <button type="button" onclick="handleLogin()" class="btn">Login</button>
+      <div class="signup-link">
+        <p>Want an Account? <a href="https://pricing-brungle.pages.dev">Create one.</a></p>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>
+<r class="bruhLolXd" style="display: none">
+  <!-- BRUNGLE REDESIGN IS OFFICIALLY BEING PULLED UP TO BRUNGLE.PAGES.DEV  From NOW ON, redesign-brungle.pages.dev is only a Investors Only and Testing Website. -->
 
-</html>
-<style>
-  .sites {
-    min-width: 750px;
-    max-width: 1000px;
-    border: 2px dashed rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    min-height: 100px;
-    max-height: 250px;
-    height: auto;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    font-family: "Helvetica", cursive;
-    color: white;
-    text-align: center;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    position: absolute;
-    z-index: 9;
-    scale: 0.85;
-    top: 337.5px;
-  }
-
-  .sitesBottom {
-    padding: 15px;
-    height: 50px;
-    width: 50px;
-    background: linear-gradient(to top right, #8646ff, #4c86f3);
-    border-radius: 10px;
-    color: white;
-    font-family: "Helvetica", cursive;
-    border: none;
-    outline: none;
-  }
-
-  .siteName {
-    position: relative;
-    padding: 5px;
-    background: linear-gradient(to top right, #8646ff, #4c86f3);
-    opacity: 0.85;
-    border-radius: 7.5px;
-    min-width: 150px;
-    text-decoration: none;
-    color: white;
-  }
-
-  .siteName h1 {
-    font-size: 35px;
-    margin-top: 5px;
-    margin-bottom: -12.5px;
-  }
-
-  .siteName h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-</style>
-<div class="customize">
-  <h1 id="bruh"> Brungle Customization Menu </h1>
-  <div class="content-customize">
-    <!--   Sections. Themes and Stuffs are Inactive Currently   -->
-    <div class="themes">
-      <h1> Themes </h1>
-      <div class="theme-circle"></div>
-      INACTIVE.
+  <html>
+  <script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
+  <column>
+    <h1 id="title"> Brungle </h1>
+    <h3> Made with ❤️ by Shyun </h3>
+    <div class="searchBar">
+      <!-- search icon -->
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <!-- input -->
+      <input type="text" class="searchInput" placeholder="Search Brungle ... " autofocus></input>
+      <!--  file icon  -->
+      <i style="transform: rotate(-35deg)" class="fa-solid fa-paperclip"></i>
+      <hr>
+      <!-- ai icon -->
+      <svg id="fuck" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="35px" viewBox="0 0 24 24" width="35px">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#7f4cff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#4f84f2;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <rect fill="none" height="24" width="24" x="0" />
+        <g>
+          <path d="M19.46,8l0.79-1.75L22,5.46c0.39-0.18,0.39-0.73,0-0.91l-1.75-0.79L19.46,2c-0.18-0.39-0.73-0.39-0.91,0l-0.79,1.75 L16,4.54c-0.39,0.18-0.39,0.73,0,0.91l1.75,0.79L18.54,8C18.72,8.39,19.28,8.39,19.46,8z M11.5,9.5L9.91,6 C9.56,5.22,8.44,5.22,8.09,6L6.5,9.5L3,11.09c-0.78,0.36-0.78,1.47,0,1.82l3.5,1.59L8.09,18c0.36,0.78,1.47,0.78,1.82,0l1.59-3.5 l3.5-1.59c0.78-0.36,0.78-1.47,0-1.82L11.5,9.5z M18.54,16l-0.79,1.75L16,18.54c-0.39,0.18-0.39,0.73,0,0.91l1.75,0.79L18.54,22 c0.18,0.39,0.73,0.39,0.91,0l0.79-1.75L22,19.46c0.39-0.18,0.39-0.73,0-0.91l-1.75-0.79L19.46,16 C19.28,15.61,18.72,15.61,18.54,16z" style="fill:url(#grad1); font-weight: 1000; scale: 1.075" />
+        </g>
+      </svg>
     </div>
-    <div class="colors">
-      <h1> Colors </h1>
-      <div class="smolPopup" id="colours">
-        <h3 id="smolColors"> Loading ... </h3>
+    <div class="sites" id="sitesContainer">
+      <template id="siteTemplate">
+        <a class="siteName" target="_blank">
+          <h1 class="siteH">Site</h1>
+          <h3 class="siteHT">Site.com</h3>
+        </a>
+      </template>
+      <button class="sitesBottom" onclick="addSite()">
+        <i class="fa-solid fa-plus fa-xl" style="scale: 1.3"></i>
+      </button>
+    </div>
+  </column>
+
+  <div class="topLevels">
+    <button class="circle" id="themeButton" onclick="showThemeChanger()">
+      <i style="scale: 1.35" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
+    </button>
+    <button class="circle" onclick="showTimetable()">
+      <i style="scale: 1.35" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
+    </button>
+    <button class="circle" id="moreButton" onclick="toggleMore()">
+      <i style="scale: 1.35" class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="leftLevels">
+    <button class="circle">
+      <i style="scale: 1.35" class="fa-solid fa-trophy"></i>
+    </button>
+    <h1 id="points"> loading ... </h1>
+  </div>
+
+  <!-- brungle old features -->
+  <!--  -->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cd9d6500a7.js" crossorigin="anonymous"></script>
+    <title>Brungle</title>
+    <style>
+      .siteName {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .sitesBottom {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <!--  -->
+  <div class="customize">
+    <h1 id="bruh"> Brungle Customization Menu </h1>
+    <div class="content-customize">
+      <!--   Sections. Themes and Stuffs are Inactive Currently   -->
+      <div class="themes">
+        <h1> Themes </h1>
+        <div class="theme-circle"></div>
+        INACTIVE.
       </div>
-      <button class="color-circle" style="background: #E63946" id="color-og"></button>
-      <button class="color-circle" style="background: #036B52" id="color-green"></button>
-      <button class="color-circle" style="background: #000042" id="color-navy"></button>
-      <button class="color-circle" style="background: #282a37" id="color-normal"></button>
-      <button class="color-circle" style="background: transparent; display: flex; justify-content: center;
+      <div class="colors">
+        <h1> Colors </h1>
+        <div class="smolPopup" id="colours">
+          <h3 id="smolColors"> Loading ... </h3>
+        </div>
+        <button class="color-circle" style="background: #E63946" id="color-og"></button>
+        <button class="color-circle" style="background: #036B52" id="color-green"></button>
+        <button class="color-circle" style="background: #000042" id="color-navy"></button>
+        <button class="color-circle" style="background: #282a37" id="color-normal"></button>
+        <button class="color-circle" style="background: transparent; display: flex; justify-content: center;
                                         align-items: center; color: white;" onclick="addNewColor()">+</button>
-    </div>
-    <div class="images">
-      <h1> BG Images </h1>
-      <div class="bg-circle" style="display: none"></div>
-      Currently No Default BG Images. Try Creating One...
-      <button class="color-circle" style="background: transparent; display: flex; justify-content: center;align-items: center; color: white;" onclick="addNewBG()">+</button>
-    </div>
-    <div class="stuffs">
-      <h1> Your Stuff: </h1>
-      <dang id="theme-dang">
-        <h2> Themes: </h2>
-        <div class="custom-theme"></div>
-        INACTIVE.
-      </dang>
-      <hr>
-      <dang id="color-dang">
-        <h2> Colors: </h2>
-      </dang>
-      <hr>
-      <dang id="image-dang">
-        <h2> Images: </h2>
-        <div class="custom-image"></div>
-        INACTIVE.
-      </dang>
+      </div>
+      <div class="images">
+        <h1> BG Images </h1>
+        <div class="bg-circle" style="display: none"></div>
+        Currently No Default BG Images. Try Creating One...
+        <button class="color-circle" style="background: transparent; display: flex; justify-content: center;align-items: center; color: white;" onclick="addNewBG()">+</button>
+      </div>
+      <div class="stuffs">
+        <h1> Your Stuff: </h1>
+        <dang id="theme-dang">
+          <h2> Themes: </h2>
+          <div class="custom-theme"></div>
+          INACTIVE.
+        </dang>
+        <hr>
+        <dang id="color-dang">
+          <h2> Colors: </h2>
+        </dang>
+        <hr>
+        <dang id="image-dang">
+          <h2> Images: </h2>
+          <div class="custom-image"></div>
+          INACTIVE.
+        </dang>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="moreMenu">
-  <div class="moreeenu">
-    <h1> Select A <b>SERVICE</b></h1>
-    <button class="box" style="background: #00ffff; border: 5px solid #1ad4ff" onclick="showThemeChanger()">
-      <i style="scale: 1.45" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
-    </button>
-    <button class="box" style="background: #1ad4ff; border: 5px solid #339aff">
-      <i style="scale: 1.44" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
-    </button>
-    <button class="box" style="background: #339aff; border: 5px solid #4d5fff;">
-      <i style="scale: 1.43" class="fa-solid fa-school"></i>
-    </button>
-    <button class="box" style="background: #4d5fff; border: 5px solid #6635ff;">
-    <i style="scale: 1.42" class="fa-solid fa-earth-americas"></i>
-    </button>
-    <button class="box" style="background: #6635ff; border: 5px solid #7f0aff;">
-    <i style="scale: 1.41" class="fa-solid fa-note-sticky"></i>
-    </button>
-    <button class="box" style="background: #7f0aff; border: 5px solid #704acb">
-      <i style="scale: 1.4" class="fa-solid fa-comment-dots"></i>
-    </button>
-    
+  <div class="moreMenu">
+    <div class="moreeenu">
+      <h1> Select A <b>SERVICE</b></h1>
+      <button class="box" style="background: #00ffff; border: 5px solid #1ad4ff" onclick="showThemeChanger()">
+        <i style="scale: 1.45" class="fa-solid fa-fill" id="color" aria-hidden="true"></i>
+      </button>
+      <button class="box" style="background: #1ad4ff; border: 5px solid #339aff">
+        <i style="scale: 1.44" class="fa-solid fa-calendar" id="timetable" aria-hidden="true"></i>
+      </button>
+      <button class="box" style="background: #339aff; border: 5px solid #4d5fff;">
+        <i style="scale: 1.43" class="fa-solid fa-school"></i>
+      </button>
+      <button class="box" style="background: #4d5fff; border: 5px solid #6635ff;">
+        <i style="scale: 1.42" class="fa-solid fa-earth-americas"></i>
+      </button>
+      <button class="box" style="background: #6635ff; border: 5px solid #7f0aff;">
+        <i style="scale: 1.41" class="fa-solid fa-note-sticky"></i>
+      </button>
+      <button class="box" style="background: #7f0aff; border: 5px solid #704acb">
+        <i style="scale: 1.4" class="fa-solid fa-comment-dots"></i>
+      </button>
+
       <button class="box" style="background: #704acb; border: 5px solid #814cfe">
-    <i style="scale: 1.39" class="fa-solid fa-code"></i>
-    </button>
+        <i style="scale: 1.39" class="fa-solid fa-code"></i>
+      </button>
+    </div>
   </div>
-</div>
-<style>
-  button {
-    outline: none;
-    border: none;
-  }
-
-  .moreeenu {
-    background: rgba(70, 71, 78, 1);
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    font-family: "Helvetica", cursive;
-    z-index: 99999999999;
-    scale: 0.75;
-    border-radius: 50px;
-  }
-
-  .moreMenu {
-    position: absolute;
-    display: none;
-    background: rgba(70, 71, 78, 0.15);
-    z-index: top;
-  }
-
-  .moreMenu b {
-    font-weight: 1000;
-  }
-
-  .moreMenu h1 {
-    position: absolute;
-    top: 150px;
-    z-index: 9;
-    font-size: 50px;
-    font-weight: 500;
-  }
-
-  * {
-    margin: 0;
-  }
-
-  .box {
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 75px;
-    width: 75px;
-    border-radius: 10px;
-    transition: all 0.35s ease-in-out;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-    opacity: 0.75;
-  }
-
-  .box:hover {
-    width: 105px;
-    height: 105px;
-    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
-    opacity: 1;
-  }
-
-  #color-dang,
-  #image-dang,
-  #theme-dang {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    align-items: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  #color-dang h1,
-  #image-dang h1,
-  #theme-dang h1 {
-    position: absolute;
-  }
-
-  #bruh {
-    font-size: 25px;
-    text-align: center;
-    font-weight: 950;
-    text-decoration: none;
-    transition: all 0.05s ease-in-out;
-  }
-
-  #bruh:hover {
-    font-size: 27.5px;
-    font-weight: 1000;
-    text-decoration: underline;
-    padding: 10px;
-    width: auto;
-    height: auto;
-    border-radius: 5px;
-  }
-
-  .customize {
-    position: absolute;
-    background: #3e404d;
-    width: 70%;
-    height: 80%;
-    z-index: 10;
-    top: 10vh;
-    left: 10vw;
-    padding: 15px;
-    border-radius: 25px;
-    display: flex;
-    color: white;
-    gap: 10px;
-    font-family: "Helvetica", cursive;
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    z-index: 999999999999999999999999;
-    display: none;
-  }
-
-  .closeIT {
-    height: 50px;
-    width: 50px;
-    background: red;
-    opacity: 0.86;
-    color: white;
-    font-weight: 1000;
-    border-radius: 15px;
-    z-index: 999999999;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-
-  .content-customize {
-    margin-bottom: 15px;
-    position: relative;
-  }
-
-  .themes,
-  .images,
-  .colors,
-  .stuffs {
-    background: #3e8eff;
-    padding: 5px;
-    border-radius: 10px;
-    align-items: center;
-    width: calc(100% - 10px);
-    min-height: 20%;
-    height: auto;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    transition: all 0.075s ease-in-out;
-  }
-
-  .stuffs hr {
-    opacity: 0.35;
-    width: calc(100% + 7.5px);
-    margin-left: -5px;
-    border: 2px solid white;
-    border-radius: 5px;
-  }
-
-  .themes:hover,
-  .images:hover,
-  .colors:hover,
-  .stuffs:hover {
-    background: #7f37e5;
-    transform: scale(1.005) translateX(-0.35vw);
-    border: 2px dashed white;
-  }
-
-  .themes h1,
-  .images h1,
-  .colors h1,
-  .stuffs h1 {
-    font-size: 25px;
-    margin-left: 15px;
-  }
-
-  .stuffs h2 {
-    font-size: 15px;
-    margin-left: 15px;
-  }
-
-  .theme-circle,
-  .color-circle,
-  .bg-circle,
-  .custom-theme,
-  .custom-color,
-  .custom-image {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: black;
-    margin: 5px;
-    margin-left: 15px;
-    margin-bottom: 10px;
-  }
-
-  .theme-circle:hover,
-  .color-circle:hover,
-  .bg-circle:hover,
-  .custom-theme:hover,
-  .custom-color:hover,
-  .custom-image:hover {
-    border: 2px dashed white;
-  }
-
-  .smolPopup {
-    background: purple;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px 20px;
-    text-align: center;
-    font-size: 10px;
-    position: absolute;
-    display: block;
-    position: absolute;
-    z-index: 11;
-    border-radius: 5px;
-    right: 0;
-    top: 0;
-    margin-top: 35px;
-    margin-right: 50px;
-    display: none;
-  }
-</style>
-<script>
-  function showThemeChanger() {
-    var bruh = document.querySelector(".customize");
-    var theme = document.querySelector("#themeButton");
-    var hurb = document.querySelector(".moreMenu");
-    if (bruh.style.display === "block") {
-      bruh.style.display = "none";
-      theme.style.background = "#3e404d";
-      theme.style.border = "none";
-    } else {
-      bruh.style.display = "block";
-      theme.style.background = "#515157";
-      theme.style.border = "2px dashed white";
-      if (hurb.style.display === "block") {
-        toggleMore();
-      }
-    }
-  }
-
-  function toggleMore() {
-    var bruh = document.querySelector(".moreMenu");
-    var more = document.querySelector("#moreButton");
-    var hurb = document.querySelector(".customize");
-    if (bruh.style.display === "block") {
-      bruh.style.display = "none";
-      more.style.background = "#3e404d";
-      more.style.border = "none";
-    } else {
-      bruh.style.display = "block";
-      more.style.background = "#515157";
-      more.style.border = "2px dashed white";
-      if (hurb.style.display === "block") {
-        showThemeChanger();
-      }
-    }
-  }
-
-  function closeIT() {
-    alert("broken lol");
-  }
-  let db;
-  const request = indexedDB.open("ColorDB", 1);
-  request.onupgradeneeded = function(event) {
-    db = event.target.result;
-    db.createObjectStore("colors", {
-      keyPath: "id",
-      autoIncrement: true
-    });
-  };
-  request.onsuccess = function(event) {
-    db = event.target.result;
-    loadColors();
-  };
-  request.onerror = function(event) {
-    console.error("Database error: " + event.target.errorCode);
-  };
-
-  function addNewColor() {
-    const color = prompt("Enter a color in hex (e.g., #ff0000):");
-    if (color) {
-      const transaction = db.transaction(["colors"], "readwrite");
-      const store = transaction.objectStore("colors");
-      store.add({
-        color: color
-      });
-      transaction.oncomplete = function() {
-        createColorDiv(color);
-      };
-      transaction.onerror = function(event) {
-        console.error("Transaction error: " + event.target.errorCode);
-      };
-    }
-  }
-
-  function loadColors() {
-    const transaction = db.transaction(["colors"], "readonly");
-    const store = transaction.objectStore("colors");
-    const request = store.getAll();
-    request.onsuccess = function(event) {
-      const colors = event.target.result;
-      colors.forEach((colorObj) => createColorDiv(colorObj.color));
-    };
-    request.onerror = function(event) {
-      console.error("Transaction error: " + event.target.errorCode);
-    };
-  }
-
-  function createColorDiv(color) {
-    const div = document.createElement("div");
-    div.className = "color-circle";
-    div.style.backgroundColor = color;
-    div.onclick = function() {
-      document.body.style.backgroundColor = color;
-    };
-    document.getElementById("color-dang").appendChild(div);
-  }
-  document.addEventListener("DOMContentLoaded", function() {
-    // Open (or create) the database
-    let db;
-    const request = indexedDB.open("backgroundDB", 1);
-    request.onerror = function(event) {
-      console.log("Database error:", event.target.error);
-    };
-    request.onsuccess = function(event) {
-      db = event.target.result;
-      getBackgroundColor();
-    };
-    request.onupgradeneeded = function(event) {
-      db = event.target.result;
-      db.createObjectStore("settings", {
-        keyPath: "id"
-      });
-    };
-
-    function saveBackgroundColor(color) {
-      const transaction = db.transaction(["settings"], "readwrite");
-      const store = transaction.objectStore("settings");
-      store.put({
-        id: "backgroundColor",
-        color: color
-      });
-    }
-
-    function getBackgroundColor() {
-      const transaction = db.transaction(["settings"], "readonly");
-      const store = transaction.objectStore("settings");
-      const request = store.get("backgroundColor");
-      request.onsuccess = function(event) {
-        if (event.target.result) {
-          document.body.style.backgroundColor = event.target.result.color;
-        }
-      };
-      request.onerror = function(event) {
-        console.log("Error fetching background color:", event.target.error);
-      };
-    }
-    document.getElementById("color-navy").addEventListener("click", function() {
-      const navyColor = "#000042";
-      document.body.style.backgroundImage = "";
-      document.body.style.backgroundColor = navyColor;
-      saveBackgroundColor(navyColor);
-    });
-    document
-      .getElementById("color-normal")
-      .addEventListener("click", function() {
-        const normalColor = "#282a37";
-        document.body.style.backgroundImage = "";
-        document.body.style.backgroundColor = normalColor;
-        saveBackgroundColor(normalColor);
-      });
-    document.getElementById("color-green").addEventListener("click", function() {
-      const greenColor = "#036B52";
-      document.body.style.backgroundImage = "";
-      document.body.style.backgroundColor = greenColor;
-      saveBackgroundColor(greenColor);
-    });
-    document.getElementById("color-og").addEventListener("click", function() {
-      const ogColor = "#E63946";
-      document.body.style.backgroundImage = "";
-      document.body.style.backgroundColor = ogColor;
-      saveBackgroundColor(ogColor);
-    });
-    //smol popup thingy name
-    document
-      .getElementById("color-navy")
-      .addEventListener("mouseover", function() {
-        document.getElementById("smolColors").innerHTML = "Navy Oliver";
-        document.getElementById("smolPopup").style.display = "block";
-      });
-    document
-      .getElementById("color-normal")
-      .addEventListener("mouseover", function() {
-        document.getElementById("smolColors").innerHTML = "Dark";
-        document.getElementById("colours").style.display = "block";
-      });
-    document
-      .getElementById("color-green")
-      .addEventListener("mouseover", function() {
-        document.getElementById("smolColors").innerHTML = "Direct Green";
-        document.getElementById("colours").style.display = "block";
-      });
-    document
-      .getElementById("color-og")
-      .addEventListener("mouseover", function() {
-        document.getElementById("smolColors").innerHTML = "OG";
-        document.getElementById("smolPopup").style.display = "block";
-      });
-  });
-  // bruh
-  document.addEventListener("DOMContentLoaded", () => {
-    // Initialize IndexedDB
-    const request = indexedDB.open("bgImageDB", 1);
-    request.onupgradeneeded = (event) => {
-      const db = event.target.result;
-      db.createObjectStore("images", {
-        keyPath: "id"
-      });
-      db.createObjectStore("circles", {
-        keyPath: "id",
-        autoIncrement: true
-      });
-    };
-    request.onsuccess = (event) => {
-      const db = event.target.result;
-      loadSavedData(db);
-    };
-    request.onerror = (event) => {
-      console.error("Database error:", event.target.errorCode);
-    };
-  });
-
-  function loadSavedData(db) {
-    // Load and set background image
-    const transaction = db.transaction(["images"], "readonly");
-    const store = transaction.objectStore("images");
-    const getRequest = store.get("bgImage");
-    getRequest.onsuccess = (event) => {
-      if (event.target.result) {
-        document.body.style.backgroundImage = `url(${event.target.result.url})`;
-      }
-    };
-    // Load and create saved circles
-    const circleTransaction = db.transaction(["circles"], "readonly");
-    const circleStore = circleTransaction.objectStore("circles");
-    circleStore.openCursor().onsuccess = (event) => {
-      const cursor = event.target.result;
-      if (cursor) {
-        addColorCircle(cursor.value.url, false);
-        cursor.continue();
-      }
-    };
-  }
-
-  function addNewBG() {
-    const imageUrl = prompt("Please enter the image URL:");
-    if (imageUrl) {
-      document.body.style.backgroundImage = `url(${imageUrl})`;
-      // Save the image URL to IndexedDB
-      const request = indexedDB.open("bgImageDB", 1);
-      request.onsuccess = (event) => {
-        const db = event.target.result;
-        const transaction = db.transaction(["images"], "readwrite");
-        const store = transaction.objectStore("images");
-        const bgImage = {
-          id: "bgImage",
-          url: imageUrl
-        };
-        store.put(bgImage);
-        transaction.oncomplete = () => {
-          console.log("Background image saved to IndexedDB.");
-          addColorCircle(imageUrl, true);
-        };
-        transaction.onerror = (event) => {
-          console.error("Transaction error:", event.target.errorCode);
-        };
-      };
-      request.onerror = (event) => {
-        console.error("Database error:", event.target.errorCode);
-      };
-    } else {
-      console.log("No image URL provided.");
-    }
-  }
-
-  function addColorCircle(imageUrl, saveToDB) {
-    const parentDiv = document.getElementById('image-dang');
-    const newDiv = document.createElement('div');
-    newDiv.className = 'color-circle';
-    newDiv.style.backgroundImage = `url(${imageUrl})`;
-    newDiv.addEventListener('click', () => {
-      document.body.style.backgroundImage = `url(${imageUrl})`;
-      saveBackgroundImage(imageUrl);
-    });
-    parentDiv.appendChild(newDiv);
-    if (saveToDB) {
-      // Save the circle's image URL to IndexedDB
-      const request = indexedDB.open("bgImageDB", 1);
-      request.onsuccess = (event) => {
-        const db = event.target.result;
-        const transaction = db.transaction(["circles"], "readwrite");
-        const store = transaction.objectStore("circles");
-        const circle = {
-          url: imageUrl
-        };
-        store.add(circle);
-        transaction.oncomplete = () => {
-          console.log("Circle image saved to IndexedDB.");
-        };
-        transaction.onerror = (event) => {
-          console.error("Transaction error:", event.target.errorCode);
-        };
-      };
-      request.onerror = (event) => {
-        console.error("Database error:", event.target.errorCode);
-      };
-    }
-  }
-
-  function saveBackgroundImage(imageUrl) {
-    const request = indexedDB.open("bgImageDB", 1);
-    request.onsuccess = (event) => {
-      const db = event.target.result;
-      const transaction = db.transaction(["images"], "readwrite");
-      const store = transaction.objectStore("images");
-      const bgImage = {
-        id: "bgImage",
-        url: imageUrl
-      };
-      store.put(bgImage);
-      transaction.oncomplete = () => {
-        console.log("Background image saved to IndexedDB.");
-      };
-      transaction.onerror = (event) => {
-        console.error("Transaction error:", event.target.errorCode);
-      };
-    };
-    request.onerror = (event) => {
-      console.error("Database error:", event.target.errorCode);
-    };
-  }
-  
-  // function gotoNotes() {
-  //   window.location.href = "https://notes-brungle.pages.dev/";
-  // }
-
-  // function openBCHATS() {
-  //   alert('Currently not Opperational BUT we are allowing users to feel how it would look like.');
-  //   window.location.href = "https://chats-brungle.pages.dev";
-  // }
-
-  // function openBSCODE() {
-  //   window.location.href="https://coding-brungle.pages.dev";
-  // }
-
-  // function showTimetable() {
-  //   window.location.href="https://table-tops.pages.dev";
-  // }
-
-
-  // // theme functions
-  // function ogBrungle() {
-  //   alert('For a few days, This theme will redirect you to the old Brungle Website. Sorry for the inconvienence.');
-  //   window.location.href="https://og-brungle.pages.dev";
-  // }
-
-  // function openMAPS() {
-  //   alert('Redirecting to Brungle Maps. Copyright MIT CC Microsoft Azure in Corporation with OpenStreetMaps');
-  //   window.location.href="https://maps-brungle.pages.dev");
-  // }
-
-  // function showSCHOOLS() {
-  //   alert('Currently there are no more services except calculator. For a short while, while we keep developing more applications and services, this will redirect to Calcultor. PS: we are adding log, sin cos, sq root, squaring and more to the Calculator. A button called advanced might pop up in one of these days, the top right corner!');
-  //   window.location.href="https://calculator-brungle.pages.dev");
-  // }
-</script>
+  <!--    -->
+  <!--  -->
+</r>
